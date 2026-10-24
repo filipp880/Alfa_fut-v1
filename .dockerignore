@@ -1,0 +1,9 @@
+.git
+.tools
+.venv
+runs
+dist
+__pycache__
+.env
+.env.*
+APIkey.txt

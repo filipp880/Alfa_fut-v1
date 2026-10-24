@@ -1,0 +1,17 @@
+.venv/
+.tools/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+.env.*
+!/.env.example
+APIkey.txt
+runs/
+dist/
+.alfa_runs/
+submission.csv
+*.log
+*.cbm
+*.pkl
+*.npz

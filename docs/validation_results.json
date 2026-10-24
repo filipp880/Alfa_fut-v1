@@ -1,0 +1,226 @@
+[
+  {
+    "environment": "Linux",
+    "problem_type": "classification",
+    "target": "attack_cat",
+    "metric": "macro_f1",
+    "search_score": 0.6149913913440417,
+    "selection_phase": "confirm",
+    "validation_score": 0.6025191978252796,
+    "constant_baseline_score": 0.047637845955803476,
+    "elapsed_seconds": 525.939888623,
+    "train_rows": 87670,
+    "test_rows": 41166,
+    "refit_completed": true,
+    "weights": [
+      1.0
+    ],
+    "selected": [
+      {
+        "config": {
+          "model": "lightgbm",
+          "iterations": 1600,
+          "depth": 6,
+          "learning_rate": 0.06,
+          "regularization": 5.0,
+          "leaves": 31,
+          "min_child_samples": 30,
+          "class_weight_power": 0.5,
+          "missing_indicators": false,
+          "frequency_encoding": false,
+          "drop_time": false,
+          "target_transform": "identity",
+          "transforms": [],
+          "seed": 42,
+          "hypothesis": "Компенсация дисбаланса в независимом семействе бустинга"
+        },
+        "score": 0.6025191978252796,
+        "phase": "confirm",
+        "best_iterations": 279
+      }
+    ],
+    "successful_experiments": 8,
+    "failed_experiments": 0,
+    "peak_worker_rss_mb": 1101.72,
+    "versions": {
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.5.2",
+      "catboost": "1.2.8",
+      "lightgbm": "4.6.0",
+      "openai": "1.68.2"
+    },
+    "python": "3.12.15 (main, Oct 21 2026, 01:08:20) [GCC 14.2.0]",
+    "llm_calls": 0,
+    "llm_accounted_tokens": 0,
+    "run_id": "20261024T183908_056858_1"
+  },
+  {
+    "environment": "Windows",
+    "problem_type": "classification",
+    "target": "attack_cat",
+    "metric": "macro_f1",
+    "search_score": 0.592881400560758,
+    "selection_phase": "confirm",
+    "validation_score": 0.5728668497557242,
+    "constant_baseline_score": 0.047637845955803476,
+    "elapsed_seconds": 791.5,
+    "train_rows": 87670,
+    "test_rows": 41166,
+    "refit_completed": true,
+    "weights": [
+      1.0
+    ],
+    "selected": [
+      {
+        "config": {
+          "model": "catboost",
+          "iterations": 1600,
+          "depth": 6,
+          "learning_rate": 0.06,
+          "regularization": 5.0,
+          "leaves": 31,
+          "min_child_samples": 30,
+          "class_weight_power": 0.5,
+          "missing_indicators": false,
+          "frequency_encoding": false,
+          "drop_time": false,
+          "target_transform": "identity",
+          "transforms": [],
+          "seed": 42,
+          "hypothesis": "Умеренное усиление редких классов для основной метрики"
+        },
+        "score": 0.5728668497557242,
+        "phase": "confirm",
+        "best_iterations": 117
+      }
+    ],
+    "successful_experiments": 7,
+    "failed_experiments": 1,
+    "peak_worker_rss_mb": 754.21,
+    "versions": {
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.5.2",
+      "catboost": "1.2.8",
+      "lightgbm": "4.6.0",
+      "openai": "1.68.2"
+    },
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "llm_calls": 2,
+    "llm_accounted_tokens": 10833,
+    "run_id": "20261024T182257_187927_7332"
+  },
+  {
+    "environment": "Linux",
+    "problem_type": "regression",
+    "target": "site_eui",
+    "metric": "rmse",
+    "search_score": 43.577746671962394,
+    "selection_phase": "confirm",
+    "validation_score": 45.20185020404409,
+    "constant_baseline_score": 56.79943183188593,
+    "elapsed_seconds": 56.63964488500005,
+    "train_rows": 53308,
+    "test_rows": 22449,
+    "refit_completed": true,
+    "weights": [
+      1.0
+    ],
+    "selected": [
+      {
+        "config": {
+          "model": "catboost",
+          "iterations": 1200,
+          "depth": 8,
+          "learning_rate": 0.045,
+          "regularization": 5.0,
+          "leaves": 31,
+          "min_child_samples": 30,
+          "class_weight_power": 0.0,
+          "missing_indicators": false,
+          "frequency_encoding": false,
+          "drop_time": false,
+          "target_transform": "identity",
+          "transforms": [],
+          "seed": 42,
+          "hypothesis": "Более глубокие взаимодействия при меньшем шаге"
+        },
+        "score": 45.20185020404409,
+        "phase": "confirm",
+        "best_iterations": 161
+      }
+    ],
+    "successful_experiments": 6,
+    "failed_experiments": 0,
+    "peak_worker_rss_mb": 592.12,
+    "versions": {
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.5.2",
+      "catboost": "1.2.8",
+      "lightgbm": "4.6.0",
+      "openai": "1.68.2"
+    },
+    "python": "3.12.15 (main, Oct 21 2026, 01:08:20) [GCC 14.2.0]",
+    "llm_calls": 0,
+    "llm_accounted_tokens": 0,
+    "run_id": "20261024T185259_112674_1"
+  },
+  {
+    "environment": "Windows",
+    "problem_type": "regression",
+    "target": "site_eui",
+    "metric": "rmse",
+    "search_score": 43.577746671962394,
+    "selection_phase": "confirm",
+    "validation_score": 45.20185020404409,
+    "constant_baseline_score": 56.79943183188593,
+    "elapsed_seconds": 195.98399999999856,
+    "train_rows": 53308,
+    "test_rows": 22449,
+    "refit_completed": true,
+    "weights": [
+      1.0
+    ],
+    "selected": [
+      {
+        "config": {
+          "model": "catboost",
+          "iterations": 1200,
+          "depth": 8,
+          "learning_rate": 0.045,
+          "regularization": 5.0,
+          "leaves": 31,
+          "min_child_samples": 30,
+          "class_weight_power": 0.0,
+          "missing_indicators": false,
+          "frequency_encoding": false,
+          "drop_time": false,
+          "target_transform": "identity",
+          "transforms": [],
+          "seed": 42,
+          "hypothesis": "Более глубокие взаимодействия при меньшем шаге"
+        },
+        "score": 45.20185020404409,
+        "phase": "confirm",
+        "best_iterations": 161
+      }
+    ],
+    "successful_experiments": 6,
+    "failed_experiments": 0,
+    "peak_worker_rss_mb": 314.13,
+    "versions": {
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.5.2",
+      "catboost": "1.2.8",
+      "lightgbm": "4.6.0",
+      "openai": "1.68.2"
+    },
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "llm_calls": 0,
+    "llm_accounted_tokens": 0,
+    "run_id": "20261024T180327_802680_14208"
+  }
+]
