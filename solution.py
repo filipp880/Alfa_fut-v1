@@ -25,7 +25,7 @@ def main(argv=None) -> int:
     import traceback
     import threading
     import numpy as np
-    from contracts import CLASSIFICATION_METRICS, ExperimentSpec, METRICS, native
+    from contracts import CLASSIFICATION_METRICS, ExperimentSpec, METRICS, native, parse_experiment
     from task_reader import load_task
     from data_io import encode_target, profile_data
     from validation import make_splits
@@ -34,7 +34,7 @@ def main(argv=None) -> int:
     from experiment_store import Journal, atomic_json
     from runtime import Budget, Runner
     from llm_client import LLMPlanner
-    from research import Research
+    from research import Research, choose_finalists
 
     parser = argparse.ArgumentParser(description="Автономный агент табличного ML")
     parser.add_argument("task", nargs="?", default="task.md")
@@ -127,7 +127,7 @@ def main(argv=None) -> int:
                 versions[name] = "unavailable"
         summary.update(profile=profile, versions=versions, python=sys.version)
         runner = Runner(directory, task, profile, budget)
-        research = Research(task, profile, planner)
+        research = Research(task, profile, planner, include_alternatives=True)
         history, successes, executed = [], [], set()
         best_score, best_result, no_improvement = None, None, 0
         search_split = splits[0]
@@ -170,19 +170,15 @@ def main(argv=None) -> int:
         if not successes:
             return finish("fallback_no_successful_experiments", experiments=len(history))
         successes.sort(key=lambda r: r["score"], reverse=task.maximize)
-        candidates = successes[:2]
+        candidates, blend_weights = choose_finalists(task, successes, y[search_split.valid],
+                                                    lambda r: predictions(r)[0])
         selected = [candidates[0]]
         weights = [1.0]
         # Вес ансамбля выбирается на search и проверяется неизменным на confirm.
-        blend_weight = None
-        if len(candidates) == 2:
-            a, _ = predictions(candidates[0])
-            b, _ = predictions(candidates[1])
-            blend_score = candidates[0]["score"]
-            for weight in (.25, .5, .75):
-                value = evaluate(task, y[search_split.valid], weight*a+(1-weight)*b)[task.metric]
-                if better(task, value, blend_score, tolerance=.001):
-                    blend_score, blend_weight = value, weight
+        atomic_json(directory/"finalists.json", {
+            "candidates": [{"config_key": r["config_key"], "config": r["config"],
+                            "best_iterations": r["best_iterations"]} for r in candidates],
+            "blend_weights": blend_weights, "confirmation_early_stopping": False})
         confirmed = []
         if "confirm" in split_paths:
             for candidate in candidates:
@@ -191,23 +187,31 @@ def main(argv=None) -> int:
                 estimate = candidate["wall_seconds"] * len(splits[1].train)/max(1, candidate["n_train"])
                 if allowance < max(4, min(estimate*.7, 15)):
                     break
-                config = ExperimentSpec.from_dict(candidate["config"], task)
+                config = parse_experiment(candidate["config"], task)
                 journal.event("experiment_started", phase="confirm", model=config.model)
-                result = runner.run(config, split_paths["confirm"], "confirm", allowance)
+                result = runner.run(config, split_paths["confirm"], "confirm", allowance,
+                                    refit=True, fixed_iterations=candidate["best_iterations"])
                 journal.event("experiment_result", **result)
                 if result["status"] == "ok":
                     confirmed.append(result)
             if confirmed:
                 winner = sorted(confirmed, key=lambda r: r["score"], reverse=task.maximize)[0]
                 selected, weights = [winner], [1.]
-                if len(confirmed) == 2 and blend_weight is not None:
-                    a, _ = predictions(confirmed[0])
-                    b, _ = predictions(confirmed[1])
-                    mixed = blend_weight*a+(1-blend_weight)*b
-                    score = evaluate(task, y[splits[1].valid], mixed)[task.metric]
-                    if better(task, score, winner["score"], tolerance=.001):
-                        selected, weights = confirmed, [blend_weight, 1-blend_weight]
-                        journal.event("ensemble_confirmed", phase="confirm", score=score, weights=weights)
+                leader = next((r for r in confirmed if r["config_key"] == candidates[0]["config_key"]), None)
+                selected_score = winner["score"]
+                if leader is not None:
+                    a, _ = predictions(leader)
+                    for complement in confirmed:
+                        blend_weight = blend_weights.get(complement["config_key"])
+                        if blend_weight is None:
+                            continue
+                        b, _ = predictions(complement)
+                        mixed = blend_weight*a+(1-blend_weight)*b
+                        score = evaluate(task, y[splits[1].valid], mixed)[task.metric]
+                        if better(task, score, selected_score, tolerance=.001):
+                            selected, weights = [leader, complement], [blend_weight, 1-blend_weight]
+                            selected_score = score
+                            journal.event("ensemble_confirmed", phase="confirm", score=score, weights=weights)
         # При единственном разбиении выбираем модель без дополнительного подбора ансамбля.
         selected_prediction = sum(w*predictions(r)[1] for w, r in zip(weights, selected))
         write_submission(task, test, selected_prediction, output)
@@ -230,7 +234,7 @@ def main(argv=None) -> int:
             if available < estimates_left:
                 journal.event("refit_skipped", reason="Недостаточно резерва; сохранён проверенный ответ")
                 break
-            config = ExperimentSpec.from_dict(candidate["config"], task)
+            config = parse_experiment(candidate["config"], task)
             journal.event("experiment_started", phase="refit", model=config.model)
             result = runner.run(config, full_split, "refit", min(available, estimate*1.5),
                                 refit=True, fixed_iterations=candidate["best_iterations"])

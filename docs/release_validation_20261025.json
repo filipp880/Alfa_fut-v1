@@ -1,0 +1,39 @@
+{
+  "date_moscow": "2026-10-25",
+  "initial_tests": {
+    "windows": {"total": 34, "passed": 33, "skipped": 1, "seconds": 53.026},
+    "linux": {"total": 34, "passed": 33, "failed": 1, "seconds": 36.162,
+      "failure": "AutoGluon 1.3.1: sample_weight + train_data_extra unsupported"}
+  },
+  "final_tests": {
+    "total": 42, "passed": 42, "failed": 0, "skipped": 0,
+    "seconds": 39.524, "platform": "Linux", "python": "3.12.15",
+    "cpus": 2, "memory_bytes": 4294967296, "network": "none"
+  },
+  "production_archive_checks": {
+    "regression": {
+      "completed": true, "final_refit_completed": true, "rows": 22449,
+      "seconds": 142.97030915999994, "model": "extra_trees",
+      "confirmation_metric": "rmse", "confirmation_score": 46.58330001137281,
+      "comparable_control_score": 48.678635620745055,
+      "directory": "runs/linux/regression_20261025T014709"
+    },
+    "classification": {
+      "completed": true, "final_refit_completed": true, "rows": 41166,
+      "seconds": 259.0094092200002, "model": "lightgbm",
+      "confirmation_metric": "macro_f1", "confirmation_score": 0.6019947583411831,
+      "boosting_iterations_cap": 250, "integration_check_only": true,
+      "directory": "runs/linux/classification_20261025T015201"
+    },
+    "cpus": 8, "memory_bytes": 31138512896, "memory_swap_bytes": 31138512896,
+    "network": "none"
+  },
+  "archive": {
+    "path": "dist/alfa_solution.zip", "bytes": 40732, "python_modules": 16,
+    "sha256": "079a5f610baa616b10c0058e4c4e4860705f372f7b75f0b325d9a74c9b795a79",
+    "requirements_sha256": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+  },
+  "scope": "Local public-data validation; private competition test not evaluated",
+  "platform_submissions_used": 0,
+  "organizer_llm_requests_in_this_research": 0
+}

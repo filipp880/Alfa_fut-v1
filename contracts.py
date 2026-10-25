@@ -151,3 +151,11 @@ class ExperimentSpec:
         if not isinstance(data, dict):
             raise ValueError("Конфигурация должна быть объектом")
         return cls(**data).validate(task)
+
+
+def parse_experiment(data: dict, task: TaskSpec) -> ExperimentSpec:
+    """Закрытый реестр конфигураций; стандартный LLM-DSL остаётся прежним."""
+    if isinstance(data, dict) and data.get("model") in {"extra_trees", "kernel", "retrieval"}:
+        from novel_models import NovelSpec
+        return NovelSpec.from_dict(data, task)
+    return ExperimentSpec.from_dict(data, task)

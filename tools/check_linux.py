@@ -38,7 +38,7 @@ def main():
     with zipfile.ZipFile(archive) as bundle:
         bundle.extractall(destination)
     name = 'alfa-check-'+uuid.uuid4().hex[:10]
-    command = ['docker','run','--rm','--name',name,'--cpus=8','--memory=32g','--network=none',
+    command = ['docker','run','--rm','--name',name,'--cpus=8','--memory=29g','--memory-swap=29g','--network=none',
                '--mount',f'type=bind,source={destination},target=/task','--entrypoint','python3',
                args.image,'/task/solution.py','task.md','--time-limit',str(args.time_limit),
                '--max-experiments',str(args.max_experiments),'--max-iterations',str(args.max_iterations),'--no-llm']

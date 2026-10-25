@@ -81,24 +81,30 @@ class Budget:
 
 
 class Runner:
-    def __init__(self, directory: Path, task: TaskSpec, profile: dict, budget: Budget):
+    def __init__(self, directory: Path, task: TaskSpec, profile: dict, budget: Budget,
+                 worker_module: str = "worker"):
+        if worker_module not in {"worker", "strategy_worker", "novel_worker"}:
+            raise ValueError("Недопустимый исполнитель")
         self.directory, self.task, self.profile, self.budget = directory, task, profile, budget
+        self.worker_module = worker_module
         self.code_root = Path(__file__).resolve().parent
         self.counter = 0
 
     def run(self, config: ExperimentSpec, split_path: Path, phase: str, timeout: float,
-            refit: bool = False, fixed_iterations: int | None = None) -> dict:
+            refit: bool = False, fixed_iterations: int | None = None,
+            job_options: dict | None = None) -> dict:
         config.validate(self.task)
         self.counter += 1
         work = self.directory / f"{self.counter:03d}_{phase}_{config.key}"
         work.mkdir(parents=True, exist_ok=False)
         request = {"task": self.task.to_dict(), "config": config.to_dict(), "profile": self.profile,
                    "split_path": str(split_path.resolve()), "threads": self.budget.threads,
-                   "refit": refit, "fixed_iterations": fixed_iterations}
+                   "refit": refit, "fixed_iterations": fixed_iterations,
+                   "job_options": job_options or {}}
         atomic_json(work / "request.json", request)
         # Генерация исполняемой программы из фиксированного шаблона и проверенного DSL.
         program = ("import sys\n" + f"sys.path.insert(0, {str(self.code_root)!r})\n"
-                   + "from worker import main\n"
+                   + f"from {self.worker_module} import main\n"
                    + f"raise SystemExit(main({str(work / 'request.json')!r}))\n")
         (work / "experiment.py").write_text(program, encoding="utf-8")
         allowed = {"PATH", "SYSTEMROOT", "WINDIR", "COMSPEC", "TEMP", "TMP", "LD_LIBRARY_PATH",

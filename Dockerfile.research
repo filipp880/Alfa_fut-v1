@@ -1,0 +1,5 @@
+FROM alfa-agent:local
+COPY requirements-dev.txt requirements-research.txt requirements.txt /research_dependencies/
+RUN python -c "from pathlib import Path; import re; p=Path('/research_dependencies'); lines=[re.sub(r'\[[^\]]*\]','',s.strip()) for s in (p/'requirements.txt').read_text(encoding='utf-8').splitlines() if s.strip() and not s.lstrip().startswith('#')]; (p/'approved-constraints.txt').write_text('\n'.join(lines))"
+RUN pip install --no-cache-dir -c /research_dependencies/approved-constraints.txt -r /research_dependencies/requirements-dev.txt -r /research_dependencies/requirements-research.txt
+WORKDIR /task

@@ -10,7 +10,8 @@ import zipfile
 MODULES = (
     "solution.py", "contracts.py", "task_reader.py", "data_io.py", "validation.py",
     "metrics.py", "submission.py", "preprocessing.py", "models.py", "worker.py",
-    "runtime.py", "experiment_store.py", "research.py", "llm_client.py", "requirements.txt",
+    "runtime.py", "experiment_store.py", "research.py", "llm_client.py",
+    "novel_models.py", "novel_worker.py", "requirements.txt",
 )
 
 

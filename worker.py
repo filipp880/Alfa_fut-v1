@@ -13,6 +13,10 @@ def main(request_path: str) -> int:
     output = request_file.parent
     started = time.monotonic()
     try:
+        request = json.loads(request_file.read_text(encoding="utf-8"))
+        if request.get("config", {}).get("model") in {"extra_trees", "kernel", "retrieval"}:
+            from novel_worker import main as alternative_main
+            return alternative_main(request_path)
         import numpy as np
         from threadpoolctl import threadpool_limits
         from contracts import ExperimentSpec, TaskSpec

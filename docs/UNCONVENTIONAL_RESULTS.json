@@ -1,0 +1,629 @@
+[
+  {
+    "task": "classification",
+    "metric": "macro_f1",
+    "directory": "runs\\unconventional\\classification_20261025T010933_c965285af2",
+    "control_score": 0.5989991605570064,
+    "elapsed_seconds": 1243.94984821,
+    "winner": "kernel",
+    "winner_alpha": 0.25,
+    "peak_worker_rss_mb": 1061.89,
+    "final_refit_completed": true,
+    "methods": {
+      "extra_trees": {
+        "status": "ok",
+        "search_score": 0.6089003037275156,
+        "search_blend_score": 0.6149913913440417,
+        "alpha": 0.0,
+        "config": {
+          "model": "extra_trees",
+          "iterations": 1600,
+          "depth": 6,
+          "learning_rate": 0.06,
+          "regularization": 5.0,
+          "leaves": 31,
+          "min_child_samples": 30,
+          "class_weight_power": 0.5,
+          "missing_indicators": false,
+          "frequency_encoding": false,
+          "drop_time": false,
+          "target_transform": "identity",
+          "transforms": [],
+          "seed": 42,
+          "hypothesis": "Базовый бустинг",
+          "forest_trees": 256,
+          "forest_depth": 24,
+          "min_leaf": 4,
+          "max_features": 1.0,
+          "components": 384,
+          "kernel_scale": 0.5,
+          "neighbors": 25,
+          "metric_features": 24
+        },
+        "search_directory": "010_extra_trees_search_06ff128d05c7496f1f55",
+        "search_seconds": 49.14269986000022,
+        "tested": 3,
+        "confirmation_score": 0.6039465353543796,
+        "confirmation_blend_score": 0.5989991605570064,
+        "confirmation_directory": "019_extra_trees_confirm_06ff128d05c7496f1f55",
+        "confirmation_seconds": 26.877563480999925,
+        "confirmation_metrics": {
+          "macro_f1": 0.6039465353543796,
+          "weighted_f1": 0.8162599411220158,
+          "accuracy": 0.8061845217979047,
+          "balanced_accuracy": 0.6315710131808345,
+          "log_loss": 0.49459376065226784,
+          "per_class_f1": {
+            "Analysis": 0.2251655629139073,
+            "Backdoor": 0.15897435897435896,
+            "DoS": 0.46308360477741584,
+            "Exploits": 0.6900141978230004,
+            "Fuzzers": 0.740337224383917,
+            "Generic": 0.9894582005393479,
+            "Normal": 0.9191585699462315,
+            "Reconnaissance": 0.823966065747614,
+            "Shellcode": 0.6814814814814815,
+            "Worms": 0.34782608695652173
+          }
+        },
+        "blend_metrics": {
+          "macro_f1": 0.5989991605570064,
+          "weighted_f1": 0.8134284299034281,
+          "accuracy": 0.8028613270248958,
+          "balanced_accuracy": 0.6183375324662946,
+          "log_loss": 0.47264186972469435,
+          "per_class_f1": {
+            "Analysis": 0.19263456090651557,
+            "Backdoor": 0.15258855585831063,
+            "DoS": 0.46141649048625794,
+            "Exploits": 0.6809677419354838,
+            "Fuzzers": 0.7388040383121925,
+            "Generic": 0.9893421536199927,
+            "Normal": 0.918017338861666,
+            "Reconnaissance": 0.8193786203264877,
+            "Shellcode": 0.7368421052631579,
+            "Worms": 0.3
+          }
+        },
+        "pure_improvement": 0.004947374797373172,
+        "pure_improvement_ci95_conditional": [
+          -0.009909440245883425,
+          0.024469505931700674
+        ],
+        "blend_improvement": 0.0,
+        "blend_improvement_ci95_conditional": [
+          0.0,
+          0.0
+        ]
+      },
+      "kernel": {
+        "status": "ok",
+        "search_score": 0.4925555672145495,
+        "search_blend_score": 0.6159313472670351,
+        "alpha": 0.25,
+        "config": {
+          "model": "kernel",
+          "iterations": 1600,
+          "depth": 6,
+          "learning_rate": 0.06,
+          "regularization": 1.0,
+          "leaves": 31,
+          "min_child_samples": 30,
+          "class_weight_power": 0.5,
+          "missing_indicators": false,
+          "frequency_encoding": false,
+          "drop_time": false,
+          "target_transform": "identity",
+          "transforms": [],
+          "seed": 42,
+          "hypothesis": "Базовый бустинг",
+          "forest_trees": 256,
+          "forest_depth": 28,
+          "min_leaf": 1,
+          "max_features": 0.7,
+          "components": 384,
+          "kernel_scale": 0.5,
+          "neighbors": 25,
+          "metric_features": 24
+        },
+        "search_directory": "012_kernel_search_bb6968e913301b3bc05b",
+        "search_seconds": 31.327584891000015,
+        "tested": 3,
+        "confirmation_score": 0.47987206597079746,
+        "confirmation_blend_score": 0.6022855988993061,
+        "confirmation_directory": "020_kernel_confirm_bb6968e913301b3bc05b",
+        "confirmation_seconds": 12.245589956999993,
+        "confirmation_metrics": {
+          "macro_f1": 0.47987206597079746,
+          "weighted_f1": 0.7651522771683169,
+          "accuracy": 0.7523375014081334,
+          "balanced_accuracy": 0.518050474313352,
+          "log_loss": 0.6350632254279821,
+          "per_class_f1": {
+            "Analysis": 0.2096317280453258,
+            "Backdoor": 0.011695906432748537,
+            "DoS": 0.46004728132387707,
+            "Exploits": 0.613300920298663,
+            "Fuzzers": 0.6440677966101694,
+            "Generic": 0.9864087180115098,
+            "Normal": 0.8764180303182412,
+            "Reconnaissance": 0.6813608049832295,
+            "Shellcode": 0.3157894736842105,
+            "Worms": 0.0
+          }
+        },
+        "blend_metrics": {
+          "macro_f1": 0.6022855988993061,
+          "weighted_f1": 0.8115186481506452,
+          "accuracy": 0.8004956629491945,
+          "balanced_accuracy": 0.6231452760772572,
+          "log_loss": 0.4897272122623172,
+          "per_class_f1": {
+            "Analysis": 0.20987654320987653,
+            "Backdoor": 0.15384615384615385,
+            "DoS": 0.4723192019950125,
+            "Exploits": 0.6756129887342611,
+            "Fuzzers": 0.7361319340329835,
+            "Generic": 0.9894633668218574,
+            "Normal": 0.9128234507781915,
+            "Reconnaissance": 0.8188976377952756,
+            "Shellcode": 0.7380952380952381,
+            "Worms": 0.3157894736842105
+          }
+        },
+        "pure_improvement": -0.11912709458620896,
+        "pure_improvement_ci95_conditional": [
+          -0.14851181560071558,
+          -0.09241781969155201
+        ],
+        "blend_improvement": 0.0032864383422996912,
+        "blend_improvement_ci95_conditional": [
+          -0.0009804095009014273,
+          0.0081273410557124
+        ]
+      },
+      "retrieval": {
+        "status": "ok",
+        "search_score": 0.5781879116475463,
+        "search_blend_score": 0.6171469653578281,
+        "alpha": 0.25,
+        "config": {
+          "model": "retrieval",
+          "iterations": 1600,
+          "depth": 6,
+          "learning_rate": 0.06,
+          "regularization": 5.0,
+          "leaves": 31,
+          "min_child_samples": 30,
+          "class_weight_power": 0.5,
+          "missing_indicators": false,
+          "frequency_encoding": false,
+          "drop_time": false,
+          "target_transform": "identity",
+          "transforms": [],
+          "seed": 42,
+          "hypothesis": "Базовый бустинг",
+          "forest_trees": 256,
+          "forest_depth": 28,
+          "min_leaf": 1,
+          "max_features": 0.7,
+          "components": 384,
+          "kernel_scale": 0.5,
+          "neighbors": 5,
+          "metric_features": 16
+        },
+        "search_directory": "015_retrieval_search_3b5ac0dcb3c55564f24a",
+        "search_seconds": 25.0822537060003,
+        "tested": 3,
+        "confirmation_score": 0.5498598116793192,
+        "confirmation_blend_score": 0.5983089554770191,
+        "confirmation_directory": "021_retrieval_confirm_3b5ac0dcb3c55564f24a",
+        "confirmation_seconds": 9.632367883999905,
+        "confirmation_metrics": {
+          "macro_f1": 0.5498598116793192,
+          "weighted_f1": 0.7868867825333614,
+          "accuracy": 0.7667567872028839,
+          "balanced_accuracy": 0.6073121724659318,
+          "log_loss": 1.0619835632745036,
+          "per_class_f1": {
+            "Analysis": 0.144390243902439,
+            "Backdoor": 0.08964781216648879,
+            "DoS": 0.3404426559356137,
+            "Exploits": 0.6504251144538914,
+            "Fuzzers": 0.6921841541755889,
+            "Generic": 0.9886210693747706,
+            "Normal": 0.9105796966595329,
+            "Reconnaissance": 0.7752864972595914,
+            "Shellcode": 0.6129032258064516,
+            "Worms": 0.29411764705882354
+          }
+        },
+        "blend_metrics": {
+          "macro_f1": 0.5983089554770191,
+          "weighted_f1": 0.8163683100909921,
+          "accuracy": 0.8106905486087642,
+          "balanced_accuracy": 0.6099829882573571,
+          "log_loss": 0.46770627815497834,
+          "per_class_f1": {
+            "Analysis": 0.2085889570552147,
+            "Backdoor": 0.14915254237288136,
+            "DoS": 0.42021614748887476,
+            "Exploits": 0.7066840655357401,
+            "Fuzzers": 0.7368421052631579,
+            "Generic": 0.9892262487757101,
+            "Normal": 0.9202142655765435,
+            "Reconnaissance": 0.8245154531168151,
+            "Shellcode": 0.7419354838709677,
+            "Worms": 0.2857142857142857
+          }
+        },
+        "pure_improvement": -0.04913934887768723,
+        "pure_improvement_ci95_conditional": [
+          -0.07125391991218763,
+          -0.028177568838445105
+        ],
+        "blend_improvement": -0.0006902050799872939,
+        "blend_improvement_ci95_conditional": [
+          -0.009061240747419347,
+          0.006976627500186894
+        ]
+      }
+    },
+    "requirements_audit": {
+      "installed_approved": {
+        "numpy": "1.26.4",
+        "scipy": "1.12.0",
+        "pandas": "2.2.3",
+        "joblib": "1.4.2",
+        "threadpoolctl": "3.6.0",
+        "scikit-learn": "1.5.2",
+        "catboost": "1.2.8",
+        "lightgbm": "4.6.0",
+        "xgboost": "2.1.4",
+        "optuna": "4.2.1",
+        "autogluon.tabular": "1.3.1",
+        "openai": "1.68.2",
+        "httpx": "0.28.1",
+        "pydantic": "2.10.6",
+        "PyYAML": "6.0.2",
+        "matplotlib": "3.9.4",
+        "tqdm": "4.67.1",
+        "psutil": "6.1.1",
+        "setuptools": "80.9.0"
+      },
+      "unused_not_installed": {
+        "polars": "1.26.0",
+        "pyarrow": "19.0.1",
+        "imbalanced-learn": "0.12.4",
+        "category-encoders": "2.6.4",
+        "feature-engine": "1.8.3",
+        "statsmodels": "0.14.0",
+        "torch": "2.5.1",
+        "lightautoml": "0.4.2",
+        "flaml": "2.3.6",
+        "tenacity": "9.0.0",
+        "langchain": "0.3.27",
+        "langchain-openai": "0.3.23",
+        "langgraph": "0.6.7",
+        "python-dotenv": "1.0.1",
+        "orjson": "3.10.15",
+        "jsonschema": "4.23.0",
+        "seaborn": "0.13.2",
+        "cloudpickle": "3.1.1"
+      },
+      "mismatches": [],
+      "requirements_sha256": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+    },
+    "resource_audit": {
+      "cpu_limit": 8.0,
+      "memory_bytes": 31138512896,
+      "memory_swap_bytes": 31138512896,
+      "network": "none",
+      "readonly_root": true
+    },
+    "archive_sha256": "a60be8da64940a24ad721e889ab6bde365535aeffe4242815fb0ceaaea839901",
+    "kernel_ablation": {
+      "exploratory_ablation_after_primary_comparison": true,
+      "hypothesis": "Даёт ли ядро полезный сигнал сверх линейной части?",
+      "alpha_frozen_from_primary_search": 0.25,
+      "regularization_frozen_from_primary_search": 1.0,
+      "phases": {
+        "search": {
+          "linear_only_score": 0.4889831903984219,
+          "linear_blend_score": 0.6163078601437518,
+          "full_kernel_score": 0.4925555672145495,
+          "full_kernel_blend_score": 0.6159313472670351
+        },
+        "confirm": {
+          "linear_only_score": 0.465956027475597,
+          "linear_blend_score": 0.6007210926025485,
+          "full_kernel_score": 0.47987206597079746,
+          "full_kernel_blend_score": 0.6022855988993061
+        }
+      },
+      "elapsed_seconds": 8.11161802200013
+    }
+  },
+  {
+    "task": "regression",
+    "metric": "rmse",
+    "directory": "runs\\unconventional\\regression_20261025T013040_5bcf1f5c76",
+    "control_score": 48.678635620745055,
+    "elapsed_seconds": 268.407978104,
+    "winner": "extra_trees",
+    "winner_alpha": 0.25,
+    "peak_worker_rss_mb": 627.7,
+    "final_refit_completed": true,
+    "methods": {
+      "extra_trees": {
+        "status": "ok",
+        "search_score": 44.441220786914016,
+        "search_blend_score": 42.63357267994042,
+        "alpha": 0.25,
+        "config": {
+          "model": "extra_trees",
+          "iterations": 1600,
+          "depth": 6,
+          "learning_rate": 0.06,
+          "regularization": 5.0,
+          "leaves": 31,
+          "min_child_samples": 30,
+          "class_weight_power": 0.0,
+          "missing_indicators": false,
+          "frequency_encoding": false,
+          "drop_time": false,
+          "target_transform": "identity",
+          "transforms": [],
+          "seed": 42,
+          "hypothesis": "Базовый бустинг",
+          "forest_trees": 256,
+          "forest_depth": 24,
+          "min_leaf": 4,
+          "max_features": 1.0,
+          "components": 384,
+          "kernel_scale": 0.5,
+          "neighbors": 25,
+          "metric_features": 24
+        },
+        "search_directory": "010_extra_trees_search_6339f83d75ce91a6e1df",
+        "search_seconds": 29.889175971000213,
+        "tested": 3,
+        "confirmation_score": 46.58330001137281,
+        "confirmation_blend_score": 46.64754070518968,
+        "confirmation_directory": "019_extra_trees_confirm_6339f83d75ce91a6e1df",
+        "confirmation_seconds": 19.656668183999955,
+        "confirmation_metrics": {
+          "rmse": 46.58330001137281,
+          "mse": 2170.0038399495666,
+          "mae": 26.715382233038305,
+          "r2": 0.3210365266808122,
+          "mape": 0.7103886238540628,
+          "rmsle": 0.5730723806339366
+        },
+        "blend_metrics": {
+          "rmse": 46.64754070518968,
+          "mse": 2175.9930538423278,
+          "mae": 28.142289489027664,
+          "r2": 0.3191625864636488,
+          "mape": 0.7823589720810431,
+          "rmsle": 0.6116891094667457
+        },
+        "pure_improvement": 2.095335609372242,
+        "pure_improvement_ci95_conditional": [
+          1.0425293327711693,
+          3.1695434647971297
+        ],
+        "blend_improvement": 2.0310949155553786,
+        "blend_improvement_ci95_conditional": [
+          1.7260437196302296,
+          2.358359202415232
+        ],
+        "residual_correlation": 0.8223911762487551
+      },
+      "kernel": {
+        "status": "ok",
+        "search_score": 48.96464778289092,
+        "search_blend_score": 43.1132982212882,
+        "alpha": 0.0,
+        "config": {
+          "model": "kernel",
+          "iterations": 1600,
+          "depth": 6,
+          "learning_rate": 0.06,
+          "regularization": 1.0,
+          "leaves": 31,
+          "min_child_samples": 30,
+          "class_weight_power": 0.0,
+          "missing_indicators": false,
+          "frequency_encoding": false,
+          "drop_time": false,
+          "target_transform": "identity",
+          "transforms": [],
+          "seed": 42,
+          "hypothesis": "Базовый бустинг",
+          "forest_trees": 256,
+          "forest_depth": 28,
+          "min_leaf": 1,
+          "max_features": 0.7,
+          "components": 384,
+          "kernel_scale": 0.5,
+          "neighbors": 25,
+          "metric_features": 24
+        },
+        "search_directory": "012_kernel_search_1b7dca817cd38cd16bf3",
+        "search_seconds": 10.662665467000124,
+        "tested": 3,
+        "confirmation_score": 57.748371475352116,
+        "confirmation_blend_score": 48.678635620745055,
+        "confirmation_directory": "020_kernel_confirm_1b7dca817cd38cd16bf3",
+        "confirmation_seconds": 3.616185690000293,
+        "confirmation_metrics": {
+          "rmse": 57.748371475352116,
+          "mse": 3334.8744080552615,
+          "mae": 43.0610968739415,
+          "r2": -0.043434979004043806,
+          "mape": 1.0614128081041951,
+          "rmsle": 0.7101633152041854
+        },
+        "blend_metrics": {
+          "rmse": 48.678635620745055,
+          "mse": 2369.6095658972695,
+          "mae": 29.599300341685073,
+          "r2": 0.25858272153593287,
+          "mape": 0.8182702781182535,
+          "rmsle": 0.6296014096164707
+        },
+        "pure_improvement": -9.06973585460706,
+        "pure_improvement_ci95_conditional": [
+          -10.126614725960216,
+          -8.167362468257176
+        ],
+        "blend_improvement": -0.0,
+        "blend_improvement_ci95_conditional": [
+          -0.0,
+          0.0
+        ],
+        "residual_correlation": 0.7624580184778109
+      },
+      "retrieval": {
+        "status": "ok",
+        "search_score": 49.11148559273799,
+        "search_blend_score": 43.1132982212882,
+        "alpha": 0.0,
+        "config": {
+          "model": "retrieval",
+          "iterations": 1600,
+          "depth": 6,
+          "learning_rate": 0.06,
+          "regularization": 5.0,
+          "leaves": 31,
+          "min_child_samples": 30,
+          "class_weight_power": 0.0,
+          "missing_indicators": false,
+          "frequency_encoding": false,
+          "drop_time": false,
+          "target_transform": "identity",
+          "transforms": [],
+          "seed": 42,
+          "hypothesis": "Базовый бустинг",
+          "forest_trees": 256,
+          "forest_depth": 28,
+          "min_leaf": 1,
+          "max_features": 0.7,
+          "components": 384,
+          "kernel_scale": 0.5,
+          "neighbors": 25,
+          "metric_features": 24
+        },
+        "search_directory": "016_retrieval_search_e1a19f1f713ac2b8039f",
+        "search_seconds": 13.655334768000102,
+        "tested": 3,
+        "confirmation_score": 43.22008622179295,
+        "confirmation_blend_score": 48.678635620745055,
+        "confirmation_directory": "021_retrieval_confirm_e1a19f1f713ac2b8039f",
+        "confirmation_seconds": 6.2237987180001255,
+        "confirmation_metrics": {
+          "rmse": 43.22008622179295,
+          "mse": 1867.9758530192164,
+          "mae": 22.91152088539346,
+          "r2": 0.4155368069432651,
+          "mape": 0.5634917178322453,
+          "rmsle": 0.5105522551160774
+        },
+        "blend_metrics": {
+          "rmse": 48.678635620745055,
+          "mse": 2369.6095658972695,
+          "mae": 29.599300341685073,
+          "r2": 0.25858272153593287,
+          "mape": 0.8182702781182535,
+          "rmsle": 0.6296014096164707
+        },
+        "pure_improvement": 5.458549398952108,
+        "pure_improvement_ci95_conditional": [
+          4.195692449792652,
+          6.681106308482361
+        ],
+        "blend_improvement": -0.0,
+        "blend_improvement_ci95_conditional": [
+          -0.0,
+          0.0
+        ],
+        "residual_correlation": 0.7896048477679859
+      }
+    },
+    "requirements_audit": {
+      "installed_approved": {
+        "numpy": "1.26.4",
+        "scipy": "1.12.0",
+        "pandas": "2.2.3",
+        "joblib": "1.4.2",
+        "threadpoolctl": "3.6.0",
+        "scikit-learn": "1.5.2",
+        "catboost": "1.2.8",
+        "lightgbm": "4.6.0",
+        "xgboost": "2.1.4",
+        "optuna": "4.2.1",
+        "autogluon.tabular": "1.3.1",
+        "openai": "1.68.2",
+        "httpx": "0.28.1",
+        "pydantic": "2.10.6",
+        "PyYAML": "6.0.2",
+        "matplotlib": "3.9.4",
+        "tqdm": "4.67.1",
+        "psutil": "6.1.1",
+        "setuptools": "80.9.0"
+      },
+      "unused_not_installed": {
+        "polars": "1.26.0",
+        "pyarrow": "19.0.1",
+        "imbalanced-learn": "0.12.4",
+        "category-encoders": "2.6.4",
+        "feature-engine": "1.8.3",
+        "statsmodels": "0.14.0",
+        "torch": "2.5.1",
+        "lightautoml": "0.4.2",
+        "flaml": "2.3.6",
+        "tenacity": "9.0.0",
+        "langchain": "0.3.27",
+        "langchain-openai": "0.3.23",
+        "langgraph": "0.6.7",
+        "python-dotenv": "1.0.1",
+        "orjson": "3.10.15",
+        "jsonschema": "4.23.0",
+        "seaborn": "0.13.2",
+        "cloudpickle": "3.1.1"
+      },
+      "mismatches": [],
+      "requirements_sha256": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+    },
+    "resource_audit": {
+      "cpu_limit": 8.0,
+      "memory_bytes": 31138512896,
+      "memory_swap_bytes": 31138512896,
+      "network": "none",
+      "readonly_root": true
+    },
+    "archive_sha256": "a60be8da64940a24ad721e889ab6bde365535aeffe4242815fb0ceaaea839901",
+    "kernel_ablation": {
+      "exploratory_ablation_after_primary_comparison": true,
+      "hypothesis": "Даёт ли ядро полезный сигнал сверх линейной части?",
+      "alpha_frozen_from_primary_search": 0.0,
+      "regularization_frozen_from_primary_search": 1.0,
+      "phases": {
+        "search": {
+          "linear_only_score": 49.755660398334854,
+          "linear_blend_score": 43.1132982212882,
+          "full_kernel_score": 48.96464778289092,
+          "full_kernel_blend_score": 43.1132982212882
+        },
+        "confirm": {
+          "linear_only_score": 49.412209960298696,
+          "linear_blend_score": 48.678635620745055,
+          "full_kernel_score": 57.748371475352116,
+          "full_kernel_blend_score": 48.678635620745055
+        }
+      },
+      "elapsed_seconds": 2.8035741079997933
+    }
+  }
+]
