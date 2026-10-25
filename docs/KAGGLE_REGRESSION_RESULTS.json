@@ -1,0 +1,2873 @@
+[
+  {
+    "task": "regression",
+    "metric": "rmse",
+    "directory": "runs\\kaggle\\regression_20261025T125527_b8bf12b11e",
+    "summary_directory": "20261025T125530_360675",
+    "validation_note": "Те же search/confirm; confirm уже исследован ранее и не является новым слепым тестом",
+    "bootstrap_note": "Парный пуассоновский bootstrap целых групп, 400 повторов; условный интервал не учитывает множественный выбор и будущий временной сдвиг.",
+    "baseline": {
+      "members": [
+        "6339f83d75ce91a6e1df"
+      ],
+      "weights": [
+        1.0
+      ],
+      "search_score": 44.44122078691401,
+      "confirmation_score": 46.58330001137281,
+      "predictions_path": "baseline_plan_2.npz",
+      "metrics": {
+        "rmse": 46.58330001137281,
+        "mse": 2170.0038399495666,
+        "mae": 26.715382233038305,
+        "r2": 0.3210365266808122,
+        "mape": 0.7103886238540628,
+        "rmsle": 0.5730723806339366
+      },
+      "per_class": {}
+    },
+    "integrated": {
+      "members": [
+        "a7b5b52d8fe4b9a444be"
+      ],
+      "weights": [
+        1.0
+      ],
+      "search_score": 32.85520198140249,
+      "confirmation_score": 46.632569379413425,
+      "predictions_path": "integrated_plan_0.npz",
+      "metrics": {
+        "rmse": 46.632569379413425,
+        "mse": 2174.5965269258068,
+        "mae": 25.540447209453813,
+        "r2": 0.3195995399603978,
+        "mape": 0.7366282496593086,
+        "rmsle": 0.6055036828299256
+      },
+      "per_class": {},
+      "absolute_improvement_vs_baseline": -0.049269368040611994,
+      "relative_improvement_percent": -0.1057661608958219,
+      "improvement_percentage_points": null,
+      "improvement_ci95_conditional": [
+        -1.1401815743875863,
+        1.090563817488803
+      ]
+    },
+    "selected": {
+      "members": [
+        "6339f83d75ce91a6e1df"
+      ],
+      "weights": [
+        1.0
+      ],
+      "search_score": 44.44122078691401,
+      "confirmation_score": 46.58330001137281,
+      "predictions_path": "baseline_plan_2.npz",
+      "absolute_improvement_vs_baseline": -0.0,
+      "relative_improvement_percent": -0.0,
+      "improvement_percentage_points": null,
+      "improvement_ci95_conditional": [
+        0.0,
+        0.0
+      ]
+    },
+    "baseline_plans": [
+      {
+        "members": [
+          "17ece7a721cb29d19219"
+        ],
+        "weights": [
+          1.0
+        ],
+        "search_score": 43.1132982212882,
+        "confirmation_score": 48.678635620745055,
+        "predictions_path": "baseline_plan_0.npz",
+        "metrics": {
+          "rmse": 48.678635620745055,
+          "mse": 2369.6095658972695,
+          "mae": 29.599300341685073,
+          "r2": 0.25858272153593287,
+          "mape": 0.8182702781182535,
+          "rmsle": 0.6296014096164707
+        },
+        "per_class": {}
+      },
+      {
+        "members": [
+          "b7a7d5d665fb836bbf73"
+        ],
+        "weights": [
+          1.0
+        ],
+        "search_score": 43.67393145977802,
+        "confirmation_score": 53.87337876406847,
+        "predictions_path": "baseline_plan_1.npz",
+        "metrics": {
+          "rmse": 53.87337876406847,
+          "mse": 2902.3409394567834,
+          "mae": 31.20901664789379,
+          "r2": 0.09189861845781311,
+          "mape": 0.8575700137636438,
+          "rmsle": 0.6542655159821149
+        },
+        "per_class": {}
+      },
+      {
+        "members": [
+          "6339f83d75ce91a6e1df"
+        ],
+        "weights": [
+          1.0
+        ],
+        "search_score": 44.44122078691401,
+        "confirmation_score": 46.58330001137281,
+        "predictions_path": "baseline_plan_2.npz",
+        "metrics": {
+          "rmse": 46.58330001137281,
+          "mse": 2170.0038399495666,
+          "mae": 26.715382233038305,
+          "r2": 0.3210365266808122,
+          "mape": 0.7103886238540628,
+          "rmsle": 0.5730723806339366
+        },
+        "per_class": {}
+      },
+      {
+        "members": [
+          "17ece7a721cb29d19219",
+          "b7a7d5d665fb836bbf73"
+        ],
+        "weights": [
+          0.5,
+          0.5
+        ],
+        "search_score": 42.21132958884669,
+        "confirmation_score": 48.772880500608416,
+        "predictions_path": "baseline_plan_3.npz",
+        "metrics": {
+          "rmse": 48.772880500608416,
+          "mse": 2378.7938723266284,
+          "mae": 29.230691552526867,
+          "r2": 0.25570908210797216,
+          "mape": 0.8239292204515779,
+          "rmsle": 0.6349251587253025
+        },
+        "per_class": {}
+      },
+      {
+        "members": [
+          "17ece7a721cb29d19219",
+          "6339f83d75ce91a6e1df"
+        ],
+        "weights": [
+          0.75,
+          0.25
+        ],
+        "search_score": 42.63357267994042,
+        "confirmation_score": 46.64754070518968,
+        "predictions_path": "baseline_plan_4.npz",
+        "metrics": {
+          "rmse": 46.64754070518968,
+          "mse": 2175.9930538423278,
+          "mae": 28.142289489027664,
+          "r2": 0.3191625864636488,
+          "mape": 0.7823589720810431,
+          "rmsle": 0.6116891094667457
+        },
+        "per_class": {}
+      }
+    ],
+    "integrated_plans": [
+      {
+        "members": [
+          "a7b5b52d8fe4b9a444be"
+        ],
+        "weights": [
+          1.0
+        ],
+        "search_score": 32.85520198140249,
+        "confirmation_score": 46.632569379413425,
+        "predictions_path": "integrated_plan_0.npz",
+        "metrics": {
+          "rmse": 46.632569379413425,
+          "mse": 2174.5965269258068,
+          "mae": 25.540447209453813,
+          "r2": 0.3195995399603978,
+          "mape": 0.7366282496593086,
+          "rmsle": 0.6055036828299256
+        },
+        "per_class": {},
+        "absolute_improvement_vs_baseline": -0.049269368040611994,
+        "relative_improvement_percent": -0.1057661608958219,
+        "improvement_percentage_points": null,
+        "improvement_ci95_conditional": [
+          -1.1401815743875863,
+          1.090563817488803
+        ]
+      },
+      {
+        "members": [
+          "1f6568eaa05888267bac"
+        ],
+        "weights": [
+          1.0
+        ],
+        "search_score": 42.43306051624691,
+        "confirmation_score": 56.811985977627856,
+        "predictions_path": "integrated_plan_1.npz",
+        "metrics": {
+          "rmse": 56.811985977627856,
+          "mse": 3227.601750722184,
+          "mae": 33.32324085661457,
+          "r2": -0.009870883552149268,
+          "mape": 0.9928244566264125,
+          "rmsle": 0.7057428631459153
+        },
+        "per_class": {}
+      }
+    ],
+    "methods": {
+      "history": {
+        "status": "ok",
+        "search_score": 32.85520198140249,
+        "search_seconds": 9.025377977000062,
+        "confirmation_score": 46.632569379413425,
+        "confirmation_seconds": 8.825844066999935,
+        "config": {
+          "model": "augmentation",
+          "base_config": {
+            "model": "catboost",
+            "iterations": 2400,
+            "depth": 8,
+            "learning_rate": 0.045,
+            "regularization": 5.0,
+            "leaves": 31,
+            "min_child_samples": 30,
+            "class_weight_power": 0.0,
+            "missing_indicators": false,
+            "frequency_encoding": false,
+            "drop_time": false,
+            "target_transform": "identity",
+            "transforms": [],
+            "seed": 42,
+            "hypothesis": "Более глубокие взаимодействия при меньшем шаге"
+          },
+          "feature_schema": {},
+          "history_schema": {
+            "time_column": "Year_Factor",
+            "entity_columns": [
+              "State_Factor",
+              "building_class",
+              "facility_type",
+              "floor_area",
+              "year_built"
+            ],
+            "feature_columns": [
+              "Year_Factor",
+              "State_Factor",
+              "building_class",
+              "facility_type",
+              "floor_area",
+              "year_built",
+              "energy_star_rating",
+              "ELEVATION",
+              "january_min_temp_c",
+              "january_avg_temp_c",
+              "january_max_temp_c",
+              "february_min_temp_c",
+              "february_avg_temp_c",
+              "february_max_temp_c",
+              "march_min_temp_c",
+              "march_avg_temp_c",
+              "march_max_temp_c",
+              "april_min_temp_c",
+              "april_avg_temp_c",
+              "april_max_temp_c",
+              "may_min_temp_c",
+              "may_avg_temp_c",
+              "may_max_temp_c",
+              "june_min_temp_c",
+              "june_avg_temp_c",
+              "june_max_temp_c",
+              "july_min_temp_c",
+              "july_avg_temp_c",
+              "july_max_temp_c",
+              "august_min_temp_c",
+              "august_avg_temp_c",
+              "august_max_temp_c",
+              "september_min_temp_c",
+              "september_avg_temp_c",
+              "september_max_temp_c",
+              "october_min_temp_c",
+              "october_avg_temp_c",
+              "october_max_temp_c",
+              "november_min_temp_c",
+              "november_avg_temp_c",
+              "november_max_temp_c",
+              "december_min_temp_c",
+              "december_avg_temp_c",
+              "december_max_temp_c",
+              "cooling_degree_days_c",
+              "heating_degree_days_c",
+              "precipitation_inches",
+              "snowfall_inches",
+              "snowdepth_inches",
+              "avg_temp_c",
+              "days_below_minus1C",
+              "days_below_minus7C",
+              "days_below_minus12C",
+              "days_below_minus18C",
+              "days_above_27C",
+              "days_above_32C",
+              "days_above_38C",
+              "days_above_43C",
+              "direction_max_wind_speed",
+              "direction_peak_wind_speed",
+              "max_wind_speed",
+              "days_with_fog"
+            ],
+            "forbidden_columns": [
+              "id",
+              "site_eui"
+            ]
+          },
+          "seed": 42,
+          "hypothesis": "Отдельная проверка: history"
+        },
+        "search_directory": "009_history_search_a7b5b52d8fe4b9a444be",
+        "confirmation_directory": "040_candidate_confirm_a7b5b52d8fe4b9a444be",
+        "metrics": {
+          "rmse": 46.632569379413425,
+          "mse": 2174.5965269258068,
+          "mae": 25.540447209453813,
+          "r2": 0.3195995399603978,
+          "mape": 0.7366282496593086,
+          "rmsle": 0.6055036828299256
+        },
+        "diagnostics": {
+          "history_fit": {
+            "fit_rows": 35000,
+            "entity_keys": 14651,
+            "missing_key_rows": 1628,
+            "missing_time_rows": 0,
+            "multirow_key_period_groups": 418,
+            "multirow_key_period_rows": 944,
+            "different_target_key_period_groups": 409,
+            "note": "Повторы ключа внутри периода — возможные коллизии либо повторные измерения; истинный ID неизвестен.",
+            "training_history": {
+              "rows": 35000,
+              "known_history_rows": 18535,
+              "coverage": 0.5295714285714286,
+              "unknown_key_rows": 1628,
+              "no_earlier_history_rows": 14837
+            }
+          },
+          "history_valid": {
+            "rows": 18308,
+            "known_history_rows": 12551,
+            "coverage": 0.6855473017260214,
+            "unknown_key_rows": 5757,
+            "no_earlier_history_rows": 0
+          },
+          "history_test": {
+            "rows": 22449,
+            "known_history_rows": 12503,
+            "coverage": 0.5569513118624437,
+            "unknown_key_rows": 9946,
+            "no_earlier_history_rows": 0
+          }
+        },
+        "config_key": "a7b5b52d8fe4b9a444be",
+        "per_class": {},
+        "absolute_improvement_vs_baseline": -0.049269368040611994,
+        "relative_improvement_percent": -0.1057661608958219,
+        "improvement_percentage_points": null,
+        "improvement_ci95_conditional": [
+          -1.1401815743875863,
+          1.090563817488803
+        ]
+      },
+      "imputation": {
+        "status": "ok",
+        "search_score": 45.44734506816881,
+        "search_seconds": 19.849558492999904,
+        "confirmation_score": 59.9963571425495,
+        "confirmation_seconds": 21.45390085200006,
+        "config": {
+          "model": "augmentation",
+          "base_config": {
+            "model": "catboost",
+            "iterations": 2400,
+            "depth": 8,
+            "learning_rate": 0.045,
+            "regularization": 5.0,
+            "leaves": 31,
+            "min_child_samples": 30,
+            "class_weight_power": 0.0,
+            "missing_indicators": false,
+            "frequency_encoding": false,
+            "drop_time": false,
+            "target_transform": "identity",
+            "transforms": [],
+            "seed": 42,
+            "hypothesis": "Более глубокие взаимодействия при меньшем шаге"
+          },
+          "feature_schema": {
+            "pca_groups": [],
+            "impute_columns": [
+              "year_built",
+              "energy_star_rating"
+            ]
+          },
+          "history_schema": {},
+          "seed": 42,
+          "hypothesis": "Отдельная проверка: imputation"
+        },
+        "search_directory": "010_imputation_search_518c9a76997438ee1f08",
+        "confirmation_directory": "044_candidate_confirm_518c9a76997438ee1f08",
+        "metrics": {
+          "rmse": 59.9963571425495,
+          "mse": 3599.56287037635,
+          "mae": 39.36608946946104,
+          "r2": -0.1262522507602164,
+          "mape": 1.1088267778229306,
+          "rmsle": 0.740775201870236
+        },
+        "diagnostics": {
+          "features": {
+            "fit_rows": 35000,
+            "input_columns": [
+              "Year_Factor",
+              "State_Factor",
+              "building_class",
+              "facility_type",
+              "floor_area",
+              "year_built",
+              "energy_star_rating",
+              "ELEVATION",
+              "january_min_temp_c",
+              "january_avg_temp_c",
+              "january_max_temp_c",
+              "february_min_temp_c",
+              "february_avg_temp_c",
+              "february_max_temp_c",
+              "march_min_temp_c",
+              "march_avg_temp_c",
+              "march_max_temp_c",
+              "april_min_temp_c",
+              "april_avg_temp_c",
+              "april_max_temp_c",
+              "may_min_temp_c",
+              "may_avg_temp_c",
+              "may_max_temp_c",
+              "june_min_temp_c",
+              "june_avg_temp_c",
+              "june_max_temp_c",
+              "july_min_temp_c",
+              "july_avg_temp_c",
+              "july_max_temp_c",
+              "august_min_temp_c",
+              "august_avg_temp_c",
+              "august_max_temp_c",
+              "september_min_temp_c",
+              "september_avg_temp_c",
+              "september_max_temp_c",
+              "october_min_temp_c",
+              "october_avg_temp_c",
+              "october_max_temp_c",
+              "november_min_temp_c",
+              "november_avg_temp_c",
+              "november_max_temp_c",
+              "december_min_temp_c",
+              "december_avg_temp_c",
+              "december_max_temp_c",
+              "cooling_degree_days_c",
+              "heating_degree_days_c",
+              "precipitation_inches",
+              "snowfall_inches",
+              "snowdepth_inches",
+              "avg_temp_c",
+              "days_below_minus1C",
+              "days_below_minus7C",
+              "days_below_minus12C",
+              "days_below_minus18C",
+              "days_above_27C",
+              "days_above_32C",
+              "days_above_38C",
+              "days_above_43C",
+              "direction_max_wind_speed",
+              "direction_peak_wind_speed",
+              "max_wind_speed",
+              "days_with_fog"
+            ],
+            "imputation": {
+              "year_built": {
+                "observed_rows": 33372,
+                "missing_rate": 0.046514285714285716,
+                "predictors": [
+                  "Year_Factor",
+                  "State_Factor",
+                  "building_class",
+                  "facility_type",
+                  "floor_area",
+                  "energy_star_rating",
+                  "ELEVATION",
+                  "january_min_temp_c",
+                  "january_avg_temp_c",
+                  "january_max_temp_c",
+                  "february_min_temp_c",
+                  "february_avg_temp_c",
+                  "february_max_temp_c",
+                  "march_min_temp_c",
+                  "march_avg_temp_c",
+                  "march_max_temp_c",
+                  "april_min_temp_c",
+                  "april_avg_temp_c",
+                  "april_max_temp_c",
+                  "may_min_temp_c",
+                  "may_avg_temp_c",
+                  "may_max_temp_c",
+                  "june_min_temp_c",
+                  "june_avg_temp_c",
+                  "june_max_temp_c",
+                  "july_min_temp_c",
+                  "july_avg_temp_c",
+                  "july_max_temp_c",
+                  "august_min_temp_c",
+                  "august_avg_temp_c",
+                  "august_max_temp_c",
+                  "september_min_temp_c",
+                  "september_avg_temp_c",
+                  "september_max_temp_c",
+                  "october_min_temp_c",
+                  "october_avg_temp_c",
+                  "october_max_temp_c",
+                  "november_min_temp_c",
+                  "november_avg_temp_c",
+                  "november_max_temp_c",
+                  "december_min_temp_c",
+                  "december_avg_temp_c",
+                  "december_max_temp_c",
+                  "cooling_degree_days_c",
+                  "heating_degree_days_c",
+                  "precipitation_inches",
+                  "snowfall_inches",
+                  "snowdepth_inches",
+                  "avg_temp_c",
+                  "days_below_minus1C",
+                  "days_below_minus7C",
+                  "days_below_minus12C",
+                  "days_below_minus18C",
+                  "days_above_27C",
+                  "days_above_32C",
+                  "days_above_38C",
+                  "days_above_43C",
+                  "direction_max_wind_speed",
+                  "direction_peak_wind_speed",
+                  "max_wind_speed",
+                  "days_with_fog"
+                ],
+                "fallback": 1946.0,
+                "status": "model",
+                "model_rows": 30000
+              },
+              "energy_star_rating": {
+                "observed_rows": 16320,
+                "missing_rate": 0.5337142857142857,
+                "predictors": [
+                  "Year_Factor",
+                  "State_Factor",
+                  "building_class",
+                  "facility_type",
+                  "floor_area",
+                  "year_built",
+                  "ELEVATION",
+                  "january_min_temp_c",
+                  "january_avg_temp_c",
+                  "january_max_temp_c",
+                  "february_min_temp_c",
+                  "february_avg_temp_c",
+                  "february_max_temp_c",
+                  "march_min_temp_c",
+                  "march_avg_temp_c",
+                  "march_max_temp_c",
+                  "april_min_temp_c",
+                  "april_avg_temp_c",
+                  "april_max_temp_c",
+                  "may_min_temp_c",
+                  "may_avg_temp_c",
+                  "may_max_temp_c",
+                  "june_min_temp_c",
+                  "june_avg_temp_c",
+                  "june_max_temp_c",
+                  "july_min_temp_c",
+                  "july_avg_temp_c",
+                  "july_max_temp_c",
+                  "august_min_temp_c",
+                  "august_avg_temp_c",
+                  "august_max_temp_c",
+                  "september_min_temp_c",
+                  "september_avg_temp_c",
+                  "september_max_temp_c",
+                  "october_min_temp_c",
+                  "october_avg_temp_c",
+                  "october_max_temp_c",
+                  "november_min_temp_c",
+                  "november_avg_temp_c",
+                  "november_max_temp_c",
+                  "december_min_temp_c",
+                  "december_avg_temp_c",
+                  "december_max_temp_c",
+                  "cooling_degree_days_c",
+                  "heating_degree_days_c",
+                  "precipitation_inches",
+                  "snowfall_inches",
+                  "snowdepth_inches",
+                  "avg_temp_c",
+                  "days_below_minus1C",
+                  "days_below_minus7C",
+                  "days_below_minus12C",
+                  "days_below_minus18C",
+                  "days_above_27C",
+                  "days_above_32C",
+                  "days_above_38C",
+                  "days_above_43C",
+                  "direction_max_wind_speed",
+                  "direction_peak_wind_speed",
+                  "max_wind_speed",
+                  "days_with_fog"
+                ],
+                "fallback": 66.0,
+                "status": "model",
+                "model_rows": 16320
+              }
+            },
+            "pca": {},
+            "fit_seconds": 1.995778160999862
+          }
+        },
+        "config_key": "518c9a76997438ee1f08",
+        "per_class": {},
+        "absolute_improvement_vs_baseline": -13.413057131176686,
+        "relative_improvement_percent": -28.793703168092495,
+        "improvement_percentage_points": null,
+        "improvement_ci95_conditional": [
+          -14.474423805481372,
+          -12.125008817972429
+        ]
+      },
+      "pca": {
+        "status": "ok",
+        "search_score": 43.64446461389001,
+        "search_seconds": 25.658898550000004,
+        "confirmation_score": 51.01308376884636,
+        "confirmation_seconds": 29.471461225999974,
+        "config": {
+          "model": "augmentation",
+          "base_config": {
+            "model": "catboost",
+            "iterations": 2400,
+            "depth": 8,
+            "learning_rate": 0.045,
+            "regularization": 5.0,
+            "leaves": 31,
+            "min_child_samples": 30,
+            "class_weight_power": 0.0,
+            "missing_indicators": false,
+            "frequency_encoding": false,
+            "drop_time": false,
+            "target_transform": "identity",
+            "transforms": [],
+            "seed": 42,
+            "hypothesis": "Более глубокие взаимодействия при меньшем шаге"
+          },
+          "feature_schema": {
+            "pca_groups": [
+              {
+                "name": "warm",
+                "columns": [
+                  "january_max_temp_c",
+                  "february_max_temp_c",
+                  "march_max_temp_c",
+                  "april_max_temp_c",
+                  "may_max_temp_c",
+                  "june_max_temp_c",
+                  "july_max_temp_c",
+                  "august_max_temp_c",
+                  "september_max_temp_c",
+                  "october_max_temp_c",
+                  "november_max_temp_c",
+                  "december_max_temp_c",
+                  "cooling_degree_days_c",
+                  "days_above_27C",
+                  "days_above_32C",
+                  "days_above_38C",
+                  "days_above_43C"
+                ],
+                "components": 2
+              },
+              {
+                "name": "cold",
+                "columns": [
+                  "january_min_temp_c",
+                  "february_min_temp_c",
+                  "march_min_temp_c",
+                  "april_min_temp_c",
+                  "may_min_temp_c",
+                  "june_min_temp_c",
+                  "july_min_temp_c",
+                  "august_min_temp_c",
+                  "september_min_temp_c",
+                  "october_min_temp_c",
+                  "november_min_temp_c",
+                  "december_min_temp_c",
+                  "heating_degree_days_c",
+                  "days_below_minus1C",
+                  "days_below_minus7C",
+                  "days_below_minus12C",
+                  "days_below_minus18C"
+                ],
+                "components": 2
+              }
+            ],
+            "impute_columns": []
+          },
+          "history_schema": {},
+          "seed": 42,
+          "hypothesis": "Отдельная проверка: pca"
+        },
+        "search_directory": "011_pca_search_c2ed6e884666e84e2f85",
+        "confirmation_directory": "042_candidate_confirm_c2ed6e884666e84e2f85",
+        "metrics": {
+          "rmse": 51.01308376884636,
+          "mse": 2602.3347156073355,
+          "mae": 30.980174124674424,
+          "r2": 0.1857663176812988,
+          "mape": 0.8741042776216552,
+          "rmsle": 0.6542216189086625
+        },
+        "diagnostics": {
+          "features": {
+            "fit_rows": 35000,
+            "input_columns": [
+              "Year_Factor",
+              "State_Factor",
+              "building_class",
+              "facility_type",
+              "floor_area",
+              "year_built",
+              "energy_star_rating",
+              "ELEVATION",
+              "january_min_temp_c",
+              "january_avg_temp_c",
+              "january_max_temp_c",
+              "february_min_temp_c",
+              "february_avg_temp_c",
+              "february_max_temp_c",
+              "march_min_temp_c",
+              "march_avg_temp_c",
+              "march_max_temp_c",
+              "april_min_temp_c",
+              "april_avg_temp_c",
+              "april_max_temp_c",
+              "may_min_temp_c",
+              "may_avg_temp_c",
+              "may_max_temp_c",
+              "june_min_temp_c",
+              "june_avg_temp_c",
+              "june_max_temp_c",
+              "july_min_temp_c",
+              "july_avg_temp_c",
+              "july_max_temp_c",
+              "august_min_temp_c",
+              "august_avg_temp_c",
+              "august_max_temp_c",
+              "september_min_temp_c",
+              "september_avg_temp_c",
+              "september_max_temp_c",
+              "october_min_temp_c",
+              "october_avg_temp_c",
+              "october_max_temp_c",
+              "november_min_temp_c",
+              "november_avg_temp_c",
+              "november_max_temp_c",
+              "december_min_temp_c",
+              "december_avg_temp_c",
+              "december_max_temp_c",
+              "cooling_degree_days_c",
+              "heating_degree_days_c",
+              "precipitation_inches",
+              "snowfall_inches",
+              "snowdepth_inches",
+              "avg_temp_c",
+              "days_below_minus1C",
+              "days_below_minus7C",
+              "days_below_minus12C",
+              "days_below_minus18C",
+              "days_above_27C",
+              "days_above_32C",
+              "days_above_38C",
+              "days_above_43C",
+              "direction_max_wind_speed",
+              "direction_peak_wind_speed",
+              "max_wind_speed",
+              "days_with_fog"
+            ],
+            "imputation": {},
+            "pca": {
+              "warm": {
+                "columns": [
+                  "january_max_temp_c",
+                  "february_max_temp_c",
+                  "march_max_temp_c",
+                  "april_max_temp_c",
+                  "may_max_temp_c",
+                  "june_max_temp_c",
+                  "july_max_temp_c",
+                  "august_max_temp_c",
+                  "september_max_temp_c",
+                  "october_max_temp_c",
+                  "november_max_temp_c",
+                  "december_max_temp_c",
+                  "cooling_degree_days_c",
+                  "days_above_27C",
+                  "days_above_32C",
+                  "days_above_38C",
+                  "days_above_43C"
+                ],
+                "components": 2,
+                "explained_variance_ratio": [
+                  0.36145171246330626,
+                  0.18820458877851476
+                ]
+              },
+              "cold": {
+                "columns": [
+                  "january_min_temp_c",
+                  "february_min_temp_c",
+                  "march_min_temp_c",
+                  "april_min_temp_c",
+                  "may_min_temp_c",
+                  "june_min_temp_c",
+                  "july_min_temp_c",
+                  "august_min_temp_c",
+                  "september_min_temp_c",
+                  "october_min_temp_c",
+                  "november_min_temp_c",
+                  "december_min_temp_c",
+                  "heating_degree_days_c",
+                  "days_below_minus1C",
+                  "days_below_minus7C",
+                  "days_below_minus12C",
+                  "days_below_minus18C"
+                ],
+                "components": 2,
+                "explained_variance_ratio": [
+                  0.508536976069992,
+                  0.23496910133753363
+                ]
+              }
+            },
+            "fit_seconds": 0.06272636100015916
+          }
+        },
+        "config_key": "c2ed6e884666e84e2f85",
+        "per_class": {},
+        "absolute_improvement_vs_baseline": -4.429783757473544,
+        "relative_improvement_percent": -9.509381594674615,
+        "improvement_percentage_points": null,
+        "improvement_ci95_conditional": [
+          -5.551880182775304,
+          -3.248177492506912
+        ]
+      },
+      "xgboost": {
+        "status": "ok",
+        "search_score": 44.22106956915085,
+        "search_seconds": 4.016101764000041,
+        "confirmation_score": 117.53775479218343,
+        "confirmation_seconds": 3.416535780999993,
+        "config": {
+          "model": "xgboost",
+          "iterations": 1200,
+          "depth": 6,
+          "learning_rate": 0.06,
+          "regularization": 5.0,
+          "min_child_weight": 5.0,
+          "class_weight_power": 0.0,
+          "missing_indicators": false,
+          "frequency_encoding": false,
+          "drop_time": false,
+          "seed": 42,
+          "hypothesis": "Прямой CPU XGBoost с выбором итераций по целевой метрике"
+        },
+        "search_directory": "012_xgboost_search_b774fbf31a0351d46daf",
+        "confirmation_directory": "043_candidate_confirm_b774fbf31a0351d46daf",
+        "metrics": {
+          "rmse": 117.53775479218343,
+          "mse": 13815.123801587439,
+          "mae": 50.86171369098108,
+          "r2": -3.3225566093368704,
+          "mape": 1.659769859419535,
+          "rmsle": 0.8652401182726961
+        },
+        "diagnostics": {},
+        "config_key": "b774fbf31a0351d46daf",
+        "per_class": {},
+        "absolute_improvement_vs_baseline": -70.95445478081062,
+        "relative_improvement_percent": -152.31736429898237,
+        "improvement_percentage_points": null,
+        "improvement_ci95_conditional": [
+          -73.97051748821382,
+          -67.48338681575413
+        ]
+      },
+      "linear_42": {
+        "status": "ok",
+        "search_score": 43.1132982212882,
+        "search_seconds": 24.859129972000005,
+        "confirmation_score": 48.678635620745055,
+        "confirmation_seconds": 27.666440982999802,
+        "config": {
+          "model": "catboost",
+          "iterations": 2400,
+          "depth": 8,
+          "learning_rate": 0.045,
+          "regularization": 5.0,
+          "leaves": 31,
+          "min_child_samples": 30,
+          "class_weight_power": 0.0,
+          "missing_indicators": false,
+          "frequency_encoding": false,
+          "drop_time": false,
+          "target_transform": "identity",
+          "transforms": [],
+          "seed": 42,
+          "hypothesis": "Более глубокие взаимодействия при меньшем шаге"
+        },
+        "search_directory": "003_control_search_17ece7a721cb29d19219",
+        "confirmation_directory": "037_candidate_confirm_17ece7a721cb29d19219",
+        "metrics": {
+          "rmse": 48.678635620745055,
+          "mse": 2369.6095658972695,
+          "mae": 29.599300341685073,
+          "r2": 0.25858272153593287,
+          "mape": 0.8182702781182535,
+          "rmsle": 0.6296014096164707
+        },
+        "diagnostics": null,
+        "config_key": "17ece7a721cb29d19219",
+        "per_class": {},
+        "absolute_improvement_vs_baseline": -2.095335609372242,
+        "relative_improvement_percent": -4.498040303844271,
+        "improvement_percentage_points": null,
+        "improvement_ci95_conditional": [
+          -3.1695434647971306,
+          -1.0425293327711693
+        ]
+      },
+      "tree_42": {
+        "status": "ok",
+        "search_score": 42.43306051624691,
+        "search_seconds": 25.460616179,
+        "confirmation_score": 56.811985977627856,
+        "confirmation_seconds": 28.867295196999976,
+        "config": {
+          "model": "catboost",
+          "iterations": 2400,
+          "depth": 8,
+          "learning_rate": 0.045,
+          "regularization": 5.0,
+          "leaves": 31,
+          "min_child_samples": 30,
+          "class_weight_power": 0.0,
+          "missing_indicators": false,
+          "frequency_encoding": true,
+          "drop_time": false,
+          "target_transform": "identity",
+          "transforms": [],
+          "seed": 42,
+          "hypothesis": "tree: атомарная проверка frequency_encoding=True"
+        },
+        "search_directory": "024_tree_42_search_1f6568eaa05888267bac",
+        "confirmation_directory": "041_candidate_confirm_1f6568eaa05888267bac",
+        "metrics": {
+          "rmse": 56.811985977627856,
+          "mse": 3227.601750722184,
+          "mae": 33.32324085661457,
+          "r2": -0.009870883552149268,
+          "mape": 0.9928244566264125,
+          "rmsle": 0.7057428631459153
+        },
+        "diagnostics": null,
+        "config_key": "1f6568eaa05888267bac",
+        "per_class": {},
+        "absolute_improvement_vs_baseline": -10.228685966255043,
+        "relative_improvement_percent": -21.957838890241394,
+        "improvement_percentage_points": null,
+        "improvement_ci95_conditional": [
+          -11.313613108876764,
+          -9.038577518841448
+        ]
+      },
+      "linear_43": {
+        "status": "ok",
+        "search_score": 43.1132982212882,
+        "search_seconds": 24.859129972000005,
+        "confirmation_score": 48.678635620745055,
+        "confirmation_seconds": 27.666440982999802,
+        "config": {
+          "model": "catboost",
+          "iterations": 2400,
+          "depth": 8,
+          "learning_rate": 0.045,
+          "regularization": 5.0,
+          "leaves": 31,
+          "min_child_samples": 30,
+          "class_weight_power": 0.0,
+          "missing_indicators": false,
+          "frequency_encoding": false,
+          "drop_time": false,
+          "target_transform": "identity",
+          "transforms": [],
+          "seed": 42,
+          "hypothesis": "Более глубокие взаимодействия при меньшем шаге"
+        },
+        "search_directory": "003_control_search_17ece7a721cb29d19219",
+        "confirmation_directory": "037_candidate_confirm_17ece7a721cb29d19219",
+        "metrics": {
+          "rmse": 48.678635620745055,
+          "mse": 2369.6095658972695,
+          "mae": 29.599300341685073,
+          "r2": 0.25858272153593287,
+          "mape": 0.8182702781182535,
+          "rmsle": 0.6296014096164707
+        },
+        "diagnostics": null,
+        "config_key": "17ece7a721cb29d19219",
+        "per_class": {},
+        "absolute_improvement_vs_baseline": -2.095335609372242,
+        "relative_improvement_percent": -4.498040303844271,
+        "improvement_percentage_points": null,
+        "improvement_ci95_conditional": [
+          -3.1695434647971306,
+          -1.0425293327711693
+        ]
+      },
+      "tree_43": {
+        "status": "ok",
+        "search_score": 43.1132982212882,
+        "search_seconds": 24.859129972000005,
+        "confirmation_score": 48.678635620745055,
+        "confirmation_seconds": 27.666440982999802,
+        "config": {
+          "model": "catboost",
+          "iterations": 2400,
+          "depth": 8,
+          "learning_rate": 0.045,
+          "regularization": 5.0,
+          "leaves": 31,
+          "min_child_samples": 30,
+          "class_weight_power": 0.0,
+          "missing_indicators": false,
+          "frequency_encoding": false,
+          "drop_time": false,
+          "target_transform": "identity",
+          "transforms": [],
+          "seed": 42,
+          "hypothesis": "Более глубокие взаимодействия при меньшем шаге"
+        },
+        "search_directory": "003_control_search_17ece7a721cb29d19219",
+        "confirmation_directory": "037_candidate_confirm_17ece7a721cb29d19219",
+        "metrics": {
+          "rmse": 48.678635620745055,
+          "mse": 2369.6095658972695,
+          "mae": 29.599300341685073,
+          "r2": 0.25858272153593287,
+          "mape": 0.8182702781182535,
+          "rmsle": 0.6296014096164707
+        },
+        "diagnostics": null,
+        "config_key": "17ece7a721cb29d19219",
+        "per_class": {},
+        "absolute_improvement_vs_baseline": -2.095335609372242,
+        "relative_improvement_percent": -4.498040303844271,
+        "improvement_percentage_points": null,
+        "improvement_ci95_conditional": [
+          -3.1695434647971306,
+          -1.0425293327711693
+        ]
+      }
+    },
+    "schedulers": {
+      "linear_42": {
+        "attempts": 6,
+        "fit_seconds": 112.28046955600007,
+        "wall_budget_seconds": 1853.3432903307496,
+        "per_trial_cap_seconds": 420,
+        "failed": 0,
+        "best_search_score": 43.1132982212882,
+        "extra_llm_calls": 0,
+        "shared_llm_calls": 1,
+        "shared_llm_tokens": 859,
+        "config_key": "17ece7a721cb29d19219",
+        "actions": [
+          {
+            "field": "depth",
+            "value": 6
+          },
+          {
+            "field": "learning_rate",
+            "value": 0.03
+          },
+          {
+            "field": "regularization",
+            "value": 10.0
+          },
+          {
+            "field": "leaves",
+            "value": 15
+          },
+          {
+            "field": "min_child_samples",
+            "value": 50
+          },
+          {
+            "field": "missing_indicators",
+            "value": true
+          },
+          {
+            "field": "frequency_encoding",
+            "value": true
+          },
+          {
+            "field": "class_weight_power",
+            "value": 0.0
+          },
+          {
+            "field": "regularization",
+            "value": 2.0
+          },
+          {
+            "field": "regularization",
+            "value": 20.0
+          },
+          {
+            "field": "learning_rate",
+            "value": 0.035
+          },
+          {
+            "field": "learning_rate",
+            "value": 0.05
+          },
+          {
+            "field": "learning_rate",
+            "value": 0.075
+          },
+          {
+            "field": "iterations",
+            "value": 800
+          },
+          {
+            "field": "iterations",
+            "value": 1600
+          },
+          {
+            "field": "iterations",
+            "value": 2400
+          },
+          {
+            "field": "depth",
+            "value": 5
+          },
+          {
+            "field": "depth",
+            "value": 7
+          },
+          {
+            "field": "depth",
+            "value": 8
+          },
+          {
+            "field": "drop_time",
+            "value": true
+          }
+        ],
+        "action_order": [
+          19,
+          5,
+          14,
+          4,
+          9,
+          13,
+          15,
+          18,
+          6,
+          12,
+          17,
+          10,
+          1,
+          11,
+          2,
+          16,
+          7,
+          8,
+          0,
+          3
+        ],
+        "nodes": [
+          {
+            "id": 1,
+            "parent": 0,
+            "stage": "improve",
+            "action": {
+              "field": "drop_time",
+              "value": true
+            },
+            "status": "ok",
+            "score": 43.45870339459314,
+            "wall_seconds": 25.260225471000012,
+            "error_type": null,
+            "error": null,
+            "config_key": "52325111845f68c32bcb",
+            "directory": "013_linear_42_search_52325111845f68c32bcb"
+          },
+          {
+            "id": 2,
+            "parent": 1,
+            "stage": "improve",
+            "action": {
+              "field": "missing_indicators",
+              "value": true
+            },
+            "status": "ok",
+            "score": 43.7973102784061,
+            "wall_seconds": 20.250399377000008,
+            "error_type": null,
+            "error": null,
+            "config_key": "cbc7803a199b4d339af2",
+            "directory": "014_linear_42_search_cbc7803a199b4d339af2"
+          },
+          {
+            "id": 3,
+            "parent": 2,
+            "stage": "improve",
+            "action": {
+              "field": "iterations",
+              "value": 1600
+            },
+            "status": "ok",
+            "score": 43.892502010734034,
+            "wall_seconds": 16.842999423000037,
+            "error_type": null,
+            "error": null,
+            "config_key": "92f4cf3766307ca01902",
+            "directory": "015_linear_42_search_92f4cf3766307ca01902"
+          },
+          {
+            "id": 4,
+            "parent": 3,
+            "stage": "improve",
+            "action": {
+              "field": "regularization",
+              "value": 20.0
+            },
+            "status": "ok",
+            "score": 44.201635663205735,
+            "wall_seconds": 16.842282084999965,
+            "error_type": null,
+            "error": null,
+            "config_key": "1e49f0028765dbdd2ce0",
+            "directory": "016_linear_42_search_1e49f0028765dbdd2ce0"
+          },
+          {
+            "id": 5,
+            "parent": 4,
+            "stage": "improve",
+            "action": {
+              "field": "iterations",
+              "value": 800
+            },
+            "status": "ok",
+            "score": 44.99391780928803,
+            "wall_seconds": 9.028230338000071,
+            "error_type": null,
+            "error": null,
+            "config_key": "18991751244d0ae11ff7",
+            "directory": "017_linear_42_search_18991751244d0ae11ff7"
+          },
+          {
+            "id": 6,
+            "parent": 5,
+            "stage": "improve",
+            "action": {
+              "field": "iterations",
+              "value": 2400
+            },
+            "status": "ok",
+            "score": 43.82048436612014,
+            "wall_seconds": 24.056332861999977,
+            "error_type": null,
+            "error": null,
+            "config_key": "38e20034f7759d58cb39",
+            "directory": "018_linear_42_search_38e20034f7759d58cb39"
+          }
+        ],
+        "complete_fit_attempt_budget": true,
+        "successful_fits": 6,
+        "skipped_before_fit": 0,
+        "shared_root_config_key": "17ece7a721cb29d19219",
+        "nonsequential_parent_selections": 0,
+        "confirmation_score": 48.678635620745055,
+        "confirmation_improvement_vs_baseline": -2.095335609372242,
+        "failed_recomputed": 0
+      },
+      "tree_42": {
+        "attempts": 6,
+        "fit_seconds": 124.10733460499978,
+        "wall_budget_seconds": 1853.3432903307496,
+        "per_trial_cap_seconds": 420,
+        "failed": 0,
+        "best_search_score": 42.43306051624691,
+        "extra_llm_calls": 0,
+        "shared_llm_calls": 1,
+        "shared_llm_tokens": 859,
+        "config_key": "1f6568eaa05888267bac",
+        "actions": [
+          {
+            "field": "depth",
+            "value": 6
+          },
+          {
+            "field": "learning_rate",
+            "value": 0.03
+          },
+          {
+            "field": "regularization",
+            "value": 10.0
+          },
+          {
+            "field": "leaves",
+            "value": 15
+          },
+          {
+            "field": "min_child_samples",
+            "value": 50
+          },
+          {
+            "field": "missing_indicators",
+            "value": true
+          },
+          {
+            "field": "frequency_encoding",
+            "value": true
+          },
+          {
+            "field": "class_weight_power",
+            "value": 0.0
+          },
+          {
+            "field": "regularization",
+            "value": 2.0
+          },
+          {
+            "field": "regularization",
+            "value": 20.0
+          },
+          {
+            "field": "learning_rate",
+            "value": 0.035
+          },
+          {
+            "field": "learning_rate",
+            "value": 0.05
+          },
+          {
+            "field": "learning_rate",
+            "value": 0.075
+          },
+          {
+            "field": "iterations",
+            "value": 800
+          },
+          {
+            "field": "iterations",
+            "value": 1600
+          },
+          {
+            "field": "iterations",
+            "value": 2400
+          },
+          {
+            "field": "depth",
+            "value": 5
+          },
+          {
+            "field": "depth",
+            "value": 7
+          },
+          {
+            "field": "depth",
+            "value": 8
+          },
+          {
+            "field": "drop_time",
+            "value": true
+          }
+        ],
+        "action_order": [
+          19,
+          5,
+          14,
+          4,
+          9,
+          13,
+          15,
+          18,
+          6,
+          12,
+          17,
+          10,
+          1,
+          11,
+          2,
+          16,
+          7,
+          8,
+          0,
+          3
+        ],
+        "nodes": [
+          {
+            "id": 1,
+            "parent": 0,
+            "stage": "improve",
+            "action": {
+              "field": "drop_time",
+              "value": true
+            },
+            "status": "ok",
+            "score": 43.45870339459314,
+            "wall_seconds": 24.457770926999956,
+            "error_type": null,
+            "error": null,
+            "config_key": "52325111845f68c32bcb",
+            "directory": "019_tree_42_search_52325111845f68c32bcb"
+          },
+          {
+            "id": 2,
+            "parent": 0,
+            "stage": "improve",
+            "action": {
+              "field": "missing_indicators",
+              "value": true
+            },
+            "status": "ok",
+            "score": 44.179581793695455,
+            "wall_seconds": 23.858387244999903,
+            "error_type": null,
+            "error": null,
+            "config_key": "a59b70e56f194e39eeb8",
+            "directory": "020_tree_42_search_a59b70e56f194e39eeb8"
+          },
+          {
+            "id": 3,
+            "parent": 0,
+            "stage": "improve",
+            "action": {
+              "field": "iterations",
+              "value": 1600
+            },
+            "status": "ok",
+            "score": 43.420773580472755,
+            "wall_seconds": 16.6432484259999,
+            "error_type": null,
+            "error": null,
+            "config_key": "eba38e48821eb8e0ef53",
+            "directory": "021_tree_42_search_eba38e48821eb8e0ef53"
+          },
+          {
+            "id": 4,
+            "parent": 0,
+            "stage": "improve",
+            "action": {
+              "field": "regularization",
+              "value": 20.0
+            },
+            "status": "ok",
+            "score": 44.12584308476741,
+            "wall_seconds": 24.659695517000046,
+            "error_type": null,
+            "error": null,
+            "config_key": "ba14335c34f4eb3598fb",
+            "directory": "022_tree_42_search_ba14335c34f4eb3598fb"
+          },
+          {
+            "id": 5,
+            "parent": 0,
+            "stage": "improve",
+            "action": {
+              "field": "iterations",
+              "value": 800
+            },
+            "status": "ok",
+            "score": 43.947490903618714,
+            "wall_seconds": 9.027616310999974,
+            "error_type": null,
+            "error": null,
+            "config_key": "600dd18ba162501d2304",
+            "directory": "023_tree_42_search_600dd18ba162501d2304"
+          },
+          {
+            "id": 6,
+            "parent": 0,
+            "stage": "improve",
+            "action": {
+              "field": "frequency_encoding",
+              "value": true
+            },
+            "status": "ok",
+            "score": 42.43306051624691,
+            "wall_seconds": 25.460616179,
+            "error_type": null,
+            "error": null,
+            "config_key": "1f6568eaa05888267bac",
+            "directory": "024_tree_42_search_1f6568eaa05888267bac"
+          }
+        ],
+        "complete_fit_attempt_budget": true,
+        "successful_fits": 6,
+        "skipped_before_fit": 0,
+        "shared_root_config_key": "17ece7a721cb29d19219",
+        "nonsequential_parent_selections": 5,
+        "confirmation_score": 56.811985977627856,
+        "confirmation_improvement_vs_baseline": -10.228685966255043,
+        "failed_recomputed": 0
+      },
+      "linear_43": {
+        "attempts": 6,
+        "fit_seconds": 63.18201305000025,
+        "wall_budget_seconds": 1853.3432903307496,
+        "per_trial_cap_seconds": 420,
+        "failed": 0,
+        "best_search_score": 43.1132982212882,
+        "extra_llm_calls": 0,
+        "shared_llm_calls": 1,
+        "shared_llm_tokens": 859,
+        "config_key": "17ece7a721cb29d19219",
+        "actions": [
+          {
+            "field": "depth",
+            "value": 6
+          },
+          {
+            "field": "learning_rate",
+            "value": 0.03
+          },
+          {
+            "field": "regularization",
+            "value": 10.0
+          },
+          {
+            "field": "leaves",
+            "value": 15
+          },
+          {
+            "field": "min_child_samples",
+            "value": 50
+          },
+          {
+            "field": "missing_indicators",
+            "value": true
+          },
+          {
+            "field": "frequency_encoding",
+            "value": true
+          },
+          {
+            "field": "class_weight_power",
+            "value": 0.0
+          },
+          {
+            "field": "regularization",
+            "value": 2.0
+          },
+          {
+            "field": "regularization",
+            "value": 20.0
+          },
+          {
+            "field": "learning_rate",
+            "value": 0.035
+          },
+          {
+            "field": "learning_rate",
+            "value": 0.05
+          },
+          {
+            "field": "learning_rate",
+            "value": 0.075
+          },
+          {
+            "field": "iterations",
+            "value": 800
+          },
+          {
+            "field": "iterations",
+            "value": 1600
+          },
+          {
+            "field": "iterations",
+            "value": 2400
+          },
+          {
+            "field": "depth",
+            "value": 5
+          },
+          {
+            "field": "depth",
+            "value": 7
+          },
+          {
+            "field": "depth",
+            "value": 8
+          },
+          {
+            "field": "drop_time",
+            "value": true
+          }
+        ],
+        "action_order": [
+          8,
+          13,
+          5,
+          2,
+          6,
+          3,
+          17,
+          0,
+          16,
+          18,
+          7,
+          19,
+          12,
+          15,
+          10,
+          11,
+          14,
+          4,
+          9,
+          1
+        ],
+        "nodes": [
+          {
+            "id": 1,
+            "parent": 0,
+            "stage": "improve",
+            "action": {
+              "field": "regularization",
+              "value": 2.0
+            },
+            "status": "ok",
+            "score": 43.76600099738389,
+            "wall_seconds": 17.243565003000185,
+            "error_type": null,
+            "error": null,
+            "config_key": "f6d65c42bbc975c1fed5",
+            "directory": "025_linear_43_search_f6d65c42bbc975c1fed5"
+          },
+          {
+            "id": 2,
+            "parent": 1,
+            "stage": "improve",
+            "action": {
+              "field": "iterations",
+              "value": 800
+            },
+            "status": "ok",
+            "score": 44.148084904710316,
+            "wall_seconds": 9.229564629999913,
+            "error_type": null,
+            "error": null,
+            "config_key": "f336639896c2aca95551",
+            "directory": "026_linear_43_search_f336639896c2aca95551"
+          },
+          {
+            "id": 3,
+            "parent": 2,
+            "stage": "improve",
+            "action": {
+              "field": "missing_indicators",
+              "value": true
+            },
+            "status": "ok",
+            "score": 43.73628707388558,
+            "wall_seconds": 9.226263579000033,
+            "error_type": null,
+            "error": null,
+            "config_key": "5f8d0c6fe67d72f2b33c",
+            "directory": "027_linear_43_search_5f8d0c6fe67d72f2b33c"
+          },
+          {
+            "id": 4,
+            "parent": 3,
+            "stage": "improve",
+            "action": {
+              "field": "regularization",
+              "value": 10.0
+            },
+            "status": "ok",
+            "score": 44.39806180607728,
+            "wall_seconds": 8.826537847000054,
+            "error_type": null,
+            "error": null,
+            "config_key": "e65aafcc6c4404d86e56",
+            "directory": "028_linear_43_search_e65aafcc6c4404d86e56"
+          },
+          {
+            "id": 5,
+            "parent": 4,
+            "stage": "improve",
+            "action": {
+              "field": "frequency_encoding",
+              "value": true
+            },
+            "status": "ok",
+            "score": 44.099361457628184,
+            "wall_seconds": 9.027200536999999,
+            "error_type": null,
+            "error": null,
+            "config_key": "54a75dae818460c72c3c",
+            "directory": "029_linear_43_search_54a75dae818460c72c3c"
+          },
+          {
+            "id": 6,
+            "parent": 5,
+            "stage": "improve",
+            "action": {
+              "field": "regularization",
+              "value": 2.0
+            },
+            "status": "ok",
+            "score": 43.24485344772381,
+            "wall_seconds": 9.628881454000066,
+            "error_type": null,
+            "error": null,
+            "config_key": "12764bf7130abd4748c7",
+            "directory": "030_linear_43_search_12764bf7130abd4748c7"
+          }
+        ],
+        "complete_fit_attempt_budget": true,
+        "successful_fits": 6,
+        "skipped_before_fit": 0,
+        "shared_root_config_key": "17ece7a721cb29d19219",
+        "nonsequential_parent_selections": 0,
+        "confirmation_score": 48.678635620745055,
+        "confirmation_improvement_vs_baseline": -2.095335609372242,
+        "failed_recomputed": 0
+      },
+      "tree_43": {
+        "attempts": 6,
+        "fit_seconds": 65.38815921799983,
+        "wall_budget_seconds": 1853.3432903307496,
+        "per_trial_cap_seconds": 420,
+        "failed": 0,
+        "best_search_score": 43.1132982212882,
+        "extra_llm_calls": 0,
+        "shared_llm_calls": 1,
+        "shared_llm_tokens": 859,
+        "config_key": "17ece7a721cb29d19219",
+        "actions": [
+          {
+            "field": "depth",
+            "value": 6
+          },
+          {
+            "field": "learning_rate",
+            "value": 0.03
+          },
+          {
+            "field": "regularization",
+            "value": 10.0
+          },
+          {
+            "field": "leaves",
+            "value": 15
+          },
+          {
+            "field": "min_child_samples",
+            "value": 50
+          },
+          {
+            "field": "missing_indicators",
+            "value": true
+          },
+          {
+            "field": "frequency_encoding",
+            "value": true
+          },
+          {
+            "field": "class_weight_power",
+            "value": 0.0
+          },
+          {
+            "field": "regularization",
+            "value": 2.0
+          },
+          {
+            "field": "regularization",
+            "value": 20.0
+          },
+          {
+            "field": "learning_rate",
+            "value": 0.035
+          },
+          {
+            "field": "learning_rate",
+            "value": 0.05
+          },
+          {
+            "field": "learning_rate",
+            "value": 0.075
+          },
+          {
+            "field": "iterations",
+            "value": 800
+          },
+          {
+            "field": "iterations",
+            "value": 1600
+          },
+          {
+            "field": "iterations",
+            "value": 2400
+          },
+          {
+            "field": "depth",
+            "value": 5
+          },
+          {
+            "field": "depth",
+            "value": 7
+          },
+          {
+            "field": "depth",
+            "value": 8
+          },
+          {
+            "field": "drop_time",
+            "value": true
+          }
+        ],
+        "action_order": [
+          8,
+          13,
+          5,
+          2,
+          6,
+          3,
+          17,
+          0,
+          16,
+          18,
+          7,
+          19,
+          12,
+          15,
+          10,
+          11,
+          14,
+          4,
+          9,
+          1
+        ],
+        "nodes": [
+          {
+            "id": 1,
+            "parent": 0,
+            "stage": "improve",
+            "action": {
+              "field": "regularization",
+              "value": 2.0
+            },
+            "status": "ok",
+            "score": 43.76600099738389,
+            "wall_seconds": 17.64524865999988,
+            "error_type": null,
+            "error": null,
+            "config_key": "f6d65c42bbc975c1fed5",
+            "directory": "031_tree_43_search_f6d65c42bbc975c1fed5"
+          },
+          {
+            "id": 2,
+            "parent": 0,
+            "stage": "improve",
+            "action": {
+              "field": "iterations",
+              "value": 800
+            },
+            "status": "ok",
+            "score": 43.947490903618714,
+            "wall_seconds": 9.628568495000081,
+            "error_type": null,
+            "error": null,
+            "config_key": "600dd18ba162501d2304",
+            "directory": "032_tree_43_search_600dd18ba162501d2304"
+          },
+          {
+            "id": 3,
+            "parent": 1,
+            "stage": "improve",
+            "action": {
+              "field": "iterations",
+              "value": 800
+            },
+            "status": "ok",
+            "score": 44.148084904710316,
+            "wall_seconds": 10.431738042999996,
+            "error_type": null,
+            "error": null,
+            "config_key": "f336639896c2aca95551",
+            "directory": "033_tree_43_search_f336639896c2aca95551"
+          },
+          {
+            "id": 4,
+            "parent": 2,
+            "stage": "improve",
+            "action": {
+              "field": "missing_indicators",
+              "value": true
+            },
+            "status": "ok",
+            "score": 44.58621457911715,
+            "wall_seconds": 9.227465391999885,
+            "error_type": null,
+            "error": null,
+            "config_key": "9013e8f68bf0e3a87593",
+            "directory": "034_tree_43_search_9013e8f68bf0e3a87593"
+          },
+          {
+            "id": 5,
+            "parent": 3,
+            "stage": "improve",
+            "action": {
+              "field": "missing_indicators",
+              "value": true
+            },
+            "status": "ok",
+            "score": 43.73628707388558,
+            "wall_seconds": 9.628605439000012,
+            "error_type": null,
+            "error": null,
+            "config_key": "5f8d0c6fe67d72f2b33c",
+            "directory": "035_tree_43_search_5f8d0c6fe67d72f2b33c"
+          },
+          {
+            "id": 6,
+            "parent": 5,
+            "stage": "improve",
+            "action": {
+              "field": "regularization",
+              "value": 10.0
+            },
+            "status": "ok",
+            "score": 44.39806180607728,
+            "wall_seconds": 8.826533188999974,
+            "error_type": null,
+            "error": null,
+            "config_key": "e65aafcc6c4404d86e56",
+            "directory": "036_tree_43_search_e65aafcc6c4404d86e56"
+          }
+        ],
+        "complete_fit_attempt_budget": true,
+        "successful_fits": 6,
+        "skipped_before_fit": 0,
+        "shared_root_config_key": "17ece7a721cb29d19219",
+        "nonsequential_parent_selections": 4,
+        "confirmation_score": 48.678635620745055,
+        "confirmation_improvement_vs_baseline": -2.095335609372242,
+        "failed_recomputed": 0
+      }
+    },
+    "scheduler_pairs": [
+      {
+        "seed": 42,
+        "attempts_equal": true,
+        "full_attempt_budget_both": true,
+        "action_pool_and_order_equal": true,
+        "limits_equal": true,
+        "tree_search_improvement_vs_linear": 0.6802377050412858,
+        "tree_confirmation_improvement_vs_linear": -8.1333503568828,
+        "linear_actual_seconds": 112.28046955600007,
+        "tree_actual_seconds": 124.10733460499978
+      },
+      {
+        "seed": 43,
+        "attempts_equal": true,
+        "full_attempt_budget_both": true,
+        "action_pool_and_order_equal": true,
+        "limits_equal": true,
+        "tree_search_improvement_vs_linear": -0.0,
+        "tree_confirmation_improvement_vs_linear": -0.0,
+        "linear_actual_seconds": 63.18201305000025,
+        "tree_actual_seconds": 65.38815921799983
+      }
+    ],
+    "shared_llm": {
+      "proposal": {
+        "actions": [
+          {
+            "field": "depth",
+            "value": 6
+          },
+          {
+            "field": "learning_rate",
+            "value": 0.03
+          },
+          {
+            "field": "regularization",
+            "value": 10.0
+          },
+          {
+            "field": "leaves",
+            "value": 15
+          },
+          {
+            "field": "min_child_samples",
+            "value": 50
+          },
+          {
+            "field": "missing_indicators",
+            "value": true
+          },
+          {
+            "field": "frequency_encoding",
+            "value": true
+          },
+          {
+            "field": "class_weight_power",
+            "value": 0.0
+          }
+        ]
+      },
+      "effective_actions": [
+        {
+          "field": "depth",
+          "value": 6
+        },
+        {
+          "field": "learning_rate",
+          "value": 0.03
+        },
+        {
+          "field": "regularization",
+          "value": 10.0
+        },
+        {
+          "field": "leaves",
+          "value": 15
+        },
+        {
+          "field": "min_child_samples",
+          "value": 50
+        },
+        {
+          "field": "missing_indicators",
+          "value": true
+        },
+        {
+          "field": "frequency_encoding",
+          "value": true
+        },
+        {
+          "field": "class_weight_power",
+          "value": 0.0
+        },
+        {
+          "field": "regularization",
+          "value": 2.0
+        },
+        {
+          "field": "regularization",
+          "value": 20.0
+        },
+        {
+          "field": "learning_rate",
+          "value": 0.035
+        },
+        {
+          "field": "learning_rate",
+          "value": 0.05
+        },
+        {
+          "field": "learning_rate",
+          "value": 0.075
+        },
+        {
+          "field": "iterations",
+          "value": 800
+        },
+        {
+          "field": "iterations",
+          "value": 1600
+        },
+        {
+          "field": "iterations",
+          "value": 2400
+        },
+        {
+          "field": "depth",
+          "value": 5
+        },
+        {
+          "field": "depth",
+          "value": 7
+        },
+        {
+          "field": "depth",
+          "value": 8
+        },
+        {
+          "field": "drop_time",
+          "value": true
+        }
+      ],
+      "calls": 1,
+      "tokens": 859,
+      "policy_access": "Один общий пул; одинаковый контекст и доступ обеим политикам, без персональных LLM-вызовов"
+    },
+    "elapsed_seconds": 699.9033834799999,
+    "time_limit_seconds": 10800,
+    "peak_worker_rss_mb": 766.78,
+    "final_refit_completed": true,
+    "experiments": [
+      {
+        "directory": "001_control_search_46071f6a71cfa1dfe803",
+        "phase": "search",
+        "config_key": "46071f6a71cfa1dfe803",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 12.03264867100006,
+        "peak_memory_mb": 416.72,
+        "best_iterations": 1568,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 44.39919946570952
+      },
+      {
+        "directory": "002_control_search_b7a7d5d665fb836bbf73",
+        "phase": "search",
+        "config_key": "b7a7d5d665fb836bbf73",
+        "model": "lightgbm",
+        "status": "ok",
+        "wall_seconds": 3.817137625999976,
+        "peak_memory_mb": 271.96,
+        "best_iterations": 655,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 43.67393145977802
+      },
+      {
+        "directory": "003_control_search_17ece7a721cb29d19219",
+        "phase": "search",
+        "config_key": "17ece7a721cb29d19219",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 24.859129972000005,
+        "peak_memory_mb": 508.59,
+        "best_iterations": 2399,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 43.1132982212882
+      },
+      {
+        "directory": "004_control_search_9fb6fe7e34fe4b0088df",
+        "phase": "search",
+        "config_key": "9fb6fe7e34fe4b0088df",
+        "model": "lightgbm",
+        "status": "ok",
+        "wall_seconds": 2.814804360000039,
+        "peak_memory_mb": 272.15,
+        "best_iterations": 64,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 45.303700657710785
+      },
+      {
+        "directory": "005_control_search_6339f83d75ce91a6e1df",
+        "phase": "search",
+        "config_key": "6339f83d75ce91a6e1df",
+        "model": "extra_trees",
+        "status": "ok",
+        "wall_seconds": 12.035694427000067,
+        "peak_memory_mb": 335.11,
+        "best_iterations": 1,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 44.44122078691401
+      },
+      {
+        "directory": "006_control_search_46ce0847fa484b7a707f",
+        "phase": "search",
+        "config_key": "46ce0847fa484b7a707f",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 5.419765819000077,
+        "peak_memory_mb": 346.02,
+        "best_iterations": 635,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 45.38975539927439
+      },
+      {
+        "directory": "007_control_search_0bcdafbf84052ca4c690",
+        "phase": "search",
+        "config_key": "0bcdafbf84052ca4c690",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 9.625849049999943,
+        "peak_memory_mb": 388.32,
+        "best_iterations": 1196,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 44.28557705576681
+      },
+      {
+        "directory": "008_control_search_b638e69e2d96387a881b",
+        "phase": "search",
+        "config_key": "b638e69e2d96387a881b",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 11.030022098000018,
+        "peak_memory_mb": 367.26,
+        "best_iterations": 1414,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 43.57328447978615
+      },
+      {
+        "directory": "009_history_search_a7b5b52d8fe4b9a444be",
+        "phase": "search",
+        "config_key": "a7b5b52d8fe4b9a444be",
+        "model": "augmentation",
+        "status": "ok",
+        "wall_seconds": 9.025377977000062,
+        "peak_memory_mb": 573.92,
+        "best_iterations": 452,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 32.85520198140249
+      },
+      {
+        "directory": "010_imputation_search_518c9a76997438ee1f08",
+        "phase": "search",
+        "config_key": "518c9a76997438ee1f08",
+        "model": "augmentation",
+        "status": "ok",
+        "wall_seconds": 19.849558492999904,
+        "peak_memory_mb": 687.55,
+        "best_iterations": 1524,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 45.44734506816881
+      },
+      {
+        "directory": "011_pca_search_c2ed6e884666e84e2f85",
+        "phase": "search",
+        "config_key": "c2ed6e884666e84e2f85",
+        "model": "augmentation",
+        "status": "ok",
+        "wall_seconds": 25.658898550000004,
+        "peak_memory_mb": 611.8,
+        "best_iterations": 2302,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 43.64446461389001
+      },
+      {
+        "directory": "012_xgboost_search_b774fbf31a0351d46daf",
+        "phase": "search",
+        "config_key": "b774fbf31a0351d46daf",
+        "model": "xgboost",
+        "status": "ok",
+        "wall_seconds": 4.016101764000041,
+        "peak_memory_mb": 282.7,
+        "best_iterations": 284,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 44.22106956915085
+      },
+      {
+        "directory": "013_linear_42_search_52325111845f68c32bcb",
+        "phase": "search",
+        "config_key": "52325111845f68c32bcb",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 25.260225471000012,
+        "peak_memory_mb": 505.11,
+        "best_iterations": 2371,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 43.45870339459314
+      },
+      {
+        "directory": "014_linear_42_search_cbc7803a199b4d339af2",
+        "phase": "search",
+        "config_key": "cbc7803a199b4d339af2",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 20.250399377000008,
+        "peak_memory_mb": 593.6,
+        "best_iterations": 1811,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 43.7973102784061
+      },
+      {
+        "directory": "015_linear_42_search_92f4cf3766307ca01902",
+        "phase": "search",
+        "config_key": "92f4cf3766307ca01902",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 16.842999423000037,
+        "peak_memory_mb": 472.47,
+        "best_iterations": 1586,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 43.892502010734034
+      },
+      {
+        "directory": "016_linear_42_search_1e49f0028765dbdd2ce0",
+        "phase": "search",
+        "config_key": "1e49f0028765dbdd2ce0",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 16.842282084999965,
+        "peak_memory_mb": 535.14,
+        "best_iterations": 1598,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 44.201635663205735
+      },
+      {
+        "directory": "017_linear_42_search_18991751244d0ae11ff7",
+        "phase": "search",
+        "config_key": "18991751244d0ae11ff7",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 9.028230338000071,
+        "peak_memory_mb": 474.38,
+        "best_iterations": 798,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 44.99391780928803
+      },
+      {
+        "directory": "018_linear_42_search_38e20034f7759d58cb39",
+        "phase": "search",
+        "config_key": "38e20034f7759d58cb39",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 24.056332861999977,
+        "peak_memory_mb": 495.01,
+        "best_iterations": 2384,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 43.82048436612014
+      },
+      {
+        "directory": "019_tree_42_search_52325111845f68c32bcb",
+        "phase": "search",
+        "config_key": "52325111845f68c32bcb",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 24.457770926999956,
+        "peak_memory_mb": 481.92,
+        "best_iterations": 2371,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 43.45870339459314
+      },
+      {
+        "directory": "020_tree_42_search_a59b70e56f194e39eeb8",
+        "phase": "search",
+        "config_key": "a59b70e56f194e39eeb8",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 23.858387244999903,
+        "peak_memory_mb": 708.41,
+        "best_iterations": 1946,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 44.179581793695455
+      },
+      {
+        "directory": "021_tree_42_search_eba38e48821eb8e0ef53",
+        "phase": "search",
+        "config_key": "eba38e48821eb8e0ef53",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 16.6432484259999,
+        "peak_memory_mb": 463.33,
+        "best_iterations": 1600,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 43.420773580472755
+      },
+      {
+        "directory": "022_tree_42_search_ba14335c34f4eb3598fb",
+        "phase": "search",
+        "config_key": "ba14335c34f4eb3598fb",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 24.659695517000046,
+        "peak_memory_mb": 588.96,
+        "best_iterations": 2399,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 44.12584308476741
+      },
+      {
+        "directory": "023_tree_42_search_600dd18ba162501d2304",
+        "phase": "search",
+        "config_key": "600dd18ba162501d2304",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 9.027616310999974,
+        "peak_memory_mb": 479.43,
+        "best_iterations": 800,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 43.947490903618714
+      },
+      {
+        "directory": "024_tree_42_search_1f6568eaa05888267bac",
+        "phase": "search",
+        "config_key": "1f6568eaa05888267bac",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 25.460616179,
+        "peak_memory_mb": 659.5,
+        "best_iterations": 2387,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 42.43306051624691
+      },
+      {
+        "directory": "025_linear_43_search_f6d65c42bbc975c1fed5",
+        "phase": "search",
+        "config_key": "f6d65c42bbc975c1fed5",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 17.243565003000185,
+        "peak_memory_mb": 461.17,
+        "best_iterations": 1503,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 43.76600099738389
+      },
+      {
+        "directory": "026_linear_43_search_f336639896c2aca95551",
+        "phase": "search",
+        "config_key": "f336639896c2aca95551",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 9.229564629999913,
+        "peak_memory_mb": 472.47,
+        "best_iterations": 800,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 44.148084904710316
+      },
+      {
+        "directory": "027_linear_43_search_5f8d0c6fe67d72f2b33c",
+        "phase": "search",
+        "config_key": "5f8d0c6fe67d72f2b33c",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 9.226263579000033,
+        "peak_memory_mb": 468.82,
+        "best_iterations": 778,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 43.73628707388558
+      },
+      {
+        "directory": "028_linear_43_search_e65aafcc6c4404d86e56",
+        "phase": "search",
+        "config_key": "e65aafcc6c4404d86e56",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 8.826537847000054,
+        "peak_memory_mb": 466.27,
+        "best_iterations": 800,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 44.39806180607728
+      },
+      {
+        "directory": "029_linear_43_search_54a75dae818460c72c3c",
+        "phase": "search",
+        "config_key": "54a75dae818460c72c3c",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 9.027200536999999,
+        "peak_memory_mb": 477.78,
+        "best_iterations": 800,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 44.099361457628184
+      },
+      {
+        "directory": "030_linear_43_search_12764bf7130abd4748c7",
+        "phase": "search",
+        "config_key": "12764bf7130abd4748c7",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 9.628881454000066,
+        "peak_memory_mb": 455.23,
+        "best_iterations": 790,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 43.24485344772381
+      },
+      {
+        "directory": "031_tree_43_search_f6d65c42bbc975c1fed5",
+        "phase": "search",
+        "config_key": "f6d65c42bbc975c1fed5",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 17.64524865999988,
+        "peak_memory_mb": 468.65,
+        "best_iterations": 1503,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 43.76600099738389
+      },
+      {
+        "directory": "032_tree_43_search_600dd18ba162501d2304",
+        "phase": "search",
+        "config_key": "600dd18ba162501d2304",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 9.628568495000081,
+        "peak_memory_mb": 544.63,
+        "best_iterations": 800,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 43.947490903618714
+      },
+      {
+        "directory": "033_tree_43_search_f336639896c2aca95551",
+        "phase": "search",
+        "config_key": "f336639896c2aca95551",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 10.431738042999996,
+        "peak_memory_mb": 526.96,
+        "best_iterations": 800,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 44.148084904710316
+      },
+      {
+        "directory": "034_tree_43_search_9013e8f68bf0e3a87593",
+        "phase": "search",
+        "config_key": "9013e8f68bf0e3a87593",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 9.227465391999885,
+        "peak_memory_mb": 482.95,
+        "best_iterations": 784,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 44.58621457911715
+      },
+      {
+        "directory": "035_tree_43_search_5f8d0c6fe67d72f2b33c",
+        "phase": "search",
+        "config_key": "5f8d0c6fe67d72f2b33c",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 9.628605439000012,
+        "peak_memory_mb": 510.4,
+        "best_iterations": 778,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 43.73628707388558
+      },
+      {
+        "directory": "036_tree_43_search_e65aafcc6c4404d86e56",
+        "phase": "search",
+        "config_key": "e65aafcc6c4404d86e56",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 8.826533188999974,
+        "peak_memory_mb": 474.11,
+        "best_iterations": 800,
+        "fixed_iterations": null,
+        "refit": false,
+        "reason": null,
+        "score": 44.39806180607728
+      },
+      {
+        "directory": "037_candidate_confirm_17ece7a721cb29d19219",
+        "phase": "confirm",
+        "config_key": "17ece7a721cb29d19219",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 27.666440982999802,
+        "peak_memory_mb": 673.48,
+        "best_iterations": 2399,
+        "fixed_iterations": 2399,
+        "refit": true,
+        "reason": null,
+        "score": 48.678635620745055
+      },
+      {
+        "directory": "038_candidate_confirm_b7a7d5d665fb836bbf73",
+        "phase": "confirm",
+        "config_key": "b7a7d5d665fb836bbf73",
+        "model": "lightgbm",
+        "status": "ok",
+        "wall_seconds": 4.0167543950001345,
+        "peak_memory_mb": 287.45,
+        "best_iterations": 655,
+        "fixed_iterations": 655,
+        "refit": true,
+        "reason": null,
+        "score": 53.87337876406847
+      },
+      {
+        "directory": "039_candidate_confirm_6339f83d75ce91a6e1df",
+        "phase": "confirm",
+        "config_key": "6339f83d75ce91a6e1df",
+        "model": "extra_trees",
+        "status": "ok",
+        "wall_seconds": 21.05933975300013,
+        "peak_memory_mb": 396.25,
+        "best_iterations": 1,
+        "fixed_iterations": 1,
+        "refit": true,
+        "reason": null,
+        "score": 46.58330001137281
+      },
+      {
+        "directory": "040_candidate_confirm_a7b5b52d8fe4b9a444be",
+        "phase": "confirm",
+        "config_key": "a7b5b52d8fe4b9a444be",
+        "model": "augmentation",
+        "status": "ok",
+        "wall_seconds": 8.825844066999935,
+        "peak_memory_mb": 719.04,
+        "best_iterations": 452,
+        "fixed_iterations": 452,
+        "refit": true,
+        "reason": null,
+        "score": 46.632569379413425
+      },
+      {
+        "directory": "041_candidate_confirm_1f6568eaa05888267bac",
+        "phase": "confirm",
+        "config_key": "1f6568eaa05888267bac",
+        "model": "catboost",
+        "status": "ok",
+        "wall_seconds": 28.867295196999976,
+        "peak_memory_mb": 674.57,
+        "best_iterations": 2387,
+        "fixed_iterations": 2387,
+        "refit": true,
+        "reason": null,
+        "score": 56.811985977627856
+      },
+      {
+        "directory": "042_candidate_confirm_c2ed6e884666e84e2f85",
+        "phase": "confirm",
+        "config_key": "c2ed6e884666e84e2f85",
+        "model": "augmentation",
+        "status": "ok",
+        "wall_seconds": 29.471461225999974,
+        "peak_memory_mb": 698.22,
+        "best_iterations": 2302,
+        "fixed_iterations": 2302,
+        "refit": true,
+        "reason": null,
+        "score": 51.01308376884636
+      },
+      {
+        "directory": "043_candidate_confirm_b774fbf31a0351d46daf",
+        "phase": "confirm",
+        "config_key": "b774fbf31a0351d46daf",
+        "model": "xgboost",
+        "status": "ok",
+        "wall_seconds": 3.416535780999993,
+        "peak_memory_mb": 303.27,
+        "best_iterations": 284,
+        "fixed_iterations": 284,
+        "refit": true,
+        "reason": null,
+        "score": 117.53775479218343
+      },
+      {
+        "directory": "044_candidate_confirm_518c9a76997438ee1f08",
+        "phase": "confirm",
+        "config_key": "518c9a76997438ee1f08",
+        "model": "augmentation",
+        "status": "ok",
+        "wall_seconds": 21.45390085200006,
+        "peak_memory_mb": 766.78,
+        "best_iterations": 1524,
+        "fixed_iterations": 1524,
+        "refit": true,
+        "reason": null,
+        "score": 59.9963571425495
+      },
+      {
+        "directory": "045_selected_full_6339f83d75ce91a6e1df",
+        "phase": "full",
+        "config_key": "6339f83d75ce91a6e1df",
+        "model": "extra_trees",
+        "status": "ok",
+        "wall_seconds": 41.32451633000005,
+        "peak_memory_mb": 453.64,
+        "best_iterations": 1,
+        "fixed_iterations": 1,
+        "refit": true,
+        "reason": null
+      }
+    ],
+    "experiment_count": 45,
+    "checks": {
+      "splits_reproduced": true,
+      "all_prediction_indices_exact": true,
+      "all_metrics_recomputed": true,
+      "frozen_before_confirmation": true,
+      "confirmation_refit_without_early_stopping": true,
+      "fixed_iterations_match_frozen": true
+    },
+    "resource_audit": {
+      "cpu_total": 8.0,
+      "memory_bytes_total": 31272730624,
+      "internal_network": true
+    },
+    "dependency_audit": {
+      "installed_approved": {
+        "numpy": "1.26.4",
+        "scipy": "1.12.0",
+        "pandas": "2.2.3",
+        "joblib": "1.4.2",
+        "threadpoolctl": "3.6.0",
+        "scikit-learn": "1.5.2",
+        "catboost": "1.2.8",
+        "lightgbm": "4.6.0",
+        "xgboost": "2.1.4",
+        "optuna": "4.2.1",
+        "autogluon.tabular": "1.3.1",
+        "openai": "1.68.2",
+        "httpx": "0.28.1",
+        "pydantic": "2.10.6",
+        "PyYAML": "6.0.2",
+        "matplotlib": "3.9.4",
+        "tqdm": "4.67.1",
+        "psutil": "6.1.1",
+        "setuptools": "80.9.0"
+      },
+      "unused_not_installed": {
+        "polars": "1.26.0",
+        "pyarrow": "19.0.1",
+        "imbalanced-learn": "0.12.4",
+        "category-encoders": "2.6.4",
+        "feature-engine": "1.8.3",
+        "statsmodels": "0.14.0",
+        "torch": "2.5.1",
+        "lightautoml": "0.4.2",
+        "flaml": "2.3.6",
+        "tenacity": "9.0.0",
+        "langchain": "0.3.27",
+        "langchain-openai": "0.3.23",
+        "langgraph": "0.6.7",
+        "python-dotenv": "1.0.1",
+        "orjson": "3.10.15",
+        "jsonschema": "4.23.0",
+        "seaborn": "0.13.2",
+        "cloudpickle": "3.1.1"
+      },
+      "mismatches": [],
+      "requirements_sha256": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+    },
+    "requirements_sha256": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+    "archive_audit": {
+      "recorded_sha256": "3c2fe69239697fd7890d8f98787912bff286f47efdec22e23bf40873326ee15a",
+      "verified_archive": "E:\\Dev_Cpp\\Alfa\\runs\\kaggle\\regression_20261025T125527_b8bf12b11e\\source.zip",
+      "source_sha256": {
+        "aide_search.py": "4c2f1adb5bea2c428749342a29d433f9ee35afd7af97fef18c96d8a71c65dc79",
+        "contracts.py": "0d16bb84f2f6ab760385c0e6a6c9193aea33ddd1144a41213384fa68cb1d7f9e",
+        "data_io.py": "81eee41218a29ec9499227882267dad66b0546845ea843b09578216b94e886be",
+        "experiment_store.py": "2db2634144cd468a3918676687de4df1d989ff507a0c7f4dfa818212cef5ae7a",
+        "historical_features.py": "f247628a0fb10b0a784b2eb4990613a6c68e7b4a02b5e6abe2a0a4c670b98b5e",
+        "kaggle_features.py": "21b7f319e53a4efbc9ac87615958c5af85b981e28d0c2653eb4709cadbb8f61c",
+        "kaggle_research.py": "e4961feccc58c7218846e06e2a2e5e6a42b0a66d7d65db7eb4f8148f12383509",
+        "kaggle_specs.py": "e2960abda7d106ea904fb35bcac689150dd018f2c2c9e0849d8641a571b7e651",
+        "kaggle_worker.py": "642b875319fc635dbb5503d523d274ef427045f56a68f414fd35714a6a68a6f3",
+        "kaggle_xgb.py": "ae26b269311df61c565855fd12eb09a31bb12cab69fa5be2ac9c62094503f8d6",
+        "llm_client.py": "b96176d9e7f717393a847cf1a64a7b27f7a8bd64d16f995a521a402634ed20bf",
+        "metrics.py": "6a60911c042e9fbcd06c5eb779cc55f441516dc5d69869fa440bee8cfdd22d9d",
+        "models.py": "0352181955402071ca07be78e7c6c123251fdb6ca709c430f42e4b6ef554af13",
+        "novel_models.py": "e5bedf8b9e0430df25c6cb3acd9472e838b02e74f5022bad2d45c007ed977a38",
+        "novel_worker.py": "de4facaecc85377fafa9890a0dd6a621f534afc73e2bca79e0f2008bb0001fd4",
+        "preprocessing.py": "71eda6cba3e6a7bc2905d7c259297f5f48358936763376d71b03593c5df0966e",
+        "research.py": "e23e89009e64b165be526ebf2f5ee643ce8c883e49da846d2d97b7ebe0e24d82",
+        "runtime.py": "7a451e6499937343bc9ecfeecda36b45f4c86eeb5bc5d4c778928681ee71e76a",
+        "solution.py": "19f963c06d41185998a2494500ca450a26c8e13ec02be5270c1afdb1146e8b2d",
+        "submission.py": "e9d68851fdc31bdb7db10d91f842503dc38da3db1c287dd83b1449806a625f69",
+        "task_reader.py": "807a0404831e834cfd4f858d400ed79c6563113fbf0de4edd2059d4112e3f431",
+        "validation.py": "c26330c35782fb3c6f1f86ecd1dcbec598f48e32d3d53058738c3685ebf0f818",
+        "worker.py": "4ee23f48c1173cd605549ae0a65d086ea9d452d05f98854c7fed4fec1dce91d3"
+      }
+    },
+    "python": "3.12.15 (main, Oct 21 2026, 01:08:20) [GCC 14.2.0]",
+    "versions": {
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.5.2",
+      "catboost": "1.2.8",
+      "lightgbm": "4.6.0",
+      "xgboost": "2.1.4"
+    }
+  }
+]

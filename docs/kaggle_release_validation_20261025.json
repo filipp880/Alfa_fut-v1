@@ -1,0 +1,52 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-10-25T13:48:59.443900+00:00",
+  "requirements_sha256": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6",
+  "archive": {
+    "bytes": 40738,
+    "sha256": "1f36d39c2ad254c42f6497e4027cf4742ad5bc779dae920e24155151f1cce66f",
+    "python_modules": 16,
+    "flat": true,
+    "matches_sources": true,
+    "backup_preserved": true
+  },
+  "tests": {
+    "windows": {
+      "tests": 69,
+      "seconds": 66.806,
+      "skipped": 3,
+      "log": "runs\\tests\\kaggle_final_windows.log"
+    },
+    "linux": {
+      "tests": 69,
+      "seconds": 48.472,
+      "skipped": 0,
+      "log": "runs\\tests\\kaggle_final_linux.log"
+    }
+  },
+  "cases": [
+    {
+      "task": "regression",
+      "directory": "runs\\kaggle\\regression_20261025T125527_b8bf12b11e",
+      "rows": 22449,
+      "score": 46.58330001137281,
+      "final_refit_completed": true,
+      "experiment_count": 45,
+      "elapsed_seconds": 699.9033834799999
+    },
+    {
+      "task": "classification",
+      "directory": "runs\\kaggle\\classification_20261025T130915_caae206aa3",
+      "rows": 41166,
+      "score": 0.6111095180710091,
+      "final_refit_completed": true,
+      "experiment_count": 43,
+      "elapsed_seconds": 1657.547631584
+    }
+  ],
+  "core_experiments": 88,
+  "additional_seed_fits": 10,
+  "syntax_files_checked": 54,
+  "production_policy_changed": false,
+  "note": "Усреднённая история остаётся post-hoc исследовательским результатом; штатные модели не заменены."
+}

@@ -1,0 +1,425 @@
+{
+  "status": "completed",
+  "case": "runs\\kaggle\\regression_20261025T125527_b8bf12b11e",
+  "metric": "rmse",
+  "interpretation": "Post-hoc проверка шума обучения на уже изученном confirm. Это не независимое подтверждение, не оценка скрытого теста и не основание подбирать seed/веса.",
+  "stopping_rule": "Взяты все и только seeds42/43/44/45; дополнительные seed не подбираются.",
+  "inputs": [
+    {
+      "seed": 42,
+      "summary_path": "E:\\Dev_Cpp\\Alfa\\runs\\kaggle\\regression_20261025T125527_b8bf12b11e\\.kaggle_research\\20261025T125530_360675\\summary.json",
+      "summary_sha256": "5447f89e0a38b8fa00964cba6fd430264927f73c2ad4815012ba509c6a9b00f0",
+      "member_prediction_directories": {
+        "6339f83d75ce91a6e1df": "039_candidate_confirm_6339f83d75ce91a6e1df",
+        "a7b5b52d8fe4b9a444be": "040_candidate_confirm_a7b5b52d8fe4b9a444be"
+      },
+      "api_note": "Основной поиск использовал общий LLM-пул; исходные confirm-обучения LLM-вызовов не выполняют."
+    },
+    {
+      "seed": 43,
+      "summary_path": "E:\\Dev_Cpp\\Alfa\\runs\\kaggle\\regression_20261025T125527_b8bf12b11e\\.kaggle_repeat\\20261025T130805_607378_seed43\\summary.json",
+      "summary_sha256": "40c9e3e81ad96bef3237ec841380b9570f515d6510334f621ebeaa42eed78e10",
+      "frozen_sha256": "de71e7bdf9e96debc90d2a73c676e606aa83d313f2ae35fd0a5c23c9d3920b8f",
+      "confirm_sha256": "9ef414ecb63258d34b5e69ad84f29cd732931ed2146b95235ac9b6fd17c8bbb3"
+    },
+    {
+      "seed": 44,
+      "summary_path": "E:\\Dev_Cpp\\Alfa\\runs\\kaggle\\regression_20261025T125527_b8bf12b11e\\.kaggle_repeat\\20261025T134011_212521_seed44\\summary.json",
+      "summary_sha256": "013e2e8be838cbcf987bfc0f632ffecedef1478b4a651a9c24640701d3888c90",
+      "frozen_sha256": "de71e7bdf9e96debc90d2a73c676e606aa83d313f2ae35fd0a5c23c9d3920b8f",
+      "confirm_sha256": "9ef414ecb63258d34b5e69ad84f29cd732931ed2146b95235ac9b6fd17c8bbb3"
+    },
+    {
+      "seed": 45,
+      "summary_path": "E:\\Dev_Cpp\\Alfa\\runs\\kaggle\\regression_20261025T125527_b8bf12b11e\\.kaggle_repeat\\20261025T134044_744370_seed45\\summary.json",
+      "summary_sha256": "753553d99815ff8db6e38ed1b0a272a94eecfbd06a84dd4cf5aa6c49e963fabe",
+      "frozen_sha256": "de71e7bdf9e96debc90d2a73c676e606aa83d313f2ae35fd0a5c23c9d3920b8f",
+      "confirm_sha256": "9ef414ecb63258d34b5e69ad84f29cd732931ed2146b95235ac9b6fd17c8bbb3"
+    }
+  ],
+  "seeds": [
+    {
+      "seed": 42,
+      "kind": "Основное заранее зафиксированное исследование",
+      "baseline": {
+        "rmse": 46.58330001137281,
+        "mse": 2170.0038399495666,
+        "mae": 26.715382233038305,
+        "r2": 0.3210365266808122,
+        "mape": 0.7103886238540628,
+        "rmsle": 0.5730723806339366
+      },
+      "integrated": {
+        "rmse": 46.632569379413425,
+        "mse": 2174.5965269258068,
+        "mae": 25.540447209453813,
+        "r2": 0.3195995399603978,
+        "mape": 0.7366282496593086,
+        "rmsle": 0.6055036828299256
+      },
+      "member_confirmation_fit_seconds": 29.885183820000066,
+      "member_peak_worker_rss_mb": 719.04,
+      "absolute_improvement": -0.049269368040611994,
+      "relative_improvement_percent": -0.1057661608958219,
+      "absolute_rmse_improvement": -0.049269368040611994,
+      "relative_rmse_reduction_percent": -0.1057661608958219
+    },
+    {
+      "seed": 43,
+      "kind": "Фиксированный повтор шума обучения",
+      "baseline": {
+        "rmse": 46.77019027857198,
+        "mse": 2187.450698693829,
+        "mae": 26.456996445606922,
+        "r2": 0.3155776516348635,
+        "mape": 0.7041057788793132,
+        "rmsle": 0.5701861190046649
+      },
+      "integrated": {
+        "rmse": 42.39794476011207,
+        "mse": 1797.5857198815145,
+        "mae": 23.890136477415158,
+        "r2": 0.4375608828470592,
+        "mape": 0.6555484635004496,
+        "rmsle": 0.5595321623505557
+      },
+      "elapsed_seconds": 32.75411460800001,
+      "fit_seconds": 30.68901982700004,
+      "peak_worker_rss_mb": 797.71,
+      "llm_calls": 0,
+      "llm_tokens": 0,
+      "resource_audit": null,
+      "network_none_verified_by_inspect": false,
+      "resource_note": "Для seed43 inspect не сохранён до удаления контейнера; отсутствие API подтверждено счётчиками, сетевой режим независимо не подтверждён этим JSON.",
+      "snapshot_modules": {
+        "contracts": "/task/contracts.py",
+        "data_io": "/task/data_io.py",
+        "experiment_store": "/task/experiment_store.py",
+        "kaggle_specs": "/task/kaggle_specs.py",
+        "metrics": "/task/metrics.py",
+        "runtime": "/task/runtime.py",
+        "task_reader": "/task/task_reader.py"
+      },
+      "absolute_improvement": 4.372245518459913,
+      "relative_improvement_percent": 9.348359483718161,
+      "absolute_rmse_improvement": 4.372245518459913,
+      "relative_rmse_reduction_percent": 9.348359483718161
+    },
+    {
+      "seed": 44,
+      "kind": "Фиксированный повтор шума обучения",
+      "baseline": {
+        "rmse": 46.74198169702829,
+        "mse": 2184.8128529653272,
+        "mae": 26.872190713060053,
+        "r2": 0.31640299621026546,
+        "mape": 0.7180680602219964,
+        "rmsle": 0.5751117843370818
+      },
+      "integrated": {
+        "rmse": 44.88394441960959,
+        "mse": 2014.5684666626028,
+        "mae": 25.34925403771239,
+        "r2": 0.3696700539496093,
+        "mape": 0.7154656271135625,
+        "rmsle": 0.5912256138377878
+      },
+      "elapsed_seconds": 33.0271819579998,
+      "fit_seconds": 30.888038577000316,
+      "peak_worker_rss_mb": 690.88,
+      "llm_calls": 0,
+      "llm_tokens": 0,
+      "resource_audit": {
+        "container": "alfa-kaggle-repeat-c56d76b6a7",
+        "cpu_total": 8.0,
+        "memory_bytes_total": 31138512896,
+        "memory_swap_bytes": 31138512896,
+        "network": "none",
+        "readonly_root": true,
+        "source": "docker inspect во время активного повтора",
+        "seed": 44
+      },
+      "network_none_verified_by_inspect": true,
+      "resource_note": "HostConfig снят во время выполнения",
+      "snapshot_modules": {
+        "contracts": "/task/contracts.py",
+        "data_io": "/task/data_io.py",
+        "experiment_store": "/task/experiment_store.py",
+        "kaggle_specs": "/task/kaggle_specs.py",
+        "metrics": "/task/metrics.py",
+        "runtime": "/task/runtime.py",
+        "task_reader": "/task/task_reader.py"
+      },
+      "absolute_improvement": 1.8580372774186955,
+      "relative_improvement_percent": 3.9750930747055246,
+      "absolute_rmse_improvement": 1.8580372774186955,
+      "relative_rmse_reduction_percent": 3.9750930747055246
+    },
+    {
+      "seed": 45,
+      "kind": "Фиксированный повтор шума обучения",
+      "baseline": {
+        "rmse": 47.19980799433507,
+        "mse": 2227.8218747020965,
+        "mae": 26.848929339558754,
+        "r2": 0.3029460823353407,
+        "mape": 0.7179465654220644,
+        "rmsle": 0.5763724889205878
+      },
+      "integrated": {
+        "rmse": 44.89235833460428,
+        "mse": 2015.3238368425148,
+        "mae": 26.214110023875985,
+        "r2": 0.36943370931668607,
+        "mape": 0.7369828387347246,
+        "rmsle": 0.5937680530254716
+      },
+      "elapsed_seconds": 32.59995851800022,
+      "fit_seconds": 30.48693907400002,
+      "peak_worker_rss_mb": 665.25,
+      "llm_calls": 0,
+      "llm_tokens": 0,
+      "resource_audit": {
+        "container": "alfa-kaggle-repeat-3bb6cbf8f0",
+        "cpu_total": 8.0,
+        "memory_bytes_total": 31138512896,
+        "memory_swap_bytes": 31138512896,
+        "network": "none",
+        "readonly_root": true,
+        "source": "docker inspect во время активного повтора",
+        "seed": 45
+      },
+      "network_none_verified_by_inspect": true,
+      "resource_note": "HostConfig снят во время выполнения",
+      "snapshot_modules": {
+        "contracts": "/task/contracts.py",
+        "data_io": "/task/data_io.py",
+        "experiment_store": "/task/experiment_store.py",
+        "kaggle_specs": "/task/kaggle_specs.py",
+        "metrics": "/task/metrics.py",
+        "runtime": "/task/runtime.py",
+        "task_reader": "/task/task_reader.py"
+      },
+      "absolute_improvement": 2.3074496597307856,
+      "relative_improvement_percent": 4.888684420088587,
+      "absolute_rmse_improvement": 2.3074496597307856,
+      "relative_rmse_reduction_percent": 4.888684420088587
+    }
+  ],
+  "ensembles": {
+    "baseline": {
+      "seeds": [
+        42,
+        43,
+        44,
+        45
+      ],
+      "weights": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "metrics": {
+        "rmse": 46.77434081414631,
+        "mse": 2187.8389585979135,
+        "mae": 26.683017094327095,
+        "r2": 0.31545617060880504,
+        "mape": 0.7121608695749361,
+        "rmsle": 0.5734863436662995
+      },
+      "per_seed_rmse_mean": 46.823819995327035,
+      "per_seed_rmse_sample_std": 0.26381211222324213
+    },
+    "integrated": {
+      "seeds": [
+        42,
+        43,
+        44,
+        45
+      ],
+      "weights": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "metrics": {
+        "rmse": 43.992873552162465,
+        "mse": 1935.372923376556,
+        "mae": 24.923034784801903,
+        "r2": 0.3944492180003716,
+        "mape": 0.7068833025543587,
+        "rmsle": 0.5861777539575225
+      },
+      "per_seed_rmse_mean": 44.701704223434845,
+      "per_seed_rmse_sample_std": 1.7421355089495816
+    }
+  },
+  "equal_weight_ensemble_comparison": {
+    "absolute_rmse_improvement": 2.781467261983849,
+    "relative_rmse_reduction_percent": 5.946566458383159,
+    "improvement_ci95_conditional": [
+      1.7139994362943942,
+      3.915529936310214
+    ],
+    "bootstrap_note": "400 парных пуассоновских повторов целых групп одинаковых признаков. Условный интервал не учитывает post-hoc выбор, будущий сдвиг и неопределённость распределения seed."
+  },
+  "per_seed_gains": {
+    "mean": 2.1221157718921955,
+    "sample_std": 1.8149456744426884,
+    "minimum": -0.049269368040611994,
+    "maximum": 4.372245518459913,
+    "positive_seeds": 3,
+    "total_seeds": 4
+  },
+  "fixed_candidates": {
+    "6339f83d75ce91a6e1df": {
+      "config": {
+        "model": "extra_trees",
+        "iterations": 1600,
+        "depth": 6,
+        "learning_rate": 0.06,
+        "regularization": 5.0,
+        "leaves": 31,
+        "min_child_samples": 30,
+        "class_weight_power": 0.0,
+        "missing_indicators": false,
+        "frequency_encoding": false,
+        "drop_time": false,
+        "target_transform": "identity",
+        "transforms": [],
+        "seed": 42,
+        "hypothesis": "Независимый случайный лес: поиск дополнительного сигнала для ансамбля",
+        "forest_trees": 256,
+        "forest_depth": 24,
+        "min_leaf": 4,
+        "max_features": 1.0,
+        "components": 384,
+        "kernel_scale": 0.5,
+        "neighbors": 25,
+        "metric_features": 24
+      },
+      "config_key": "6339f83d75ce91a6e1df",
+      "best_iterations": 1
+    },
+    "a7b5b52d8fe4b9a444be": {
+      "config": {
+        "model": "augmentation",
+        "base_config": {
+          "model": "catboost",
+          "iterations": 2400,
+          "depth": 8,
+          "learning_rate": 0.045,
+          "regularization": 5.0,
+          "leaves": 31,
+          "min_child_samples": 30,
+          "class_weight_power": 0.0,
+          "missing_indicators": false,
+          "frequency_encoding": false,
+          "drop_time": false,
+          "target_transform": "identity",
+          "transforms": [],
+          "seed": 42,
+          "hypothesis": "Более глубокие взаимодействия при меньшем шаге"
+        },
+        "feature_schema": {},
+        "history_schema": {
+          "time_column": "Year_Factor",
+          "entity_columns": [
+            "State_Factor",
+            "building_class",
+            "facility_type",
+            "floor_area",
+            "year_built"
+          ],
+          "feature_columns": [
+            "Year_Factor",
+            "State_Factor",
+            "building_class",
+            "facility_type",
+            "floor_area",
+            "year_built",
+            "energy_star_rating",
+            "ELEVATION",
+            "january_min_temp_c",
+            "january_avg_temp_c",
+            "january_max_temp_c",
+            "february_min_temp_c",
+            "february_avg_temp_c",
+            "february_max_temp_c",
+            "march_min_temp_c",
+            "march_avg_temp_c",
+            "march_max_temp_c",
+            "april_min_temp_c",
+            "april_avg_temp_c",
+            "april_max_temp_c",
+            "may_min_temp_c",
+            "may_avg_temp_c",
+            "may_max_temp_c",
+            "june_min_temp_c",
+            "june_avg_temp_c",
+            "june_max_temp_c",
+            "july_min_temp_c",
+            "july_avg_temp_c",
+            "july_max_temp_c",
+            "august_min_temp_c",
+            "august_avg_temp_c",
+            "august_max_temp_c",
+            "september_min_temp_c",
+            "september_avg_temp_c",
+            "september_max_temp_c",
+            "october_min_temp_c",
+            "october_avg_temp_c",
+            "october_max_temp_c",
+            "november_min_temp_c",
+            "november_avg_temp_c",
+            "november_max_temp_c",
+            "december_min_temp_c",
+            "december_avg_temp_c",
+            "december_max_temp_c",
+            "cooling_degree_days_c",
+            "heating_degree_days_c",
+            "precipitation_inches",
+            "snowfall_inches",
+            "snowdepth_inches",
+            "avg_temp_c",
+            "days_below_minus1C",
+            "days_below_minus7C",
+            "days_below_minus12C",
+            "days_below_minus18C",
+            "days_above_27C",
+            "days_above_32C",
+            "days_above_38C",
+            "days_above_43C",
+            "direction_max_wind_speed",
+            "direction_peak_wind_speed",
+            "max_wind_speed",
+            "days_with_fog"
+          ],
+          "forbidden_columns": [
+            "id",
+            "site_eui"
+          ]
+        },
+        "seed": 42,
+        "hypothesis": "Отдельная проверка: history"
+      },
+      "config_key": "a7b5b52d8fe4b9a444be",
+      "best_iterations": 452
+    }
+  },
+  "checks": {
+    "only_seed_changed": true,
+    "fixed_iterations_preserved": true,
+    "confirm_indices_exact": true,
+    "metrics_recomputed": true,
+    "snapshot_matches_source_zip": true,
+    "repeat_llm_calls_zero": true,
+    "repeat_llm_tokens_zero": true,
+    "all_four_seeds_included": true
+  },
+  "source_archive_sha256": "3c2fe69239697fd7890d8f98787912bff286f47efdec22e23bf40873326ee15a",
+  "frozen_sha256": "de71e7bdf9e96debc90d2a73c676e606aa83d313f2ae35fd0a5c23c9d3920b8f",
+  "confirm_sha256": "9ef414ecb63258d34b5e69ad84f29cd732931ed2146b95235ac9b6fd17c8bbb3"
+}

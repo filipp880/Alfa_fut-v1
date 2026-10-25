@@ -83,7 +83,7 @@ class Budget:
 class Runner:
     def __init__(self, directory: Path, task: TaskSpec, profile: dict, budget: Budget,
                  worker_module: str = "worker"):
-        if worker_module not in {"worker", "strategy_worker", "novel_worker"}:
+        if worker_module not in {"worker", "strategy_worker", "novel_worker", "kaggle_worker"}:
             raise ValueError("Недопустимый исполнитель")
         self.directory, self.task, self.profile, self.budget = directory, task, profile, budget
         self.worker_module = worker_module

@@ -1,0 +1,507 @@
+{
+  "status": "completed",
+  "case": "E:\\Dev_Cpp\\Alfa\\runs\\kaggle\\classification_20261025T130915_caae206aa3",
+  "metric": "macro_f1",
+  "repeat_seed": 43,
+  "interpretation": "Фиксированный повтор шума обучения на уже изученном confirm. Это не новый независимый holdout; лучший seed и новые веса не выбираются.",
+  "stopping_rule": "Включены исходный seed42 и единственный повтор seed43; дополнительные seed не подбираются.",
+  "inputs": [
+    {
+      "seed": 42,
+      "summary_path": "E:\\Dev_Cpp\\Alfa\\runs\\kaggle\\classification_20261025T130915_caae206aa3\\.kaggle_research\\20261025T130918_834616\\summary.json",
+      "summary_sha256": "2d1b2178b0cc61869ba095d1fdded7fe1f6e515d3e7fc7b161b9e1547428c62e",
+      "member_prediction_directories": {
+        "c755a04c79a8e7ae9fe8": "035_candidate_confirm_c755a04c79a8e7ae9fe8",
+        "e44f76f2022fe9b054ea": "036_candidate_confirm_e44f76f2022fe9b054ea",
+        "56a318597990af014704": "038_candidate_confirm_56a318597990af014704",
+        "9966b5572c48c3a01914": "039_candidate_confirm_9966b5572c48c3a01914"
+      },
+      "api_note": "Основной поиск использовал общий LLM-пул; исходные confirm-обучения LLM-вызовов не выполняют."
+    },
+    {
+      "seed": 43,
+      "summary_path": "E:\\Dev_Cpp\\Alfa\\runs\\kaggle\\classification_20261025T130915_caae206aa3\\.kaggle_repeat\\20261025T133808_593641_seed43\\summary.json",
+      "summary_sha256": "e79cb22976e862e73ca01b97b4ae18cd64ebeb2660f13eb893ed6bdc82c75d77",
+      "frozen_sha256": "c731ce83d66e48903287815e1b6266241367e1defb3bee64da9e47da5af3a135",
+      "confirm_sha256": "f149ae950119a7f89cc0e49f5efbce180097510e1d52e34782a863ad067ce53f"
+    }
+  ],
+  "seeds": [
+    {
+      "seed": 42,
+      "kind": "Основное заранее зафиксированное исследование",
+      "baseline": {
+        "macro_f1": 0.6111095180710091,
+        "weighted_f1": 0.8097619570417205,
+        "accuracy": 0.7986932522248508,
+        "balanced_accuracy": 0.6369082722831898,
+        "log_loss": 0.4833224147478511,
+        "per_class_f1": {
+          "Analysis": 0.20625,
+          "Backdoor": 0.17424242424242425,
+          "DoS": 0.47096299926488605,
+          "Exploits": 0.6744031830238727,
+          "Fuzzers": 0.7341834232466895,
+          "Generic": 0.9893343140860611,
+          "Normal": 0.9083542349990353,
+          "Reconnaissance": 0.821689259645464,
+          "Shellcode": 0.7106227106227107,
+          "Worms": 0.42105263157894735
+        }
+      },
+      "integrated": {
+        "macro_f1": 0.6041088620768973,
+        "weighted_f1": 0.8145149101688643,
+        "accuracy": 0.803931508392475,
+        "balanced_accuracy": 0.6233680977801053,
+        "log_loss": 0.5707976721367889,
+        "per_class_f1": {
+          "Analysis": 0.22285714285714286,
+          "Backdoor": 0.15428571428571428,
+          "DoS": 0.4596602972399151,
+          "Exploits": 0.6827000160333494,
+          "Fuzzers": 0.740209879703097,
+          "Generic": 0.9893421536199927,
+          "Normal": 0.9180793635760962,
+          "Reconnaissance": 0.8258811152025249,
+          "Shellcode": 0.7322834645669292,
+          "Worms": 0.3157894736842105
+        }
+      },
+      "member_confirmation_fit_seconds": 119.87134374699963,
+      "member_peak_worker_rss_mb": 842.9,
+      "absolute_improvement": -0.007000655994111815,
+      "relative_improvement_percent": -1.145564876195949,
+      "per_class": {
+        "baseline": {
+          "Analysis": {
+            "precision": 0.28695652173913044,
+            "recall": 0.16097560975609757,
+            "f1": 0.20625,
+            "support": 205
+          },
+          "Backdoor": {
+            "precision": 0.24210526315789474,
+            "recall": 0.13609467455621302,
+            "f1": 0.17424242424242425,
+            "support": 169
+          },
+          "DoS": {
+            "precision": 0.34743311641359365,
+            "recall": 0.7307984790874524,
+            "f1": 0.47096299926488605,
+            "support": 1315
+          },
+          "Exploits": {
+            "precision": 0.8017343318880568,
+            "recall": 0.5819742489270386,
+            "f1": 0.6744031830238727,
+            "support": 3495
+          },
+          "Fuzzers": {
+            "precision": 0.6508695652173913,
+            "recall": 0.8419572553430821,
+            "f1": 0.7341834232466895,
+            "support": 1778
+          },
+          "Generic": {
+            "precision": 0.9987623762376238,
+            "recall": 0.980082584406121,
+            "f1": 0.9893343140860611,
+            "support": 4117
+          },
+          "Normal": {
+            "precision": 0.9777777777777777,
+            "recall": 0.8481354710862907,
+            "f1": 0.9083542349990353,
+            "support": 5551
+          },
+          "Reconnaissance": {
+            "precision": 0.8649835345773875,
+            "recall": 0.7825223435948362,
+            "f1": 0.821689259645464,
+            "support": 1007
+          },
+          "Shellcode": {
+            "precision": 0.5843373493975904,
+            "recall": 0.9065420560747663,
+            "f1": 0.7106227106227107,
+            "support": 107
+          },
+          "Worms": {
+            "precision": 0.4444444444444444,
+            "recall": 0.4,
+            "f1": 0.42105263157894735,
+            "support": 10
+          }
+        },
+        "integrated": {
+          "Analysis": {
+            "precision": 0.2689655172413793,
+            "recall": 0.1902439024390244,
+            "f1": 0.22285714285714286,
+            "support": 205
+          },
+          "Backdoor": {
+            "precision": 0.14917127071823205,
+            "recall": 0.15976331360946747,
+            "f1": 0.15428571428571428,
+            "support": 169
+          },
+          "DoS": {
+            "precision": 0.35303709743171624,
+            "recall": 0.6585551330798479,
+            "f1": 0.4596602972399151,
+            "support": 1315
+          },
+          "Exploits": {
+            "precision": 0.7764405543398979,
+            "recall": 0.6091559370529328,
+            "f1": 0.6827000160333494,
+            "support": 3495
+          },
+          "Fuzzers": {
+            "precision": 0.6791921089713481,
+            "recall": 0.813273340832396,
+            "f1": 0.740209879703097,
+            "support": 1778
+          },
+          "Generic": {
+            "precision": 0.9980227385071676,
+            "recall": 0.9808112703424824,
+            "f1": 0.9893421536199927,
+            "support": 4117
+          },
+          "Normal": {
+            "precision": 0.9678514376996805,
+            "recall": 0.8731760043235453,
+            "f1": 0.9180793635760962,
+            "support": 5551
+          },
+          "Reconnaissance": {
+            "precision": 0.8780760626398211,
+            "recall": 0.7795431976166832,
+            "f1": 0.8258811152025249,
+            "support": 1007
+          },
+          "Shellcode": {
+            "precision": 0.6326530612244898,
+            "recall": 0.8691588785046729,
+            "f1": 0.7322834645669292,
+            "support": 107
+          },
+          "Worms": {
+            "precision": 0.3333333333333333,
+            "recall": 0.3,
+            "f1": 0.3157894736842105,
+            "support": 10
+          }
+        }
+      }
+    },
+    {
+      "seed": 43,
+      "kind": "Фиксированный повтор шума обучения",
+      "baseline": {
+        "macro_f1": 0.6126680405783793,
+        "weighted_f1": 0.8095697997360531,
+        "accuracy": 0.7986932522248508,
+        "balanced_accuracy": 0.6362920108320083,
+        "log_loss": 0.4823015679264481,
+        "per_class_f1": {
+          "Analysis": 0.22291021671826625,
+          "Backdoor": 0.1825726141078838,
+          "DoS": 0.4744525547445255,
+          "Exploits": 0.6728971962616822,
+          "Fuzzers": 0.7270513757000243,
+          "Generic": 0.9893316983445739,
+          "Normal": 0.9090558766859345,
+          "Reconnaissance": 0.8236525379382522,
+          "Shellcode": 0.7037037037037037,
+          "Worms": 0.42105263157894735
+        }
+      },
+      "integrated": {
+        "macro_f1": 0.6028789883894383,
+        "weighted_f1": 0.8134571177546227,
+        "accuracy": 0.8023543990086741,
+        "balanced_accuracy": 0.6241686592529413,
+        "log_loss": 0.5704856693967211,
+        "per_class_f1": {
+          "Analysis": 0.21052631578947367,
+          "Backdoor": 0.14594594594594595,
+          "DoS": 0.46417445482866043,
+          "Exploits": 0.6785830354241144,
+          "Fuzzers": 0.7412515964240102,
+          "Generic": 0.9892156862745098,
+          "Normal": 0.9167772511848341,
+          "Reconnaissance": 0.8243386243386244,
+          "Shellcode": 0.7421875,
+          "Worms": 0.3157894736842105
+        }
+      },
+      "elapsed_seconds": 121.75991571200029,
+      "fit_seconds": 119.47064935400022,
+      "peak_worker_rss_mb": 825.92,
+      "llm_calls": 0,
+      "llm_tokens": 0,
+      "resource_audit": {
+        "container": "alfa-kaggle-repeat-26ece4ed0b",
+        "cpu_total": 8.0,
+        "memory_bytes_total": 31138512896,
+        "memory_swap_bytes": 31138512896,
+        "network": "none",
+        "readonly_root": true,
+        "source": "docker inspect во время активного повтора",
+        "seed": 43
+      },
+      "network_none_verified_by_inspect": true,
+      "resource_note": "HostConfig снят во время выполнения",
+      "snapshot_modules": {
+        "contracts": "/task/contracts.py",
+        "data_io": "/task/data_io.py",
+        "experiment_store": "/task/experiment_store.py",
+        "kaggle_specs": "/task/kaggle_specs.py",
+        "metrics": "/task/metrics.py",
+        "runtime": "/task/runtime.py",
+        "task_reader": "/task/task_reader.py"
+      },
+      "absolute_improvement": -0.009789052188940994,
+      "relative_improvement_percent": -1.5977742497715073,
+      "per_class": {
+        "baseline": {
+          "Analysis": {
+            "precision": 0.3050847457627119,
+            "recall": 0.17560975609756097,
+            "f1": 0.22291021671826625,
+            "support": 205
+          },
+          "Backdoor": {
+            "precision": 0.3055555555555556,
+            "recall": 0.1301775147928994,
+            "f1": 0.1825726141078838,
+            "support": 169
+          },
+          "DoS": {
+            "precision": 0.3488372093023256,
+            "recall": 0.7414448669201521,
+            "f1": 0.4744525547445255,
+            "support": 1315
+          },
+          "Exploits": {
+            "precision": 0.8073688426111334,
+            "recall": 0.5768240343347639,
+            "f1": 0.6728971962616822,
+            "support": 3495
+          },
+          "Fuzzers": {
+            "precision": 0.6410476599398883,
+            "recall": 0.8397075365579303,
+            "f1": 0.7270513757000243,
+            "support": 1778
+          },
+          "Generic": {
+            "precision": 0.9990094105993066,
+            "recall": 0.9798396890940004,
+            "f1": 0.9893316983445739,
+            "support": 4117
+          },
+          "Normal": {
+            "precision": 0.9770138745081798,
+            "recall": 0.849936948297604,
+            "f1": 0.9090558766859345,
+            "support": 5551
+          },
+          "Reconnaissance": {
+            "precision": 0.870575221238938,
+            "recall": 0.7815292949354519,
+            "f1": 0.8236525379382522,
+            "support": 1007
+          },
+          "Shellcode": {
+            "precision": 0.5828220858895705,
+            "recall": 0.8878504672897196,
+            "f1": 0.7037037037037037,
+            "support": 107
+          },
+          "Worms": {
+            "precision": 0.4444444444444444,
+            "recall": 0.4,
+            "f1": 0.42105263157894735,
+            "support": 10
+          }
+        },
+        "integrated": {
+          "Analysis": {
+            "precision": 0.26277372262773724,
+            "recall": 0.17560975609756097,
+            "f1": 0.21052631578947367,
+            "support": 205
+          },
+          "Backdoor": {
+            "precision": 0.13432835820895522,
+            "recall": 0.15976331360946747,
+            "f1": 0.14594594594594595,
+            "support": 169
+          },
+          "DoS": {
+            "precision": 0.35238470634607805,
+            "recall": 0.6798479087452471,
+            "f1": 0.46417445482866043,
+            "support": 1315
+          },
+          "Exploits": {
+            "precision": 0.7852576156449793,
+            "recall": 0.5974248927038627,
+            "f1": 0.6785830354241144,
+            "support": 3495
+          },
+          "Fuzzers": {
+            "precision": 0.6789892372484791,
+            "recall": 0.8160854893138357,
+            "f1": 0.7412515964240102,
+            "support": 1778
+          },
+          "Generic": {
+            "precision": 0.9982686124165224,
+            "recall": 0.9803254797182415,
+            "f1": 0.9892156862745098,
+            "support": 4117
+          },
+          "Normal": {
+            "precision": 0.9673934786957391,
+            "recall": 0.8711943793911007,
+            "f1": 0.9167772511848341,
+            "support": 5551
+          },
+          "Reconnaissance": {
+            "precision": 0.8822197055492639,
+            "recall": 0.7735849056603774,
+            "f1": 0.8243386243386244,
+            "support": 1007
+          },
+          "Shellcode": {
+            "precision": 0.6375838926174496,
+            "recall": 0.8878504672897196,
+            "f1": 0.7421875,
+            "support": 107
+          },
+          "Worms": {
+            "precision": 0.3333333333333333,
+            "recall": 0.3,
+            "f1": 0.3157894736842105,
+            "support": 10
+          }
+        }
+      }
+    }
+  ],
+  "repeat_comparison": {
+    "absolute_improvement": -0.009789052188940994,
+    "relative_improvement_percent": -1.5977742497715073,
+    "improvement_ci95_conditional": [
+      -0.028101854457066373,
+      0.004439455793143424
+    ],
+    "bootstrap_note": "400 парных групповых повторов; интервал условный, без поправки на множественный выбор."
+  },
+  "fixed_candidates": {
+    "c755a04c79a8e7ae9fe8": {
+      "config": {
+        "model": "lightgbm",
+        "iterations": 2400,
+        "depth": 6,
+        "learning_rate": 0.06,
+        "regularization": 5.0,
+        "leaves": 63,
+        "min_child_samples": 60,
+        "class_weight_power": 0.5,
+        "missing_indicators": false,
+        "frequency_encoding": false,
+        "drop_time": false,
+        "target_transform": "identity",
+        "transforms": [],
+        "seed": 42,
+        "hypothesis": "Больше листьев с весами и регуляризацией"
+      },
+      "config_key": "c755a04c79a8e7ae9fe8",
+      "best_iterations": 113
+    },
+    "e44f76f2022fe9b054ea": {
+      "config": {
+        "model": "catboost",
+        "iterations": 1600,
+        "depth": 6,
+        "learning_rate": 0.06,
+        "regularization": 5.0,
+        "leaves": 31,
+        "min_child_samples": 30,
+        "class_weight_power": 0.5,
+        "missing_indicators": false,
+        "frequency_encoding": false,
+        "drop_time": false,
+        "target_transform": "identity",
+        "transforms": [],
+        "seed": 42,
+        "hypothesis": "Умеренное усиление редких классов"
+      },
+      "config_key": "e44f76f2022fe9b054ea",
+      "best_iterations": 322
+    },
+    "56a318597990af014704": {
+      "config": {
+        "model": "xgboost",
+        "iterations": 1200,
+        "depth": 6,
+        "learning_rate": 0.06,
+        "regularization": 5.0,
+        "min_child_weight": 5.0,
+        "class_weight_power": 0.5,
+        "missing_indicators": false,
+        "frequency_encoding": false,
+        "drop_time": false,
+        "seed": 42,
+        "hypothesis": "Прямой CPU XGBoost с выбором итераций по целевой метрике"
+      },
+      "config_key": "56a318597990af014704",
+      "best_iterations": 17
+    },
+    "9966b5572c48c3a01914": {
+      "config": {
+        "model": "lightgbm",
+        "iterations": 2400,
+        "depth": 6,
+        "learning_rate": 0.035,
+        "regularization": 10.0,
+        "leaves": 63,
+        "min_child_samples": 60,
+        "class_weight_power": 0.5,
+        "missing_indicators": false,
+        "frequency_encoding": false,
+        "drop_time": false,
+        "target_transform": "identity",
+        "transforms": [],
+        "seed": 42,
+        "hypothesis": "tree: атомарная проверка learning_rate=0.035"
+      },
+      "config_key": "9966b5572c48c3a01914",
+      "best_iterations": 229
+    }
+  },
+  "checks": {
+    "only_seed_changed": true,
+    "weights_preserved": true,
+    "fixed_iterations_preserved": true,
+    "confirm_indices_exact": true,
+    "paired_y_exact": true,
+    "metrics_recomputed": true,
+    "snapshot_matches_source_zip": true,
+    "repeat_llm_calls_zero": true,
+    "repeat_llm_tokens_zero": true,
+    "actual_resource_audit_present": true,
+    "single_repeat_without_seed_selection": true
+  },
+  "source_archive_sha256": "cb65fee7f64713568cbf510cfee691b3400e2b2548823f12060998a32b7bfac1",
+  "frozen_sha256": "c731ce83d66e48903287815e1b6266241367e1defb3bee64da9e47da5af3a135",
+  "confirm_sha256": "f149ae950119a7f89cc0e49f5efbce180097510e1d52e34782a863ad067ce53f"
+}
