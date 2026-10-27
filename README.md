@@ -158,6 +158,8 @@ OOF занимает не более выделенного бюджета эт�
 
 Воспроизведение сравнения на подготовленных публичных файлах:
 
+[Пошаговое руководство: A/B/C, изоляция и независимый аудит](docs/REPRODUCIBILITY.md).
+
 ```bash
 python tools/package_solution.py --output dist/alfa_solution_v4_candidate.zip
 python tools/run_release.py runs/public/regression/task.md --zip dist/alfa_solution_v4_candidate.zip --cpus 4 --memory-gb 14 --no-oof
