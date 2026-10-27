@@ -6,6 +6,19 @@ import pandas as pd
 from contracts import ExperimentSpec, TaskSpec
 
 
+def lightgbm_fit_metadata(frame: pd.DataFrame) -> dict:
+    """Имена для нативного JSON LightGBM, без изменения исходных X и порядка.
+
+    Индексы категорий необходимы вместе с явными именами: автоматический
+    pandas-путь иначе передаёт прежние имена категориальных столбцов.
+    """
+    return {
+        "feature_name": [f"_alfa_feature_{index}" for index in range(frame.shape[1])],
+        "categorical_feature": [index for index, dtype in enumerate(frame.dtypes)
+                                if isinstance(dtype, pd.CategoricalDtype)],
+    }
+
+
 class FeatureBuilder:
     def __init__(self, task: TaskSpec, config: ExperimentSpec, profile: dict):
         self.task = task

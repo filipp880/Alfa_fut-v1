@@ -1,0 +1,1745 @@
+[
+  {
+    "directory": "runs\\release\\regression_20261026T130245_415f066a",
+    "task": "regression",
+    "metric": "rmse",
+    "archive_sha256": "752afaae4fa813879bb301d7464924d9217a77999502ce10aa764ee36ed35483",
+    "confirm_score": 38.86210123626394,
+    "weights": [
+      1.0
+    ],
+    "selected_models": [
+      "history_router"
+    ],
+    "worker_jobs": 16,
+    "base_ml_fits": 23,
+    "ml_fits": 23,
+    "oof": {
+      "status": "disabled",
+      "fit_attempts": 0
+    },
+    "oracle_test_score": null,
+    "failures": [],
+    "confirmation_comparison": {
+      "planned_score": 38.86210123626394,
+      "baseline_score": 46.58330001137281
+    },
+    "host_seconds": 389.1720000000205,
+    "elapsed_source": "host_monotonic",
+    "agent_seconds": 388.694031474,
+    "cpu": 4.0,
+    "memory_limit_bytes": 15032385536,
+    "csv_rows": 22449,
+    "csv_sha256": "8475ffdf967d7f8eddf0062a9c0d372688c3c53e5babc769f1ae1947f8f4b14b",
+    "whole_plan_frozen_before_confirm": true,
+    "profile_search_train_only": true,
+    "refit_completed": true,
+    "no_iteration_cap": true,
+    "jobs": [
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 44.39919946570952,
+        "fits": 1,
+        "seconds": 12.43350977800003
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 43.67393145977802,
+        "fits": 1,
+        "seconds": 4.418262213000048
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 43.1132982212882,
+        "fits": 1,
+        "seconds": 33.677998640000055
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 45.303700657710785,
+        "fits": 1,
+        "seconds": 3.415663605999953
+      },
+      {
+        "phase": "search",
+        "model": "extra_trees",
+        "score": 44.44122078691401,
+        "fits": 1,
+        "seconds": 19.049227062
+      },
+      {
+        "phase": "search",
+        "model": "history_router",
+        "score": 33.6912803935065,
+        "fits": 2,
+        "seconds": 28.06830551600001
+      },
+      {
+        "phase": "search",
+        "model": "history_router",
+        "score": 33.113926150324964,
+        "fits": 3,
+        "seconds": 36.88848149699993
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 45.38975539927439,
+        "fits": 1,
+        "seconds": 7.021213078999949
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 44.28557705576681,
+        "fits": 1,
+        "seconds": 13.03522724000004
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 43.57328447978615,
+        "fits": 1,
+        "seconds": 14.836944405000054
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 44.4021711367113,
+        "fits": 1,
+        "seconds": 15.037603970000077
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 46.65235935488524,
+        "fits": 1,
+        "seconds": 7.0223107099999424
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 44.704915055717784,
+        "fits": 1,
+        "seconds": 6.221047957999986
+      },
+      {
+        "phase": "confirm",
+        "model": "history_router",
+        "score": 38.86210123626394,
+        "fits": 3,
+        "seconds": 57.335392652999985
+      },
+      {
+        "phase": "confirm",
+        "model": "extra_trees",
+        "score": 46.58330001137281,
+        "fits": 1,
+        "seconds": 34.68913912900007
+      },
+      {
+        "phase": "refit",
+        "model": "history_router",
+        "score": null,
+        "fits": 3,
+        "seconds": 89.61432334599999
+      }
+    ],
+    "checks": {
+      "manual_metrics": true,
+      "source_zip_intact": true,
+      "original_data_intact": true,
+      "exact_indices": true,
+      "fixed_confirm_and_refit": true,
+      "csv_matches_full_refit": true,
+      "approved_dependencies": true
+    },
+    "benchmark_task": "public/regression",
+    "arm": "A"
+  },
+  {
+    "directory": "runs\\release\\classification_20261026T130246_62a301c3",
+    "task": "classification",
+    "metric": "macro_f1",
+    "archive_sha256": "752afaae4fa813879bb301d7464924d9217a77999502ce10aa764ee36ed35483",
+    "confirm_score": 0.6111095180710091,
+    "weights": [
+      0.5,
+      0.5
+    ],
+    "selected_models": [
+      "lightgbm",
+      "catboost"
+    ],
+    "worker_jobs": 14,
+    "base_ml_fits": 14,
+    "ml_fits": 14,
+    "oof": {
+      "status": "disabled",
+      "fit_attempts": 0
+    },
+    "oracle_test_score": null,
+    "failures": [],
+    "confirmation_comparison": {
+      "planned_score": 0.6111095180710091,
+      "baseline_score": 0.6111095180710091
+    },
+    "host_seconds": 2427.530999999988,
+    "elapsed_source": "host_monotonic",
+    "agent_seconds": 2427.22827069,
+    "cpu": 4.0,
+    "memory_limit_bytes": 15032385536,
+    "csv_rows": 41166,
+    "csv_sha256": "a8cd4e2277ead2b28e50062ca4957c6b9f83dcb9bc37771feef1c4c000aa699d",
+    "whole_plan_frozen_before_confirm": true,
+    "profile_search_train_only": true,
+    "refit_completed": true,
+    "no_iteration_cap": true,
+    "jobs": [
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 0.553108142890373,
+        "fits": 1,
+        "seconds": 612.8423024169999
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 0.5609292270430296,
+        "fits": 1,
+        "seconds": 12.031783761999804
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 0.5990504338937128,
+        "fits": 1,
+        "seconds": 162.50200583600008
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 0.6149913913440417,
+        "fits": 1,
+        "seconds": 13.634011029000021
+      },
+      {
+        "phase": "search",
+        "model": "extra_trees",
+        "score": 0.6089003037275156,
+        "fits": 1,
+        "seconds": 23.05514505799988
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 0.5138220006335877,
+        "fits": 1,
+        "seconds": 77.551230476
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 0.6129440026765052,
+        "fits": 1,
+        "seconds": 12.03175239899997
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 0.6040593454032865,
+        "fits": 1,
+        "seconds": 466.2686776339999
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 0.6022618695715735,
+        "fits": 1,
+        "seconds": 288.73036251500025
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 0.6068492546057833,
+        "fits": 1,
+        "seconds": 383.7487876719997
+      },
+      {
+        "phase": "confirm",
+        "model": "lightgbm",
+        "score": 0.5989991605570064,
+        "fits": 1,
+        "seconds": 10.831147992000297
+      },
+      {
+        "phase": "confirm",
+        "model": "catboost",
+        "score": 0.5830620572934185,
+        "fits": 1,
+        "seconds": 146.88497936900012
+      },
+      {
+        "phase": "refit",
+        "model": "lightgbm",
+        "score": null,
+        "fits": 1,
+        "seconds": 9.828439455999614
+      },
+      {
+        "phase": "refit",
+        "model": "catboost",
+        "score": null,
+        "fits": 1,
+        "seconds": 179.74566337299984
+      }
+    ],
+    "checks": {
+      "manual_metrics": true,
+      "source_zip_intact": true,
+      "original_data_intact": true,
+      "exact_indices": true,
+      "fixed_confirm_and_refit": true,
+      "csv_matches_full_refit": true,
+      "approved_dependencies": true
+    },
+    "benchmark_task": "public/classification",
+    "arm": "A"
+  },
+  {
+    "directory": "runs\\release\\regression_20261027T000649_219772ad",
+    "task": "regression",
+    "metric": "rmse",
+    "archive_sha256": "ce4d46965cc4f13eae67e0eeb0033c284bf6e9e3cbe48c9782964a3d2ea15708",
+    "confirm_score": 38.86210123626394,
+    "weights": [
+      1.0
+    ],
+    "selected_models": [
+      "history_router"
+    ],
+    "worker_jobs": 17,
+    "base_ml_fits": 24,
+    "ml_fits": 24,
+    "oof": {
+      "status": "disabled",
+      "fit_attempts": 0
+    },
+    "oracle_test_score": null,
+    "failures": [],
+    "confirmation_comparison": {
+      "planned_score": 38.86210123626394,
+      "legacy_score": 38.86210123626394,
+      "baseline_score": 46.58330001137281,
+      "guard_score": 38.86210123626394
+    },
+    "host_seconds": 494.07800000000043,
+    "elapsed_source": "host_monotonic",
+    "agent_seconds": 493.17306030299994,
+    "cpu": 4.0,
+    "memory_limit_bytes": 15032385536,
+    "csv_rows": 22449,
+    "csv_sha256": "b8a5ae328e655621bdbf35c0bd617751f6f67b21bfc820bafed78895e3279a3c",
+    "whole_plan_frozen_before_confirm": true,
+    "profile_search_train_only": true,
+    "refit_completed": true,
+    "no_iteration_cap": true,
+    "jobs": [
+      {
+        "phase": "search",
+        "model": "linear",
+        "score": 50.70160681506004,
+        "fits": 1,
+        "seconds": 3.014315780000004
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 44.39919946570952,
+        "fits": 1,
+        "seconds": 15.842682182999994
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 43.67393145977802,
+        "fits": 1,
+        "seconds": 6.4243505549999895
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 43.1132982212882,
+        "fits": 1,
+        "seconds": 45.519262930999986
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 45.303700657710785,
+        "fits": 1,
+        "seconds": 4.62056677999999
+      },
+      {
+        "phase": "search",
+        "model": "extra_trees",
+        "score": 44.441220786914016,
+        "fits": 1,
+        "seconds": 24.470739865000013
+      },
+      {
+        "phase": "search",
+        "model": "history_router",
+        "score": 33.6912803935065,
+        "fits": 2,
+        "seconds": 41.323409392
+      },
+      {
+        "phase": "search",
+        "model": "history_router",
+        "score": 33.113926150324964,
+        "fits": 3,
+        "seconds": 47.330948895000006
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 45.38975539927439,
+        "fits": 1,
+        "seconds": 7.8256075250000094
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 44.28557705576681,
+        "fits": 1,
+        "seconds": 13.43438199000002
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 43.57328447978615,
+        "fits": 1,
+        "seconds": 15.441020667999965
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 44.4021711367113,
+        "fits": 1,
+        "seconds": 16.04081381000003
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 46.65235935488524,
+        "fits": 1,
+        "seconds": 6.822256974999959
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 44.704915055717784,
+        "fits": 1,
+        "seconds": 6.422088911999992
+      },
+      {
+        "phase": "confirm",
+        "model": "history_router",
+        "score": 38.86210123626394,
+        "fits": 3,
+        "seconds": 58.336897162000014
+      },
+      {
+        "phase": "confirm",
+        "model": "extra_trees",
+        "score": 46.58330001137281,
+        "fits": 1,
+        "seconds": 45.53948734099998
+      },
+      {
+        "phase": "refit",
+        "model": "history_router",
+        "score": null,
+        "fits": 3,
+        "seconds": 126.985810523
+      }
+    ],
+    "checks": {
+      "manual_metrics": true,
+      "source_zip_intact": true,
+      "original_data_intact": true,
+      "exact_indices": true,
+      "fixed_confirm_and_refit": true,
+      "csv_matches_full_refit": true,
+      "approved_dependencies": true
+    },
+    "benchmark_task": "public/regression",
+    "arm": "B"
+  },
+  {
+    "directory": "runs\\release\\regression_20261027T000703_bd93fbc7",
+    "task": "regression",
+    "metric": "rmse",
+    "archive_sha256": "ce4d46965cc4f13eae67e0eeb0033c284bf6e9e3cbe48c9782964a3d2ea15708",
+    "confirm_score": 38.86210123626394,
+    "weights": [
+      1.0
+    ],
+    "selected_models": [
+      "history_router"
+    ],
+    "worker_jobs": 17,
+    "base_ml_fits": 24,
+    "ml_fits": 30,
+    "oof": {
+      "status": "completed",
+      "reason": null,
+      "fit_attempts": 6,
+      "completed_fits": 6,
+      "validated_fits": 6,
+      "elapsed_seconds": 62.715683426,
+      "weights": [
+        0.3,
+        0.7,
+        0.0
+      ],
+      "oof_score": 50.793709034467305,
+      "checks_passed": true,
+      "rows": 19937,
+      "warmup_rows": 2117,
+      "grid_points": 73,
+      "effective_families": 2,
+      "selected": false,
+      "search_valid_score": 43.14529968378941,
+      "legacy_search_valid_score": 33.11392615032497,
+      "search_valid_accepted": false
+    },
+    "oracle_test_score": null,
+    "failures": [],
+    "confirmation_comparison": {
+      "planned_score": 38.86210123626394,
+      "legacy_score": 38.86210123626394,
+      "baseline_score": 46.58330001137281,
+      "guard_score": 38.86210123626394
+    },
+    "host_seconds": 555.0619999999999,
+    "elapsed_source": "host_monotonic",
+    "agent_seconds": 554.4823479690001,
+    "cpu": 4.0,
+    "memory_limit_bytes": 15032385536,
+    "csv_rows": 22449,
+    "csv_sha256": "1d617ea48ff1e244d8362a250ae16a2ff948aa3442ce7cc96542f5a1064cba19",
+    "whole_plan_frozen_before_confirm": true,
+    "profile_search_train_only": true,
+    "refit_completed": true,
+    "no_iteration_cap": true,
+    "jobs": [
+      {
+        "phase": "search",
+        "model": "linear",
+        "score": 50.70160681506004,
+        "fits": 1,
+        "seconds": 3.819017131999999
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 44.39919946570952,
+        "fits": 1,
+        "seconds": 18.651336864
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 43.67393145977802,
+        "fits": 1,
+        "seconds": 6.626150781999996
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 43.1132982212882,
+        "fits": 1,
+        "seconds": 46.12276573400001
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 45.303700657710785,
+        "fits": 1,
+        "seconds": 5.020691063999976
+      },
+      {
+        "phase": "search",
+        "model": "extra_trees",
+        "score": 44.44122078691401,
+        "fits": 1,
+        "seconds": 28.71820728900002
+      },
+      {
+        "phase": "search",
+        "model": "history_router",
+        "score": 33.6912803935065,
+        "fits": 2,
+        "seconds": 37.10908058199999
+      },
+      {
+        "phase": "search",
+        "model": "history_router",
+        "score": 33.11392615032497,
+        "fits": 3,
+        "seconds": 44.11163125600001
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 45.38975539927439,
+        "fits": 1,
+        "seconds": 7.4252853429999846
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 44.28557705576681,
+        "fits": 1,
+        "seconds": 13.835948152000014
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 43.57328447978615,
+        "fits": 1,
+        "seconds": 16.040914819000022
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 44.4021711367113,
+        "fits": 1,
+        "seconds": 14.63810614199997
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 46.65235935488524,
+        "fits": 1,
+        "seconds": 7.422863442999983
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 44.704915055717784,
+        "fits": 1,
+        "seconds": 7.627021683999999
+      },
+      {
+        "phase": "confirm",
+        "model": "history_router",
+        "score": 38.86210123626394,
+        "fits": 3,
+        "seconds": 79.84318975800005
+      },
+      {
+        "phase": "confirm",
+        "model": "extra_trees",
+        "score": 46.58330001137281,
+        "fits": 1,
+        "seconds": 56.988708781000014
+      },
+      {
+        "phase": "refit",
+        "model": "history_router",
+        "score": null,
+        "fits": 3,
+        "seconds": 89.80994972299993
+      }
+    ],
+    "checks": {
+      "manual_metrics": true,
+      "source_zip_intact": true,
+      "original_data_intact": true,
+      "exact_indices": true,
+      "fixed_confirm_and_refit": true,
+      "csv_matches_full_refit": true,
+      "approved_dependencies": true
+    },
+    "benchmark_task": "public/regression",
+    "arm": "C"
+  },
+  {
+    "directory": "runs\\release\\linear_regression_20261027T010850_c15628a2",
+    "task": "regression",
+    "metric": "rmse",
+    "archive_sha256": "752afaae4fa813879bb301d7464924d9217a77999502ce10aa764ee36ed35483",
+    "confirm_score": 3.680817164531453,
+    "weights": [
+      0.75,
+      0.25
+    ],
+    "selected_models": [
+      "catboost",
+      "catboost"
+    ],
+    "worker_jobs": 11,
+    "base_ml_fits": 11,
+    "ml_fits": 11,
+    "oof": {
+      "status": "disabled",
+      "fit_attempts": 0
+    },
+    "oracle_test_score": 21.045202658332,
+    "failures": [],
+    "confirmation_comparison": {
+      "planned_score": 3.680817164531453,
+      "baseline_score": 12.169788329036303
+    },
+    "host_seconds": 43.76499999999942,
+    "elapsed_source": "host_monotonic",
+    "agent_seconds": 43.27439970600017,
+    "cpu": 4.0,
+    "memory_limit_bytes": 15032385536,
+    "csv_rows": 400,
+    "csv_sha256": "b3f9d20f58f31dedc07f5d0494fd679ba999a02e59c570e3d40041e1b62465b6",
+    "whole_plan_frozen_before_confirm": true,
+    "profile_search_train_only": true,
+    "refit_completed": true,
+    "no_iteration_cap": true,
+    "jobs": [
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 4.233982127534708,
+        "fits": 1,
+        "seconds": 4.015292638000119
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 6.493599203667789,
+        "fits": 1,
+        "seconds": 2.4129173169999376
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 6.233915851726548,
+        "fits": 1,
+        "seconds": 13.238843161000204
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 6.288541744181166,
+        "fits": 1,
+        "seconds": 1.8131357880001815
+      },
+      {
+        "phase": "search",
+        "model": "extra_trees",
+        "score": 12.599976480313275,
+        "fits": 1,
+        "seconds": 1.8129939799996464
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 3.9897838003337815,
+        "fits": 1,
+        "seconds": 3.2145700510000097
+      },
+      {
+        "phase": "confirm",
+        "model": "catboost",
+        "score": 3.6652385990203666,
+        "fits": 1,
+        "seconds": 2.8137594969998645
+      },
+      {
+        "phase": "confirm",
+        "model": "catboost",
+        "score": 4.060352997783097,
+        "fits": 1,
+        "seconds": 3.2154238790003546
+      },
+      {
+        "phase": "confirm",
+        "model": "extra_trees",
+        "score": 12.169788329036303,
+        "fits": 1,
+        "seconds": 2.213303108999753
+      },
+      {
+        "phase": "refit",
+        "model": "catboost",
+        "score": null,
+        "fits": 1,
+        "seconds": 2.813446595000187
+      },
+      {
+        "phase": "refit",
+        "model": "catboost",
+        "score": null,
+        "fits": 1,
+        "seconds": 3.6152758610001
+      }
+    ],
+    "checks": {
+      "manual_metrics": true,
+      "source_zip_intact": true,
+      "original_data_intact": true,
+      "exact_indices": true,
+      "fixed_confirm_and_refit": true,
+      "csv_matches_full_refit": true,
+      "approved_dependencies": true
+    },
+    "benchmark_task": "linear_benchmarks/linear_regression",
+    "arm": "A"
+  },
+  {
+    "directory": "runs\\release\\linear_regression_20261027T010850_6a9a4bcf",
+    "task": "regression",
+    "metric": "rmse",
+    "archive_sha256": "ce4d46965cc4f13eae67e0eeb0033c284bf6e9e3cbe48c9782964a3d2ea15708",
+    "confirm_score": 0.2280447987849037,
+    "weights": [
+      1.0
+    ],
+    "selected_models": [
+      "linear"
+    ],
+    "worker_jobs": 9,
+    "base_ml_fits": 9,
+    "ml_fits": 9,
+    "oof": {
+      "status": "disabled",
+      "fit_attempts": 0
+    },
+    "oracle_test_score": 0.25992444817059723,
+    "failures": [],
+    "confirmation_comparison": {
+      "planned_score": 0.2280447987849037,
+      "legacy_score": 0.2280447987849037,
+      "baseline_score": 12.169788329036303,
+      "guard_score": 0.2280447987849037
+    },
+    "host_seconds": 31.45299999999952,
+    "elapsed_source": "host_monotonic",
+    "agent_seconds": 30.96438381600001,
+    "cpu": 4.0,
+    "memory_limit_bytes": 15032385536,
+    "csv_rows": 400,
+    "csv_sha256": "df31346724c6994b937b9ed7c5f1d4f41e8ceb155a729602d761c1f42d8cfc9d",
+    "whole_plan_frozen_before_confirm": true,
+    "profile_search_train_only": true,
+    "refit_completed": true,
+    "no_iteration_cap": true,
+    "jobs": [
+      {
+        "phase": "search",
+        "model": "linear",
+        "score": 0.25128344127427776,
+        "fits": 1,
+        "seconds": 1.2137887320000118
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 4.233982127534708,
+        "fits": 1,
+        "seconds": 4.0162284180000825
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 6.493599203667789,
+        "fits": 1,
+        "seconds": 2.4142070929997317
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 6.233915851726548,
+        "fits": 1,
+        "seconds": 13.239611972000148
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 6.288541744181166,
+        "fits": 1,
+        "seconds": 1.8137017210001432
+      },
+      {
+        "phase": "search",
+        "model": "extra_trees",
+        "score": 12.599976480313275,
+        "fits": 1,
+        "seconds": 1.8137179220002508
+      },
+      {
+        "phase": "confirm",
+        "model": "linear",
+        "score": 0.2280447987849037,
+        "fits": 1,
+        "seconds": 1.210810243999731
+      },
+      {
+        "phase": "confirm",
+        "model": "extra_trees",
+        "score": 12.169788329036303,
+        "fits": 1,
+        "seconds": 2.0141917490000196
+      },
+      {
+        "phase": "refit",
+        "model": "linear",
+        "score": null,
+        "fits": 1,
+        "seconds": 1.2107347810001556
+      }
+    ],
+    "checks": {
+      "manual_metrics": true,
+      "source_zip_intact": true,
+      "original_data_intact": true,
+      "exact_indices": true,
+      "fixed_confirm_and_refit": true,
+      "csv_matches_full_refit": true,
+      "approved_dependencies": true
+    },
+    "benchmark_task": "linear_benchmarks/linear_regression",
+    "arm": "B"
+  },
+  {
+    "directory": "runs\\release\\linear_regression_20261027T010923_5d635975",
+    "task": "regression",
+    "metric": "rmse",
+    "archive_sha256": "ce4d46965cc4f13eae67e0eeb0033c284bf6e9e3cbe48c9782964a3d2ea15708",
+    "confirm_score": 0.2280447987849037,
+    "weights": [
+      1.0
+    ],
+    "selected_models": [
+      "linear"
+    ],
+    "worker_jobs": 9,
+    "base_ml_fits": 9,
+    "ml_fits": 18,
+    "oof": {
+      "status": "completed",
+      "reason": null,
+      "fit_attempts": 9,
+      "completed_fits": 9,
+      "validated_fits": 9,
+      "elapsed_seconds": 20.707005551999828,
+      "weights": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "oof_score": 0.3013401661145821,
+      "checks_passed": true,
+      "rows": 900,
+      "warmup_rows": 0,
+      "grid_points": 73,
+      "effective_families": 1,
+      "selected": false,
+      "search_valid_score": 0.25128344127427776,
+      "legacy_search_valid_score": 0.25128344127427776,
+      "search_valid_accepted": false
+    },
+    "oracle_test_score": 0.25992444817059723,
+    "failures": [],
+    "confirmation_comparison": {
+      "planned_score": 0.2280447987849037,
+      "legacy_score": 0.2280447987849037,
+      "baseline_score": 12.169788329036301,
+      "guard_score": 0.2280447987849037
+    },
+    "host_seconds": 51.65600000000086,
+    "elapsed_source": "host_monotonic",
+    "agent_seconds": 51.17587252900012,
+    "cpu": 4.0,
+    "memory_limit_bytes": 15032385536,
+    "csv_rows": 400,
+    "csv_sha256": "df31346724c6994b937b9ed7c5f1d4f41e8ceb155a729602d761c1f42d8cfc9d",
+    "whole_plan_frozen_before_confirm": true,
+    "profile_search_train_only": true,
+    "refit_completed": true,
+    "no_iteration_cap": true,
+    "jobs": [
+      {
+        "phase": "search",
+        "model": "linear",
+        "score": 0.25128344127427776,
+        "fits": 1,
+        "seconds": 1.4124827760001608
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 4.233982127534708,
+        "fits": 1,
+        "seconds": 3.816724660000091
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 6.493599203667789,
+        "fits": 1,
+        "seconds": 2.4151050650002617
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 6.233915851726548,
+        "fits": 1,
+        "seconds": 12.036582047000138
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 6.288541744181166,
+        "fits": 1,
+        "seconds": 1.8116019990002314
+      },
+      {
+        "phase": "search",
+        "model": "extra_trees",
+        "score": 12.599976480313275,
+        "fits": 1,
+        "seconds": 2.214626224999847
+      },
+      {
+        "phase": "confirm",
+        "model": "linear",
+        "score": 0.2280447987849037,
+        "fits": 1,
+        "seconds": 1.2137740839998514
+      },
+      {
+        "phase": "confirm",
+        "model": "extra_trees",
+        "score": 12.169788329036301,
+        "fits": 1,
+        "seconds": 2.0124068280001666
+      },
+      {
+        "phase": "refit",
+        "model": "linear",
+        "score": null,
+        "fits": 1,
+        "seconds": 1.411286519999976
+      }
+    ],
+    "checks": {
+      "manual_metrics": true,
+      "source_zip_intact": true,
+      "original_data_intact": true,
+      "exact_indices": true,
+      "fixed_confirm_and_refit": true,
+      "csv_matches_full_refit": true,
+      "approved_dependencies": true
+    },
+    "benchmark_task": "linear_benchmarks/linear_regression",
+    "arm": "C"
+  },
+  {
+    "directory": "runs\\release\\linear_classification_20261027T010936_f1fc4682",
+    "task": "classification",
+    "metric": "macro_f1",
+    "archive_sha256": "752afaae4fa813879bb301d7464924d9217a77999502ce10aa764ee36ed35483",
+    "confirm_score": 0.8765875941389369,
+    "weights": [
+      1.0
+    ],
+    "selected_models": [
+      "catboost"
+    ],
+    "worker_jobs": 8,
+    "base_ml_fits": 8,
+    "ml_fits": 8,
+    "oof": {
+      "status": "disabled",
+      "fit_attempts": 0
+    },
+    "oracle_test_score": 0.84875466337212,
+    "failures": [],
+    "confirmation_comparison": {
+      "planned_score": 0.8765875941389369,
+      "baseline_score": 0.8765875941389369
+    },
+    "host_seconds": 27.360000000000582,
+    "elapsed_source": "host_monotonic",
+    "agent_seconds": 26.85263669799997,
+    "cpu": 4.0,
+    "memory_limit_bytes": 15032385536,
+    "csv_rows": 400,
+    "csv_sha256": "c7706f532a2ca4e5d59588c593f5e605a77cbbbadf89316debe3e490945bd1cf",
+    "whole_plan_frozen_before_confirm": true,
+    "profile_search_train_only": true,
+    "refit_completed": true,
+    "no_iteration_cap": true,
+    "jobs": [
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 0.8799437157646114,
+        "fits": 1,
+        "seconds": 3.8193967840002188
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 0.8766479124469672,
+        "fits": 1,
+        "seconds": 2.8138354350003283
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 0.8699432132267954,
+        "fits": 1,
+        "seconds": 5.819630747000247
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 0.8932272923624126,
+        "fits": 1,
+        "seconds": 2.415592136000214
+      },
+      {
+        "phase": "search",
+        "model": "extra_trees",
+        "score": 0.7761429928096595,
+        "fits": 1,
+        "seconds": 2.2139075709997087
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 0.9099821746880571,
+        "fits": 1,
+        "seconds": 2.814494382999783
+      },
+      {
+        "phase": "confirm",
+        "model": "catboost",
+        "score": 0.8765875941389369,
+        "fits": 1,
+        "seconds": 2.214268811999773
+      },
+      {
+        "phase": "refit",
+        "model": "catboost",
+        "score": null,
+        "fits": 1,
+        "seconds": 2.211912392999693
+      }
+    ],
+    "checks": {
+      "manual_metrics": true,
+      "source_zip_intact": true,
+      "original_data_intact": true,
+      "exact_indices": true,
+      "fixed_confirm_and_refit": true,
+      "csv_matches_full_refit": true,
+      "approved_dependencies": true
+    },
+    "benchmark_task": "linear_benchmarks/linear_classification",
+    "arm": "A"
+  },
+  {
+    "directory": "runs\\release\\linear_classification_20261027T011004_a9336c1f",
+    "task": "classification",
+    "metric": "macro_f1",
+    "archive_sha256": "ce4d46965cc4f13eae67e0eeb0033c284bf6e9e3cbe48c9782964a3d2ea15708",
+    "confirm_score": 0.9536377444059384,
+    "weights": [
+      1.0
+    ],
+    "selected_models": [
+      "linear"
+    ],
+    "worker_jobs": 8,
+    "base_ml_fits": 8,
+    "ml_fits": 8,
+    "oof": {
+      "status": "disabled",
+      "fit_attempts": 0
+    },
+    "oracle_test_score": 0.9422624065558836,
+    "failures": [],
+    "confirmation_comparison": {
+      "planned_score": 0.9536377444059384,
+      "legacy_score": 0.9536377444059384,
+      "baseline_score": 0.9536377444059384,
+      "guard_score": 0.9536377444059384
+    },
+    "host_seconds": 23.57799999999952,
+    "elapsed_source": "host_monotonic",
+    "agent_seconds": 23.023218168000312,
+    "cpu": 4.0,
+    "memory_limit_bytes": 15032385536,
+    "csv_rows": 400,
+    "csv_sha256": "e70d05daaef5ab327771729ef7e810d03aadce9ee56d59b5069b75718695eb0e",
+    "whole_plan_frozen_before_confirm": true,
+    "profile_search_train_only": true,
+    "refit_completed": true,
+    "no_iteration_cap": true,
+    "jobs": [
+      {
+        "phase": "search",
+        "model": "linear",
+        "score": 0.9598542613021848,
+        "fits": 1,
+        "seconds": 1.2094935280001664
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 0.8799437157646114,
+        "fits": 1,
+        "seconds": 3.0156922219998705
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 0.8766479124469672,
+        "fits": 1,
+        "seconds": 2.6129658039999413
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 0.8699432132267954,
+        "fits": 1,
+        "seconds": 6.2206435550001515
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 0.8932272923624126,
+        "fits": 1,
+        "seconds": 2.6144771419999415
+      },
+      {
+        "phase": "search",
+        "model": "extra_trees",
+        "score": 0.7761429928096595,
+        "fits": 1,
+        "seconds": 2.2132307090000722
+      },
+      {
+        "phase": "confirm",
+        "model": "linear",
+        "score": 0.9536377444059384,
+        "fits": 1,
+        "seconds": 1.2130553859997235
+      },
+      {
+        "phase": "refit",
+        "model": "linear",
+        "score": null,
+        "fits": 1,
+        "seconds": 1.410571592999986
+      }
+    ],
+    "checks": {
+      "manual_metrics": true,
+      "source_zip_intact": true,
+      "original_data_intact": true,
+      "exact_indices": true,
+      "fixed_confirm_and_refit": true,
+      "csv_matches_full_refit": true,
+      "approved_dependencies": true
+    },
+    "benchmark_task": "linear_benchmarks/linear_classification",
+    "arm": "B"
+  },
+  {
+    "directory": "runs\\release\\linear_classification_20261027T011015_fe981f57",
+    "task": "classification",
+    "metric": "macro_f1",
+    "archive_sha256": "ce4d46965cc4f13eae67e0eeb0033c284bf6e9e3cbe48c9782964a3d2ea15708",
+    "confirm_score": 0.9536377444059384,
+    "weights": [
+      1.0
+    ],
+    "selected_models": [
+      "linear"
+    ],
+    "worker_jobs": 8,
+    "base_ml_fits": 8,
+    "ml_fits": 17,
+    "oof": {
+      "status": "completed",
+      "reason": null,
+      "fit_attempts": 9,
+      "completed_fits": 9,
+      "validated_fits": 9,
+      "elapsed_seconds": 16.410668135999913,
+      "weights": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "oof_score": 0.9379727273081159,
+      "checks_passed": true,
+      "rows": 900,
+      "warmup_rows": 0,
+      "grid_points": 73,
+      "effective_families": 1,
+      "selected": false,
+      "search_valid_score": 0.9598542613021848,
+      "legacy_search_valid_score": 0.9598542613021848,
+      "search_valid_accepted": false
+    },
+    "oracle_test_score": 0.9422624065558836,
+    "failures": [],
+    "confirmation_comparison": {
+      "planned_score": 0.9536377444059384,
+      "legacy_score": 0.9536377444059384,
+      "baseline_score": 0.9536377444059384,
+      "guard_score": 0.9536377444059384
+    },
+    "host_seconds": 39.40699999999924,
+    "elapsed_source": "host_monotonic",
+    "agent_seconds": 38.88268429600021,
+    "cpu": 4.0,
+    "memory_limit_bytes": 15032385536,
+    "csv_rows": 400,
+    "csv_sha256": "e70d05daaef5ab327771729ef7e810d03aadce9ee56d59b5069b75718695eb0e",
+    "whole_plan_frozen_before_confirm": true,
+    "profile_search_train_only": true,
+    "refit_completed": true,
+    "no_iteration_cap": true,
+    "jobs": [
+      {
+        "phase": "search",
+        "model": "linear",
+        "score": 0.9598542613021848,
+        "fits": 1,
+        "seconds": 1.614729578999686
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 0.8799437157646114,
+        "fits": 1,
+        "seconds": 3.2163450970001577
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 0.8766479124469672,
+        "fits": 1,
+        "seconds": 2.614859759999945
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 0.8699432132267954,
+        "fits": 1,
+        "seconds": 5.42072945200016
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 0.8932272923624126,
+        "fits": 1,
+        "seconds": 2.412937839999813
+      },
+      {
+        "phase": "search",
+        "model": "extra_trees",
+        "score": 0.7761429928096595,
+        "fits": 1,
+        "seconds": 2.2141493939998327
+      },
+      {
+        "phase": "confirm",
+        "model": "linear",
+        "score": 0.9536377444059384,
+        "fits": 1,
+        "seconds": 1.2126970119998077
+      },
+      {
+        "phase": "refit",
+        "model": "linear",
+        "score": null,
+        "fits": 1,
+        "seconds": 1.2134937569999238
+      }
+    ],
+    "checks": {
+      "manual_metrics": true,
+      "source_zip_intact": true,
+      "original_data_intact": true,
+      "exact_indices": true,
+      "fixed_confirm_and_refit": true,
+      "csv_matches_full_refit": true,
+      "approved_dependencies": true
+    },
+    "benchmark_task": "linear_benchmarks/linear_classification",
+    "arm": "C"
+  },
+  {
+    "directory": "runs\\release\\classification_20261027T001802_88c4c41e",
+    "task": "classification",
+    "metric": "macro_f1",
+    "archive_sha256": "ce4d46965cc4f13eae67e0eeb0033c284bf6e9e3cbe48c9782964a3d2ea15708",
+    "confirm_score": 0.6111095180710091,
+    "weights": [
+      0.5,
+      0.5
+    ],
+    "selected_models": [
+      "lightgbm",
+      "catboost"
+    ],
+    "worker_jobs": 16,
+    "base_ml_fits": 16,
+    "ml_fits": 16,
+    "oof": {
+      "status": "disabled",
+      "fit_attempts": 0
+    },
+    "oracle_test_score": null,
+    "failures": [],
+    "confirmation_comparison": {
+      "planned_score": 0.598253218705308,
+      "legacy_score": 0.598253218705308,
+      "baseline_score": 0.6111095180710091,
+      "guard_score": 0.6111095180710091
+    },
+    "host_seconds": 2927.093,
+    "elapsed_source": "host_monotonic",
+    "agent_seconds": 2926.800494484,
+    "cpu": 4.0,
+    "memory_limit_bytes": 15032385536,
+    "csv_rows": 41166,
+    "csv_sha256": "a8cd4e2277ead2b28e50062ca4957c6b9f83dcb9bc37771feef1c4c000aa699d",
+    "whole_plan_frozen_before_confirm": true,
+    "profile_search_train_only": true,
+    "refit_completed": true,
+    "no_iteration_cap": true,
+    "jobs": [
+      {
+        "phase": "search",
+        "model": "linear",
+        "score": 0.46171932938472615,
+        "fits": 1,
+        "seconds": 23.053950729000007
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 0.553108142890373,
+        "fits": 1,
+        "seconds": 645.891893271
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 0.5609292270430296,
+        "fits": 1,
+        "seconds": 13.633902284999976
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 0.5990504338937128,
+        "fits": 1,
+        "seconds": 196.59572596499993
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 0.6149913913440417,
+        "fits": 1,
+        "seconds": 15.438873433000026
+      },
+      {
+        "phase": "search",
+        "model": "extra_trees",
+        "score": 0.6089003037275156,
+        "fits": 1,
+        "seconds": 35.503989763999925
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 0.5138220006335877,
+        "fits": 1,
+        "seconds": 98.00764091400015
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 0.6129440026765052,
+        "fits": 1,
+        "seconds": 14.638063404999912
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 0.6040593454032865,
+        "fits": 1,
+        "seconds": 609.13499903
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 0.6022618695715735,
+        "fits": 1,
+        "seconds": 349.92097861699995
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 0.6068492546057833,
+        "fits": 1,
+        "seconds": 448.0912094240002
+      },
+      {
+        "phase": "confirm",
+        "model": "lightgbm",
+        "score": 0.5989991605570064,
+        "fits": 1,
+        "seconds": 10.027250397999978
+      },
+      {
+        "phase": "confirm",
+        "model": "linear",
+        "score": 0.4309925902644485,
+        "fits": 1,
+        "seconds": 39.88452975300015
+      },
+      {
+        "phase": "confirm",
+        "model": "catboost",
+        "score": 0.5830620572934185,
+        "fits": 1,
+        "seconds": 166.34569613999975
+      },
+      {
+        "phase": "refit",
+        "model": "lightgbm",
+        "score": null,
+        "fits": 1,
+        "seconds": 11.431737296000392
+      },
+      {
+        "phase": "refit",
+        "model": "catboost",
+        "score": null,
+        "fits": 1,
+        "seconds": 221.05743519499993
+      }
+    ],
+    "checks": {
+      "manual_metrics": true,
+      "source_zip_intact": true,
+      "original_data_intact": true,
+      "exact_indices": true,
+      "fixed_confirm_and_refit": true,
+      "csv_matches_full_refit": true,
+      "approved_dependencies": true
+    },
+    "benchmark_task": "public/classification",
+    "arm": "B"
+  },
+  {
+    "directory": "runs\\release\\classification_20261027T001802_766c39e1",
+    "task": "classification",
+    "metric": "macro_f1",
+    "archive_sha256": "ce4d46965cc4f13eae67e0eeb0033c284bf6e9e3cbe48c9782964a3d2ea15708",
+    "confirm_score": 0.6111095180710091,
+    "weights": [
+      0.5,
+      0.5
+    ],
+    "selected_models": [
+      "lightgbm",
+      "catboost"
+    ],
+    "worker_jobs": 16,
+    "base_ml_fits": 16,
+    "ml_fits": 25,
+    "oof": {
+      "status": "completed",
+      "reason": null,
+      "fit_attempts": 9,
+      "completed_fits": 9,
+      "validated_fits": 9,
+      "elapsed_seconds": 127.4963988669997,
+      "weights": [
+        0.4,
+        0.4,
+        0.2
+      ],
+      "oof_score": 0.6411705332231568,
+      "checks_passed": true,
+      "rows": 52775,
+      "warmup_rows": 0,
+      "grid_points": 73,
+      "effective_families": 3,
+      "selected": false,
+      "search_valid_score": 0.6181457445463113,
+      "legacy_search_valid_score": 0.6224465073785764,
+      "search_valid_accepted": false
+    },
+    "oracle_test_score": null,
+    "failures": [],
+    "confirmation_comparison": {
+      "planned_score": 0.598253218705308,
+      "legacy_score": 0.598253218705308,
+      "baseline_score": 0.6111095180710091,
+      "guard_score": 0.6111095180710091
+    },
+    "host_seconds": 3039.219000000001,
+    "elapsed_source": "host_monotonic",
+    "agent_seconds": 3038.9933383589996,
+    "cpu": 4.0,
+    "memory_limit_bytes": 15032385536,
+    "csv_rows": 41166,
+    "csv_sha256": "a8cd4e2277ead2b28e50062ca4957c6b9f83dcb9bc37771feef1c4c000aa699d",
+    "whole_plan_frozen_before_confirm": true,
+    "profile_search_train_only": true,
+    "refit_completed": true,
+    "no_iteration_cap": true,
+    "jobs": [
+      {
+        "phase": "search",
+        "model": "linear",
+        "score": 0.46171932938472615,
+        "fits": 1,
+        "seconds": 23.051626940999995
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 0.553108142890373,
+        "fits": 1,
+        "seconds": 648.7126796439999
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 0.5609292270430296,
+        "fits": 1,
+        "seconds": 13.83436853000012
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 0.5990504338937128,
+        "fits": 1,
+        "seconds": 196.39948503300002
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 0.6149913913440417,
+        "fits": 1,
+        "seconds": 15.841740957999946
+      },
+      {
+        "phase": "search",
+        "model": "extra_trees",
+        "score": 0.6089003037275156,
+        "fits": 1,
+        "seconds": 35.906486060000134
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 0.5138220006335877,
+        "fits": 1,
+        "seconds": 97.61285697099993
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 0.6129440026765052,
+        "fits": 1,
+        "seconds": 15.038265901999921
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 0.6040593454032865,
+        "fits": 1,
+        "seconds": 603.7153117699997
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 0.6022618695715735,
+        "fits": 1,
+        "seconds": 351.3243526690003
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 0.6068492546057833,
+        "fits": 1,
+        "seconds": 445.5091913360002
+      },
+      {
+        "phase": "confirm",
+        "model": "lightgbm",
+        "score": 0.5989991605570064,
+        "fits": 1,
+        "seconds": 10.629479594000259
+      },
+      {
+        "phase": "confirm",
+        "model": "linear",
+        "score": 0.4309925902644485,
+        "fits": 1,
+        "seconds": 38.68297133399983
+      },
+      {
+        "phase": "confirm",
+        "model": "catboost",
+        "score": 0.5830620572934185,
+        "fits": 1,
+        "seconds": 176.37148463699987
+      },
+      {
+        "phase": "refit",
+        "model": "lightgbm",
+        "score": null,
+        "fits": 1,
+        "seconds": 11.630775751999863
+      },
+      {
+        "phase": "refit",
+        "model": "catboost",
+        "score": null,
+        "fits": 1,
+        "seconds": 199.0011203240001
+      }
+    ],
+    "checks": {
+      "manual_metrics": true,
+      "source_zip_intact": true,
+      "original_data_intact": true,
+      "exact_indices": true,
+      "fixed_confirm_and_refit": true,
+      "csv_matches_full_refit": true,
+      "approved_dependencies": true
+    },
+    "benchmark_task": "public/classification",
+    "arm": "C"
+  }
+]

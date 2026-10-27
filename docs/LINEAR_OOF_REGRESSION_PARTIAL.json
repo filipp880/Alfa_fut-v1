@@ -1,0 +1,165 @@
+[
+  {
+    "directory": "runs\\release\\regression_20261027T000649_219772ad",
+    "task": "regression",
+    "metric": "rmse",
+    "archive_sha256": "ce4d46965cc4f13eae67e0eeb0033c284bf6e9e3cbe48c9782964a3d2ea15708",
+    "confirm_score": 38.86210123626394,
+    "weights": [
+      1.0
+    ],
+    "selected_models": [
+      "history_router"
+    ],
+    "worker_jobs": 17,
+    "base_ml_fits": 24,
+    "ml_fits": 24,
+    "oof": {
+      "status": "disabled",
+      "fit_attempts": 0
+    },
+    "oracle_test_score": null,
+    "failures": [],
+    "host_seconds": 494.07800000000043,
+    "elapsed_source": "host_monotonic",
+    "agent_seconds": 493.17306030299994,
+    "cpu": 4.0,
+    "memory_limit_bytes": 15032385536,
+    "csv_rows": 22449,
+    "csv_sha256": "b8a5ae328e655621bdbf35c0bd617751f6f67b21bfc820bafed78895e3279a3c",
+    "whole_plan_frozen_before_confirm": true,
+    "profile_search_train_only": true,
+    "refit_completed": true,
+    "no_iteration_cap": true,
+    "jobs": [
+      {
+        "phase": "search",
+        "model": "linear",
+        "score": 50.70160681506004,
+        "fits": 1,
+        "seconds": 3.014315780000004
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 44.39919946570952,
+        "fits": 1,
+        "seconds": 15.842682182999994
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 43.67393145977802,
+        "fits": 1,
+        "seconds": 6.4243505549999895
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 43.1132982212882,
+        "fits": 1,
+        "seconds": 45.519262930999986
+      },
+      {
+        "phase": "search",
+        "model": "lightgbm",
+        "score": 45.303700657710785,
+        "fits": 1,
+        "seconds": 4.62056677999999
+      },
+      {
+        "phase": "search",
+        "model": "extra_trees",
+        "score": 44.441220786914016,
+        "fits": 1,
+        "seconds": 24.470739865000013
+      },
+      {
+        "phase": "search",
+        "model": "history_router",
+        "score": 33.6912803935065,
+        "fits": 2,
+        "seconds": 41.323409392
+      },
+      {
+        "phase": "search",
+        "model": "history_router",
+        "score": 33.113926150324964,
+        "fits": 3,
+        "seconds": 47.330948895000006
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 45.38975539927439,
+        "fits": 1,
+        "seconds": 7.8256075250000094
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 44.28557705576681,
+        "fits": 1,
+        "seconds": 13.43438199000002
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 43.57328447978615,
+        "fits": 1,
+        "seconds": 15.441020667999965
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 44.4021711367113,
+        "fits": 1,
+        "seconds": 16.04081381000003
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 46.65235935488524,
+        "fits": 1,
+        "seconds": 6.822256974999959
+      },
+      {
+        "phase": "search",
+        "model": "catboost",
+        "score": 44.704915055717784,
+        "fits": 1,
+        "seconds": 6.422088911999992
+      },
+      {
+        "phase": "confirm",
+        "model": "history_router",
+        "score": 38.86210123626394,
+        "fits": 3,
+        "seconds": 58.336897162000014
+      },
+      {
+        "phase": "confirm",
+        "model": "extra_trees",
+        "score": 46.58330001137281,
+        "fits": 1,
+        "seconds": 45.53948734099998
+      },
+      {
+        "phase": "refit",
+        "model": "history_router",
+        "score": null,
+        "fits": 3,
+        "seconds": 126.985810523
+      }
+    ],
+    "checks": {
+      "manual_metrics": true,
+      "source_zip_intact": true,
+      "original_data_intact": true,
+      "exact_indices": true,
+      "fixed_confirm_and_refit": true,
+      "csv_matches_full_refit": true,
+      "approved_dependencies": true
+    }
+  }
+]

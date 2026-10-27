@@ -12,6 +12,10 @@ MODULES = (
     "metrics.py", "submission.py", "preprocessing.py", "models.py", "worker.py",
     "runtime.py", "experiment_store.py", "research.py", "llm_client.py",
     "novel_models.py", "novel_worker.py", "requirements.txt",
+    "historical_features.py", "history_router.py", "proposal_models.py",
+    "proposal_worker.py", "submission_audit.py",
+    "sgr_planner.py",
+    "oof_ensemble.py",
 )
 
 

@@ -11,6 +11,9 @@ import traceback
 def main(request_path):
     path = Path(request_path).resolve()
     request = json.loads(path.read_text(encoding="utf-8"))
+    if request["config"]["model"] == "proposal":
+        from proposal_worker import main as proposal_main
+        return proposal_main(request_path)
     if request["config"]["model"] not in {"augmentation", "xgboost"}:
         from novel_worker import main as standard
         return standard(request_path)

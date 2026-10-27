@@ -14,7 +14,7 @@ from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.dummy import DummyClassifier
 
 from contracts import ExperimentSpec, TaskSpec
-from preprocessing import FeatureBuilder
+from preprocessing import FeatureBuilder, lightgbm_fit_metadata
 from metrics import normalized_probabilities
 
 
@@ -128,7 +128,7 @@ def train_model(task: TaskSpec, config: ExperimentSpec, profile: dict, train: pd
         else:
             params["objective"] = "regression_l1" if task.metric == "mae" else "regression"
             model = lgb.LGBMRegressor(**params)
-        fit = dict(sample_weight=weights)
+        fit = dict(sample_weight=weights, **lightgbm_fit_metadata(x_train))
         time_stopped = [False]
 
         def time_callback(environment):

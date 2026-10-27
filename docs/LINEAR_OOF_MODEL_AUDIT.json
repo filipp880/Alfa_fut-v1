@@ -1,0 +1,1049 @@
+[
+  {
+    "directory": "runs/release/regression_20261027T000649_219772ad",
+    "status": "verified",
+    "jobs": [
+      {
+        "directory": ".alfa_runs/20261027T000653_330067_1/015_confirm_429027e41adc7196520d",
+        "phase": "confirm",
+        "config_key": "429027e41adc7196520d",
+        "model_sha256": "64bfd33ff7681db03e10a67483b2a2fe7cdbeb174109c784e2820ebdb25671a7",
+        "components": [
+          {
+            "family": "catboost",
+            "trees": 452,
+            "seed": 42
+          },
+          {
+            "family": "extra_trees",
+            "trees": 256,
+            "seed": 42
+          },
+          {
+            "family": "lightgbm",
+            "iterations": 2400,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T000653_330067_1/016_confirm_6339f83d75ce91a6e1df",
+        "phase": "confirm",
+        "config_key": "6339f83d75ce91a6e1df",
+        "model_sha256": "f8e422d4b3b5750348a71d3fdbd128b944517bcb32ef24d83f999edc23b0f0c2",
+        "components": [
+          {
+            "family": "extra_trees",
+            "trees": 256,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T000653_330067_1/017_refit_429027e41adc7196520d",
+        "phase": "refit",
+        "config_key": "429027e41adc7196520d",
+        "model_sha256": "70c2def1e44da6c3f0933f9966ea4cfc01d7551fb1b41c06395669be4483148d",
+        "components": [
+          {
+            "family": "catboost",
+            "trees": 452,
+            "seed": 42
+          },
+          {
+            "family": "extra_trees",
+            "trees": 256,
+            "seed": 42
+          },
+          {
+            "family": "lightgbm",
+            "iterations": 2400,
+            "seed": 42
+          }
+        ]
+      }
+    ],
+    "new_fits": 0,
+    "new_api_calls": 0
+  },
+  {
+    "directory": "runs/release/regression_20261027T000703_bd93fbc7",
+    "status": "verified",
+    "jobs": [
+      {
+        "directory": ".alfa_runs/20261027T000705_656063_1/015_confirm_429027e41adc7196520d",
+        "phase": "confirm",
+        "config_key": "429027e41adc7196520d",
+        "model_sha256": "3d094bc29e57fb0732b73afb3a0a3858e8ca88e7ad462355eb9e1465d5dc503b",
+        "components": [
+          {
+            "family": "catboost",
+            "trees": 452,
+            "seed": 42
+          },
+          {
+            "family": "extra_trees",
+            "trees": 256,
+            "seed": 42
+          },
+          {
+            "family": "lightgbm",
+            "iterations": 2400,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T000705_656063_1/016_confirm_6339f83d75ce91a6e1df",
+        "phase": "confirm",
+        "config_key": "6339f83d75ce91a6e1df",
+        "model_sha256": "f8e422d4b3b5750348a71d3fdbd128b944517bcb32ef24d83f999edc23b0f0c2",
+        "components": [
+          {
+            "family": "extra_trees",
+            "trees": 256,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T000705_656063_1/017_refit_429027e41adc7196520d",
+        "phase": "refit",
+        "config_key": "429027e41adc7196520d",
+        "model_sha256": "c808992ef6ada9f24827cf8f61cede8e52f48ead9312536d90ce39c94b52690e",
+        "components": [
+          {
+            "family": "catboost",
+            "trees": 452,
+            "seed": 42
+          },
+          {
+            "family": "extra_trees",
+            "trees": 256,
+            "seed": 42
+          },
+          {
+            "family": "lightgbm",
+            "iterations": 2400,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T000705_656063_1/oof/fold0/001_oof_0_17ece7a721cb29d19219",
+        "phase": "oof_0",
+        "config_key": "17ece7a721cb29d19219",
+        "model_sha256": "45e6d3c5c86f33cb315fcdb8d13b23517f96140d70bd45fb319459d210f4edd3",
+        "components": [
+          {
+            "family": "catboost",
+            "trees": 2399,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T000705_656063_1/oof/fold0/002_oof_0_6339f83d75ce91a6e1df",
+        "phase": "oof_0",
+        "config_key": "6339f83d75ce91a6e1df",
+        "model_sha256": "8f2decdc0b0bca965083f07dad043b1adec75fedbf139e292151d6bb0c8a9210",
+        "components": [
+          {
+            "family": "extra_trees",
+            "trees": 256,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T000705_656063_1/oof/fold0/003_oof_0_13ae0cda02d62a9c034d",
+        "phase": "oof_0",
+        "config_key": "13ae0cda02d62a9c034d",
+        "model_sha256": "abaf8fe46a9f14f6751d14cfb7ecd5ea041698d6a04d40edaabdac0923ded238",
+        "components": [
+          {
+            "family": "linear",
+            "estimator": "Ridge",
+            "coefficient_shape": [
+              105
+            ],
+            "optimizer_iterations": [
+              20
+            ]
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T000705_656063_1/oof/fold1/001_oof_1_17ece7a721cb29d19219",
+        "phase": "oof_1",
+        "config_key": "17ece7a721cb29d19219",
+        "model_sha256": "b6725d5d74d209ee36881c952001f03fe38fd09a96f1165855981b09955bfba7",
+        "components": [
+          {
+            "family": "catboost",
+            "trees": 2399,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T000705_656063_1/oof/fold1/002_oof_1_6339f83d75ce91a6e1df",
+        "phase": "oof_1",
+        "config_key": "6339f83d75ce91a6e1df",
+        "model_sha256": "88bd907d23bbd85544ba6c4d39abec591171f93e43f30c455057d76247ec0a43",
+        "components": [
+          {
+            "family": "extra_trees",
+            "trees": 256,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T000705_656063_1/oof/fold1/003_oof_1_13ae0cda02d62a9c034d",
+        "phase": "oof_1",
+        "config_key": "13ae0cda02d62a9c034d",
+        "model_sha256": "edd0c365647e3d764e60d7f555ea6d86eaf307769eefea5225440576169ed4d4",
+        "components": [
+          {
+            "family": "linear",
+            "estimator": "Ridge",
+            "coefficient_shape": [
+              113
+            ],
+            "optimizer_iterations": [
+              47
+            ]
+          }
+        ]
+      }
+    ],
+    "new_fits": 0,
+    "new_api_calls": 0
+  },
+  {
+    "directory": "runs/release/linear_regression_20261027T010850_6a9a4bcf",
+    "status": "verified",
+    "jobs": [
+      {
+        "directory": ".alfa_runs/20261027T010852_970014_1/007_confirm_13ae0cda02d62a9c034d",
+        "phase": "confirm",
+        "config_key": "13ae0cda02d62a9c034d",
+        "model_sha256": "8501581889bb6d2f61f7e87198b36169eb64a41b2b050b649e60fcd3f9326b62",
+        "components": [
+          {
+            "family": "linear",
+            "estimator": "Ridge",
+            "coefficient_shape": [
+              12
+            ],
+            "optimizer_iterations": [
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T010852_970014_1/008_confirm_6339f83d75ce91a6e1df",
+        "phase": "confirm",
+        "config_key": "6339f83d75ce91a6e1df",
+        "model_sha256": "160f23016287e165d68509a8f1981025a5abf7713951050aef33e63e9c1556a5",
+        "components": [
+          {
+            "family": "extra_trees",
+            "trees": 256,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T010852_970014_1/009_refit_13ae0cda02d62a9c034d",
+        "phase": "refit",
+        "config_key": "13ae0cda02d62a9c034d",
+        "model_sha256": "e9f5f9993e1a08a1c5f14e80f31ecae4e6ea96fbc9bd19ecd273881b5c5368ce",
+        "components": [
+          {
+            "family": "linear",
+            "estimator": "Ridge",
+            "coefficient_shape": [
+              12
+            ],
+            "optimizer_iterations": [
+              5
+            ]
+          }
+        ]
+      }
+    ],
+    "new_fits": 0,
+    "new_api_calls": 0
+  },
+  {
+    "directory": "runs/release/linear_regression_20261027T010923_5d635975",
+    "status": "verified",
+    "jobs": [
+      {
+        "directory": ".alfa_runs/20261027T010924_721347_1/007_confirm_13ae0cda02d62a9c034d",
+        "phase": "confirm",
+        "config_key": "13ae0cda02d62a9c034d",
+        "model_sha256": "8501581889bb6d2f61f7e87198b36169eb64a41b2b050b649e60fcd3f9326b62",
+        "components": [
+          {
+            "family": "linear",
+            "estimator": "Ridge",
+            "coefficient_shape": [
+              12
+            ],
+            "optimizer_iterations": [
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T010924_721347_1/008_confirm_6339f83d75ce91a6e1df",
+        "phase": "confirm",
+        "config_key": "6339f83d75ce91a6e1df",
+        "model_sha256": "160f23016287e165d68509a8f1981025a5abf7713951050aef33e63e9c1556a5",
+        "components": [
+          {
+            "family": "extra_trees",
+            "trees": 256,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T010924_721347_1/009_refit_13ae0cda02d62a9c034d",
+        "phase": "refit",
+        "config_key": "13ae0cda02d62a9c034d",
+        "model_sha256": "e9f5f9993e1a08a1c5f14e80f31ecae4e6ea96fbc9bd19ecd273881b5c5368ce",
+        "components": [
+          {
+            "family": "linear",
+            "estimator": "Ridge",
+            "coefficient_shape": [
+              12
+            ],
+            "optimizer_iterations": [
+              5
+            ]
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T010924_721347_1/oof/fold0/001_oof_0_46071f6a71cfa1dfe803",
+        "phase": "oof_0",
+        "config_key": "46071f6a71cfa1dfe803",
+        "model_sha256": "2510faebb8667132d95a7a5241388d435b18e903796ec98986ad3a1481a6fc36",
+        "components": [
+          {
+            "family": "catboost",
+            "trees": 1598,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T010924_721347_1/oof/fold0/002_oof_0_6339f83d75ce91a6e1df",
+        "phase": "oof_0",
+        "config_key": "6339f83d75ce91a6e1df",
+        "model_sha256": "f0e4ffac2bde3e46a80bbfc1611e97b260e92809b71d4c3e205f75ea6aee9184",
+        "components": [
+          {
+            "family": "extra_trees",
+            "trees": 256,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T010924_721347_1/oof/fold0/003_oof_0_13ae0cda02d62a9c034d",
+        "phase": "oof_0",
+        "config_key": "13ae0cda02d62a9c034d",
+        "model_sha256": "4edc4c8ae3e0acc123b9695b9683265bd9e6c3f75c934ba180d0de478a5f738e",
+        "components": [
+          {
+            "family": "linear",
+            "estimator": "Ridge",
+            "coefficient_shape": [
+              12
+            ],
+            "optimizer_iterations": [
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T010924_721347_1/oof/fold1/001_oof_1_46071f6a71cfa1dfe803",
+        "phase": "oof_1",
+        "config_key": "46071f6a71cfa1dfe803",
+        "model_sha256": "392205fa1c6f6c42c28723c0e0ce280dd6cf5219163f3dfc0559a2c499892f54",
+        "components": [
+          {
+            "family": "catboost",
+            "trees": 1598,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T010924_721347_1/oof/fold1/002_oof_1_6339f83d75ce91a6e1df",
+        "phase": "oof_1",
+        "config_key": "6339f83d75ce91a6e1df",
+        "model_sha256": "2af6f784414826965b56919a9c37e5410305e3199b1132abd13c6af576efb100",
+        "components": [
+          {
+            "family": "extra_trees",
+            "trees": 256,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T010924_721347_1/oof/fold1/003_oof_1_13ae0cda02d62a9c034d",
+        "phase": "oof_1",
+        "config_key": "13ae0cda02d62a9c034d",
+        "model_sha256": "6bee3fad2ca001a3f746a5ece02a24578bef4ded4c5ad104c82cec6cc63038e9",
+        "components": [
+          {
+            "family": "linear",
+            "estimator": "Ridge",
+            "coefficient_shape": [
+              12
+            ],
+            "optimizer_iterations": [
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T010924_721347_1/oof/fold2/001_oof_2_46071f6a71cfa1dfe803",
+        "phase": "oof_2",
+        "config_key": "46071f6a71cfa1dfe803",
+        "model_sha256": "f0ec43ea98b2d2805f34dcf06857eea6590b177c3618b09e8b1bdce5ef26705a",
+        "components": [
+          {
+            "family": "catboost",
+            "trees": 1598,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T010924_721347_1/oof/fold2/002_oof_2_6339f83d75ce91a6e1df",
+        "phase": "oof_2",
+        "config_key": "6339f83d75ce91a6e1df",
+        "model_sha256": "bd8060dd7afceae2f1580de7338c8ef2c7beaaf861778e9fa25b8d2ad2bc8ae3",
+        "components": [
+          {
+            "family": "extra_trees",
+            "trees": 256,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T010924_721347_1/oof/fold2/003_oof_2_13ae0cda02d62a9c034d",
+        "phase": "oof_2",
+        "config_key": "13ae0cda02d62a9c034d",
+        "model_sha256": "71364e4c6ea9792bb2a17a315c65e0e54e7851c438ae610cefb7ae357ffdec64",
+        "components": [
+          {
+            "family": "linear",
+            "estimator": "Ridge",
+            "coefficient_shape": [
+              12
+            ],
+            "optimizer_iterations": [
+              5
+            ]
+          }
+        ]
+      }
+    ],
+    "new_fits": 0,
+    "new_api_calls": 0
+  },
+  {
+    "directory": "runs/release/linear_classification_20261027T011004_a9336c1f",
+    "status": "verified",
+    "jobs": [
+      {
+        "directory": ".alfa_runs/20261027T011005_687024_1/007_confirm_13ae0cda02d62a9c034d",
+        "phase": "confirm",
+        "config_key": "13ae0cda02d62a9c034d",
+        "model_sha256": "904e54bedbda604bcdf0846da2aab8892a58ddbeb2ed56e6c8bbc68f72ec4bd1",
+        "components": [
+          {
+            "family": "linear",
+            "estimator": "LogisticRegression",
+            "coefficient_shape": [
+              3,
+              12
+            ],
+            "optimizer_iterations": [
+              6,
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T011005_687024_1/008_refit_13ae0cda02d62a9c034d",
+        "phase": "refit",
+        "config_key": "13ae0cda02d62a9c034d",
+        "model_sha256": "19f342593079eeb316b8f11d9c7234d95b7676407d20ada839fab7e8aa32ddd1",
+        "components": [
+          {
+            "family": "linear",
+            "estimator": "LogisticRegression",
+            "coefficient_shape": [
+              3,
+              12
+            ],
+            "optimizer_iterations": [
+              6,
+              6,
+              6
+            ]
+          }
+        ]
+      }
+    ],
+    "new_fits": 0,
+    "new_api_calls": 0
+  },
+  {
+    "directory": "runs/release/linear_classification_20261027T011015_fe981f57",
+    "status": "verified",
+    "jobs": [
+      {
+        "directory": ".alfa_runs/20261027T011017_173609_1/007_confirm_13ae0cda02d62a9c034d",
+        "phase": "confirm",
+        "config_key": "13ae0cda02d62a9c034d",
+        "model_sha256": "904e54bedbda604bcdf0846da2aab8892a58ddbeb2ed56e6c8bbc68f72ec4bd1",
+        "components": [
+          {
+            "family": "linear",
+            "estimator": "LogisticRegression",
+            "coefficient_shape": [
+              3,
+              12
+            ],
+            "optimizer_iterations": [
+              6,
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T011017_173609_1/008_refit_13ae0cda02d62a9c034d",
+        "phase": "refit",
+        "config_key": "13ae0cda02d62a9c034d",
+        "model_sha256": "19f342593079eeb316b8f11d9c7234d95b7676407d20ada839fab7e8aa32ddd1",
+        "components": [
+          {
+            "family": "linear",
+            "estimator": "LogisticRegression",
+            "coefficient_shape": [
+              3,
+              12
+            ],
+            "optimizer_iterations": [
+              6,
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T011017_173609_1/oof/fold0/001_oof_0_9fb6fe7e34fe4b0088df",
+        "phase": "oof_0",
+        "config_key": "9fb6fe7e34fe4b0088df",
+        "model_sha256": "2cd459c7c114fe15d6228be2cc7bbf115537157fda0935e4e34c75533c67e2d7",
+        "components": [
+          {
+            "family": "lightgbm",
+            "iterations": 1748,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T011017_173609_1/oof/fold0/002_oof_0_6339f83d75ce91a6e1df",
+        "phase": "oof_0",
+        "config_key": "6339f83d75ce91a6e1df",
+        "model_sha256": "b7f892dbbc8c5b428480d9cb0aa6ec6d9a9b32490e89d8fc46b0fd053de6700d",
+        "components": [
+          {
+            "family": "extra_trees",
+            "trees": 256,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T011017_173609_1/oof/fold0/003_oof_0_13ae0cda02d62a9c034d",
+        "phase": "oof_0",
+        "config_key": "13ae0cda02d62a9c034d",
+        "model_sha256": "2e2b613d18e7aca45c33ab72896eb90d546fa59d6f04893099f88a061c1829e5",
+        "components": [
+          {
+            "family": "linear",
+            "estimator": "LogisticRegression",
+            "coefficient_shape": [
+              3,
+              12
+            ],
+            "optimizer_iterations": [
+              5,
+              6,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T011017_173609_1/oof/fold1/001_oof_1_9fb6fe7e34fe4b0088df",
+        "phase": "oof_1",
+        "config_key": "9fb6fe7e34fe4b0088df",
+        "model_sha256": "5ce0bf43c6b265959a02ac6c76e86721398f598c8dad1fc1208b87053c63405a",
+        "components": [
+          {
+            "family": "lightgbm",
+            "iterations": 1748,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T011017_173609_1/oof/fold1/002_oof_1_6339f83d75ce91a6e1df",
+        "phase": "oof_1",
+        "config_key": "6339f83d75ce91a6e1df",
+        "model_sha256": "3bf8ec917d0c4084f95b3f76a50858a1865cf48d8d76edb960ba908e086bb7b3",
+        "components": [
+          {
+            "family": "extra_trees",
+            "trees": 256,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T011017_173609_1/oof/fold1/003_oof_1_13ae0cda02d62a9c034d",
+        "phase": "oof_1",
+        "config_key": "13ae0cda02d62a9c034d",
+        "model_sha256": "db887f220e877c7dbeb989f40049a692968279afa97d282be1d815c12af7d872",
+        "components": [
+          {
+            "family": "linear",
+            "estimator": "LogisticRegression",
+            "coefficient_shape": [
+              3,
+              12
+            ],
+            "optimizer_iterations": [
+              6,
+              5,
+              6
+            ]
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T011017_173609_1/oof/fold2/001_oof_2_9fb6fe7e34fe4b0088df",
+        "phase": "oof_2",
+        "config_key": "9fb6fe7e34fe4b0088df",
+        "model_sha256": "1778c175144de6d521ba375437c75b2dbec3043200c11824ca8ada73cd35b3fe",
+        "components": [
+          {
+            "family": "lightgbm",
+            "iterations": 1748,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T011017_173609_1/oof/fold2/002_oof_2_6339f83d75ce91a6e1df",
+        "phase": "oof_2",
+        "config_key": "6339f83d75ce91a6e1df",
+        "model_sha256": "e0c2467e77fc922a970cf4d9d7179ce819334accdc1a35406d5cedc8d8eff060",
+        "components": [
+          {
+            "family": "extra_trees",
+            "trees": 256,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T011017_173609_1/oof/fold2/003_oof_2_13ae0cda02d62a9c034d",
+        "phase": "oof_2",
+        "config_key": "13ae0cda02d62a9c034d",
+        "model_sha256": "323bea792a1ad18dc47bc9afd823fa3d7eb9c85188480e5913d355341df5296c",
+        "components": [
+          {
+            "family": "linear",
+            "estimator": "LogisticRegression",
+            "coefficient_shape": [
+              3,
+              12
+            ],
+            "optimizer_iterations": [
+              6,
+              6,
+              6
+            ]
+          }
+        ]
+      }
+    ],
+    "new_fits": 0,
+    "new_api_calls": 0
+  },
+  {
+    "directory": "runs/release/classification_20261027T001802_88c4c41e",
+    "status": "verified",
+    "jobs": [
+      {
+        "directory": ".alfa_runs/20261027T001805_331398_1/012_confirm_c755a04c79a8e7ae9fe8",
+        "phase": "confirm",
+        "config_key": "c755a04c79a8e7ae9fe8",
+        "model_sha256": "2679be3d82de5c06cbb0569f7497588154c28aaacb2c5da94344740df59335f1",
+        "components": [
+          {
+            "family": "lightgbm",
+            "iterations": 113,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T001805_331398_1/013_confirm_e18cb69bf19eea40797b",
+        "phase": "confirm",
+        "config_key": "e18cb69bf19eea40797b",
+        "model_sha256": "acbcb73840453a9132577041adb8a63d54fa0ab0dca8eb54352d4b3c79b984df",
+        "components": [
+          {
+            "family": "linear",
+            "estimator": "LogisticRegression",
+            "coefficient_shape": [
+              10,
+              187
+            ],
+            "optimizer_iterations": [
+              102,
+              14,
+              49,
+              18,
+              27,
+              10,
+              28,
+              70,
+              13,
+              40
+            ]
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T001805_331398_1/014_confirm_e44f76f2022fe9b054ea",
+        "phase": "confirm",
+        "config_key": "e44f76f2022fe9b054ea",
+        "model_sha256": "4ec595b050286129f343741d20a9fe47b2e92452dfc4a4d901c94f2584b4e7b0",
+        "components": [
+          {
+            "family": "catboost",
+            "trees": 322,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T001805_331398_1/015_refit_c755a04c79a8e7ae9fe8",
+        "phase": "refit",
+        "config_key": "c755a04c79a8e7ae9fe8",
+        "model_sha256": "6aee3fd70b0b3a1a45427d5465ddabbd89102d56e3b27c3cc69f1aef55613546",
+        "components": [
+          {
+            "family": "lightgbm",
+            "iterations": 113,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T001805_331398_1/016_refit_e44f76f2022fe9b054ea",
+        "phase": "refit",
+        "config_key": "e44f76f2022fe9b054ea",
+        "model_sha256": "13cbf1d305098267090bb9bf93eba0552f7c08521a68368140e9d92d4ccc1878",
+        "components": [
+          {
+            "family": "catboost",
+            "trees": 322,
+            "seed": 42
+          }
+        ]
+      }
+    ],
+    "new_fits": 0,
+    "new_api_calls": 0
+  },
+  {
+    "directory": "runs/release/classification_20261027T001802_766c39e1",
+    "status": "verified",
+    "jobs": [
+      {
+        "directory": ".alfa_runs/20261027T001805_956759_1/012_confirm_c755a04c79a8e7ae9fe8",
+        "phase": "confirm",
+        "config_key": "c755a04c79a8e7ae9fe8",
+        "model_sha256": "2679be3d82de5c06cbb0569f7497588154c28aaacb2c5da94344740df59335f1",
+        "components": [
+          {
+            "family": "lightgbm",
+            "iterations": 113,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T001805_956759_1/013_confirm_e18cb69bf19eea40797b",
+        "phase": "confirm",
+        "config_key": "e18cb69bf19eea40797b",
+        "model_sha256": "acbcb73840453a9132577041adb8a63d54fa0ab0dca8eb54352d4b3c79b984df",
+        "components": [
+          {
+            "family": "linear",
+            "estimator": "LogisticRegression",
+            "coefficient_shape": [
+              10,
+              187
+            ],
+            "optimizer_iterations": [
+              102,
+              14,
+              49,
+              18,
+              27,
+              10,
+              28,
+              70,
+              13,
+              40
+            ]
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T001805_956759_1/014_confirm_e44f76f2022fe9b054ea",
+        "phase": "confirm",
+        "config_key": "e44f76f2022fe9b054ea",
+        "model_sha256": "0123d50a57a0a8352703ee17375a35afe8a07da44148fb19f80b9066985a76bd",
+        "components": [
+          {
+            "family": "catboost",
+            "trees": 322,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T001805_956759_1/015_refit_c755a04c79a8e7ae9fe8",
+        "phase": "refit",
+        "config_key": "c755a04c79a8e7ae9fe8",
+        "model_sha256": "6aee3fd70b0b3a1a45427d5465ddabbd89102d56e3b27c3cc69f1aef55613546",
+        "components": [
+          {
+            "family": "lightgbm",
+            "iterations": 113,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T001805_956759_1/016_refit_e44f76f2022fe9b054ea",
+        "phase": "refit",
+        "config_key": "e44f76f2022fe9b054ea",
+        "model_sha256": "a8c435033ab01aa9bf3cd429082f152872d7476ba2d2412cffd5b1d3e57e89af",
+        "components": [
+          {
+            "family": "catboost",
+            "trees": 322,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T001805_956759_1/oof/fold0/001_oof_0_c755a04c79a8e7ae9fe8",
+        "phase": "oof_0",
+        "config_key": "c755a04c79a8e7ae9fe8",
+        "model_sha256": "f7fcfbd6b98feff4ce69b32cb12d226f8ad2993e942f876e7a72c008483f2ca5",
+        "components": [
+          {
+            "family": "lightgbm",
+            "iterations": 113,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T001805_956759_1/oof/fold0/002_oof_0_06ff128d05c7496f1f55",
+        "phase": "oof_0",
+        "config_key": "06ff128d05c7496f1f55",
+        "model_sha256": "d7d880a3d5eb8a4b11e00fec7e73cfc3bf6921f49fa20b23df1a932225244798",
+        "components": [
+          {
+            "family": "extra_trees",
+            "trees": 256,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T001805_956759_1/oof/fold0/003_oof_0_e18cb69bf19eea40797b",
+        "phase": "oof_0",
+        "config_key": "e18cb69bf19eea40797b",
+        "model_sha256": "25986087e57b699770798dbd7533394e050ddf830b7ae8c781a53bf351e8a915",
+        "components": [
+          {
+            "family": "linear",
+            "estimator": "LogisticRegression",
+            "coefficient_shape": [
+              10,
+              184
+            ],
+            "optimizer_iterations": [
+              13,
+              14,
+              23,
+              9,
+              14,
+              9,
+              9,
+              14,
+              12,
+              23
+            ]
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T001805_956759_1/oof/fold1/001_oof_1_c755a04c79a8e7ae9fe8",
+        "phase": "oof_1",
+        "config_key": "c755a04c79a8e7ae9fe8",
+        "model_sha256": "699f877a774102c44bd05a39c11b31f5a59eaa58f849d1200a79d91979a61e24",
+        "components": [
+          {
+            "family": "lightgbm",
+            "iterations": 113,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T001805_956759_1/oof/fold1/002_oof_1_06ff128d05c7496f1f55",
+        "phase": "oof_1",
+        "config_key": "06ff128d05c7496f1f55",
+        "model_sha256": "b4d3035ad202220bdff86195c0627a569bb0c72f1945469e64d76722ea4f6a9b",
+        "components": [
+          {
+            "family": "extra_trees",
+            "trees": 256,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T001805_956759_1/oof/fold1/003_oof_1_e18cb69bf19eea40797b",
+        "phase": "oof_1",
+        "config_key": "e18cb69bf19eea40797b",
+        "model_sha256": "f87915a0db70ae8382f130de61217e5af2fcc2fe4e19e6310cee219475e87ad6",
+        "components": [
+          {
+            "family": "linear",
+            "estimator": "LogisticRegression",
+            "coefficient_shape": [
+              10,
+              181
+            ],
+            "optimizer_iterations": [
+              36,
+              14,
+              42,
+              22,
+              11,
+              10,
+              27,
+              41,
+              12,
+              43
+            ]
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T001805_956759_1/oof/fold2/001_oof_2_c755a04c79a8e7ae9fe8",
+        "phase": "oof_2",
+        "config_key": "c755a04c79a8e7ae9fe8",
+        "model_sha256": "d552ebd744d6b1d18f924f42c123f5eedb9c568532aa8a8cd7f4ee45301ac9d4",
+        "components": [
+          {
+            "family": "lightgbm",
+            "iterations": 113,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T001805_956759_1/oof/fold2/002_oof_2_06ff128d05c7496f1f55",
+        "phase": "oof_2",
+        "config_key": "06ff128d05c7496f1f55",
+        "model_sha256": "7491008907a2672506c74b6f1e92748ccc18203bc0a4b5144038a404e8bf3548",
+        "components": [
+          {
+            "family": "extra_trees",
+            "trees": 256,
+            "seed": 42
+          }
+        ]
+      },
+      {
+        "directory": ".alfa_runs/20261027T001805_956759_1/oof/fold2/003_oof_2_e18cb69bf19eea40797b",
+        "phase": "oof_2",
+        "config_key": "e18cb69bf19eea40797b",
+        "model_sha256": "122d41a360b0146982c4eff459c31e61578aa78c674eb45f676f7e3e42950b8d",
+        "components": [
+          {
+            "family": "linear",
+            "estimator": "LogisticRegression",
+            "coefficient_shape": [
+              10,
+              181
+            ],
+            "optimizer_iterations": [
+              30,
+              22,
+              31,
+              38,
+              12,
+              16,
+              12,
+              11,
+              12,
+              23
+            ]
+          }
+        ]
+      }
+    ],
+    "new_fits": 0,
+    "new_api_calls": 0
+  }
+]

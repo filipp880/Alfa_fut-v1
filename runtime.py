@@ -136,7 +136,7 @@ class Runner:
             return {"status": "skipped", "reason": "Недостаточно свободной памяти", "directory": str(work)}
         started, peak, stopped = time.monotonic(), 0, None
         with (work / "stdout.log").open("wb") as stdout, (work / "stderr.log").open("wb") as stderr:
-            process = subprocess.Popen([sys.executable, "-u", str(work / "experiment.py")],
+            process = subprocess.Popen([sys.executable, "-B", "-u", str(work / "experiment.py")],
                                        cwd=Path(self.task.task_path).parent, env=environment,
                                        stdin=subprocess.DEVNULL, stdout=stdout, stderr=stderr, **kwargs)
             try:

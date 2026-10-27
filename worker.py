@@ -14,12 +14,15 @@ def main(request_path: str) -> int:
     started = time.monotonic()
     try:
         request = json.loads(request_file.read_text(encoding="utf-8"))
+        if request.get("config", {}).get("model") == "proposal":
+            from proposal_worker import main as proposal_main
+            return proposal_main(request_path)
         if request.get("config", {}).get("model") in {"extra_trees", "kernel", "retrieval"}:
             from novel_worker import main as alternative_main
             return alternative_main(request_path)
         import numpy as np
         from threadpoolctl import threadpool_limits
-        from contracts import ExperimentSpec, TaskSpec
+        from contracts import ExperimentSpec, TaskSpec, parse_experiment
         from task_reader import read_csv
         from data_io import encode_target
         from models import train_model
@@ -27,7 +30,7 @@ def main(request_path: str) -> int:
         from experiment_store import atomic_json
         request = json.loads(request_file.read_text(encoding="utf-8"))
         task = TaskSpec.from_dict(request["task"])
-        config = ExperimentSpec.from_dict(request["config"], task)
+        config = parse_experiment(request["config"], task)
         train = read_csv(task.train_path, task.id_columns + task.categorical_columns)
         test = read_csv(task.test_path, task.id_columns + task.categorical_columns)
         y = encode_target(task, train)
@@ -36,7 +39,12 @@ def main(request_path: str) -> int:
         if set(train_indices.tolist()) & set(valid_indices.tolist()):
             raise ValueError("Пересечение индексов обучения и оценки")
         with threadpool_limits(limits=1, user_api="blas"):
-            bundle, valid_pred, test_pred, details = train_model(
+            if config.model == "history_router":
+                from history_router import train_router
+                trainer = train_router
+            else:
+                trainer = train_model
+            bundle, valid_pred, test_pred, details = trainer(
                 task, config, request["profile"], train, test, y, train_indices, valid_indices,
                 int(request["threads"]), bool(request.get("refit")), request.get("fixed_iterations"),
                 max(.1, request.get("fit_time_limit_seconds", 3600)-(time.monotonic()-started)))

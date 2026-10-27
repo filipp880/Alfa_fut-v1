@@ -55,7 +55,7 @@ def main():
         raise RuntimeError(f'Агент не завершил модельный прогон: {summary["status"]}')
     events = [json.loads(line) for line in summaries[-1].with_name('experiments.jsonl').read_text(encoding='utf-8').splitlines()]
     succeeded = {e.get('config',{}).get('model') for e in events if e['event']=='experiment_result' and e.get('status')=='ok'}
-    if args.max_experiments>=2 and not {'catboost','lightgbm'} <= succeeded:
+    if args.max_experiments>=3 and not {'linear','catboost','lightgbm'} <= succeeded:
         raise RuntimeError('Не подтверждена работа обоих бустингов в контейнере')
     report = {k:summary[k] for k in ('status','elapsed_seconds','search_best_score','refit_completed','versions','python')}
     report.update(selected=summary['selected'],rows=summary['profile']['test_rows'],task_directory=str(destination))

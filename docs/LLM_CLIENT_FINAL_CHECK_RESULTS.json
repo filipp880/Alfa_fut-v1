@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "archive": "dist\\alfa_solution_v3_audit_2026-10-26.zip",
+  "archive_sha256": "752afaae4fa813879bb301d7464924d9217a77999502ce10aa764ee36ed35483",
+  "archive_bytes": 71090,
+  "llm_client_sha256": "7d4c6a4cb9b0be236dca5674ee334d05e0ce6e9e01b075a7efa123b96af91830",
+  "runtime_changed": false,
+  "active_agents_max": 2,
+  "independent_exact_zip_tests": 16,
+  "windows_wire_scenarios": 33,
+  "linux_no_network_wire_scenarios": 33,
+  "windows_evidence": "runs\\llm_final_check\\20261026T140710\\wire_results.json",
+  "linux_evidence": "runs\\llm_final_check\\linux_v3_exact_zip\\results\\wire_results.json",
+  "new_external_api_calls": 0,
+  "openai_version": "1.68.2",
+  "httpx_version": "0.28.1",
+  "platform_environment_available": false,
+  "limitations": [
+    "SDK timeout ограничивает сетевые операции; общий wallclock ограничен watchdog решения.",
+    "Token admission использует оценку; это не точная предварительная токенизация и не рублёвый лимит.",
+    "Фактические env, ключ, модель и сетевое окружение судей без их журналов недоступны."
+  ]
+}

@@ -1,6 +1,7 @@
 """Определение контракта из условия, словаря и структуры CSV."""
 from __future__ import annotations
 
+import ast
 import csv
 from pathlib import Path
 import re
@@ -67,6 +68,51 @@ def detect_metric(text: str) -> str | None:
         for metric, pattern in METRIC_PATTERNS:
             if re.search(pattern, scope, re.I):
                 return metric
+    return None
+
+
+def explicit_positive_index(text: str, classes: list) -> int | None:
+    """Сопоставить полную явно указанную метку с замороженной осью классов.
+
+    Точка может быть частью числа или строковой метки. Кавычки ограничивают
+    метку, а не входят в неё; escaped quotes читаются как строковый литерал.
+    Точное совпадение имеет приоритет над однозначным сравнением без регистра.
+    """
+    marker = (r"(?:positive\s+(?:class|label)|положительн\w*\s+(?:класс\w*|метк\w*)|"
+              r"вероятност[ьи]\s+класса)\s*(?:[:=—–-]\s*|(?:is|это)\b\s*)?")
+    for match in re.finditer(marker, text, re.I):
+        tail = text[match.end():].lstrip()
+        if not tail:
+            continue
+        if tail[0] in "`\"'":
+            quote, end, escaped = tail[0], None, False
+            for index, character in enumerate(tail[1:], 1):
+                if character == quote and not escaped:
+                    end = index
+                    break
+                escaped = character == "\\" and not escaped if quote != "`" else False
+            if end is None:
+                continue
+            try:
+                label = tail[1:end] if quote == "`" else ast.literal_eval(tail[:end+1])
+            except (SyntaxError, ValueError):
+                continue
+            candidates = [label]
+        else:
+            token = re.match(r"[^\s,;!?`\"']+", tail)
+            if token is None:
+                continue
+            label = token.group(0)
+            # Только завершающая точка предложения; полная метка проверяется первой.
+            candidates = [label] + ([label[:-1]] if label.endswith(".") else [])
+        for label in candidates:
+            exact = [index for index, value in enumerate(classes) if str(value) == label]
+            if len(exact) == 1:
+                return exact[0]
+        for label in candidates:
+            matches = [index for index, value in enumerate(classes) if str(value).casefold() == label.casefold()]
+            if len(matches) == 1:
+                return matches[0]
     return None
 
 
@@ -181,11 +227,7 @@ def load_task(task_path: str | Path) -> tuple[TaskSpec, pd.DataFrame, pd.DataFra
                     categorical, output_columns, kind, classes, probability_columns, warnings=warnings)
     spec.probability_indices = probability_indices
     if len(classes) == 2:
-        match = re.search(r"(?:positive\s+(?:class|label)|положительн\w*\s+(?:класс\w*|метк\w*)|"
-                          r"вероятност[ьи]\s+класса)\s*(?:[:=—–-]|is|это)?\s*[`\"']?([^`\"'\s,.;]+)", text, re.I)
-        if match:
-            label = match.group(1).lower()
-            matches = [i for i, value in enumerate(classes) if str(value).lower() == label]
-            if matches:
-                spec.positive_index = matches[0]
+        positive_index = explicit_positive_index(text, classes)
+        if positive_index is not None:
+            spec.positive_index = positive_index
     return spec, train, test, sample, dictionary

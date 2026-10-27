@@ -158,4 +158,10 @@ def parse_experiment(data: dict, task: TaskSpec) -> ExperimentSpec:
     if isinstance(data, dict) and data.get("model") in {"extra_trees", "kernel", "retrieval"}:
         from novel_models import NovelSpec
         return NovelSpec.from_dict(data, task)
+    if isinstance(data, dict) and data.get("model") == "history_router":
+        from history_router import HistoryRouterSpec
+        return HistoryRouterSpec.from_dict(data, task)
+    if isinstance(data, dict) and data.get("model") == "proposal":
+        from proposal_models import ProposalSpec
+        return ProposalSpec.from_dict(data, task)
     return ExperimentSpec.from_dict(data, task)

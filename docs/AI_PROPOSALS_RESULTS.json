@@ -1,0 +1,3233 @@
+[
+  {
+    "task": "regression",
+    "metric": "rmse",
+    "directory": "runs\\ai_proposals\\regression_20261025T181912_58ff4e991d",
+    "summary_directory": "20261025T181914_198873",
+    "baseline_score": 46.58330001137281,
+    "baseline_search_score": 48.87820249825746,
+    "baseline_metrics": {
+      "rmse": 46.58330001137281,
+      "mse": 2170.0038399495666,
+      "mae": 26.715382233038305,
+      "r2": 0.3210365266808122,
+      "mape": 0.7103886238540628,
+      "rmsle": 0.5730723806339366
+    },
+    "baseline_by_fold": {
+      "search_early": 53.6824517177633,
+      "search_late": 44.44122078691401
+    },
+    "methods": {
+      "G1": {
+        "source": "GPT",
+        "proposal": "Семантический zero→NaN + provenance indicators",
+        "paired": "cb",
+        "search_score": 49.02392825081294,
+        "search_blend_score": 48.053169618620856,
+        "weight": 0.5,
+        "search_by_fold": {
+          "search_early": 54.64351404654211,
+          "search_late": 43.74691016935715
+        },
+        "status": "ok",
+        "confirmation_score": 51.852951733475514,
+        "confirmation_prediction_file": "plan_confirm_G1.npz",
+        "confirmation_blend_score": 47.085073534670194,
+        "blend_prediction_file": "plan_confirm_G1_frozen_blend.npz",
+        "paired_component_score": 48.678635620745055,
+        "component_score": 51.852951733475514,
+        "metrics": {
+          "rmse": 51.852951733475514,
+          "mse": 2688.7286034741414,
+          "mae": 31.889051761321163,
+          "r2": 0.15873489354291648,
+          "mape": 0.9142618464705216,
+          "rmsle": 0.6698651431600224
+        },
+        "blend_metrics": {
+          "rmse": 47.085073534670194,
+          "mse": 2217.0041497652996,
+          "mae": 28.236531755710036,
+          "r2": 0.30633079528436014,
+          "mape": 0.7991027515067151,
+          "rmsle": 0.61821965777914
+        },
+        "absolute_improvement": -5.269651722102701,
+        "relative_improvement_percent": -11.312319481050444,
+        "blend_absolute_improvement": -0.5017735232973806,
+        "improvement_ci95_conditional": [
+          -6.303202993734722,
+          -4.228745947992408
+        ],
+        "blend_improvement_ci95_conditional": [
+          -1.0213444367940074,
+          0.07104193321895377
+        ],
+        "fit_seconds": 57.14075294600005,
+        "shared_oof_fit_seconds": 0.0,
+        "peak_memory_mb": 749.74,
+        "diagnostics": [
+          {
+            "policy": "sentinel",
+            "columns": [
+              "year_built"
+            ],
+            "groups": [],
+            "fit_rows": 11175
+          },
+          {
+            "policy": "sentinel",
+            "columns": [
+              "year_built"
+            ],
+            "groups": [],
+            "fit_rows": 22054
+          },
+          {
+            "policy": "sentinel",
+            "columns": [
+              "year_built"
+            ],
+            "groups": [],
+            "fit_rows": 35000
+          }
+        ]
+      },
+      "G2": {
+        "source": "GPT",
+        "proposal": "Глобальная медиана + индикаторы у CatBoost",
+        "paired": "cb",
+        "search_score": 50.36077962992339,
+        "search_blend_score": 48.45917712096837,
+        "weight": 0.25,
+        "search_by_fold": {
+          "search_early": 56.20009151207724,
+          "search_late": 44.86998048511919
+        },
+        "status": "ok",
+        "confirmation_score": 46.21385531338534,
+        "confirmation_prediction_file": "plan_confirm_G2.npz",
+        "confirmation_blend_score": 45.16121658713449,
+        "blend_prediction_file": "plan_confirm_G2_frozen_blend.npz",
+        "paired_component_score": 48.678635620745055,
+        "component_score": 46.21385531338534,
+        "metrics": {
+          "rmse": 46.21385531338534,
+          "mse": 2135.7204229265144,
+          "mae": 28.282515485889245,
+          "r2": 0.33176332239918416,
+          "mape": 0.7329243305503739,
+          "rmsle": 0.597010949745192
+        },
+        "blend_metrics": {
+          "rmse": 45.16121658713449,
+          "mse": 2039.5354836300717,
+          "mae": 26.2867047316665,
+          "r2": 0.3618582278843403,
+          "mape": 0.7050087375572461,
+          "rmsle": 0.5719678857901487
+        },
+        "absolute_improvement": 0.3694446979874755,
+        "relative_improvement_percent": 0.793083997692906,
+        "blend_absolute_improvement": 1.4220834242383233,
+        "improvement_ci95_conditional": [
+          -0.6200521089736716,
+          1.3579725842525057
+        ],
+        "blend_improvement_ci95_conditional": [
+          1.2094755392736782,
+          1.6866652215021534
+        ],
+        "fit_seconds": 46.72545333000002,
+        "shared_oof_fit_seconds": 0.0,
+        "peak_memory_mb": 683.55,
+        "diagnostics": [
+          {
+            "policy": "median",
+            "columns": [
+              "year_built",
+              "energy_star_rating",
+              "direction_max_wind_speed",
+              "direction_peak_wind_speed",
+              "max_wind_speed",
+              "days_with_fog"
+            ],
+            "groups": [],
+            "fit_rows": 11175
+          },
+          {
+            "policy": "median",
+            "columns": [
+              "year_built",
+              "energy_star_rating",
+              "direction_max_wind_speed",
+              "direction_peak_wind_speed",
+              "max_wind_speed",
+              "days_with_fog"
+            ],
+            "groups": [],
+            "fit_rows": 22054
+          },
+          {
+            "policy": "median",
+            "columns": [
+              "year_built",
+              "energy_star_rating",
+              "direction_max_wind_speed",
+              "direction_peak_wind_speed",
+              "max_wind_speed",
+              "days_with_fog"
+            ],
+            "groups": [],
+            "fit_rows": 35000
+          }
+        ]
+      },
+      "G3": {
+        "source": "GPT",
+        "proposal": "Условная медиана по статическим категориям",
+        "paired": "cb",
+        "search_score": 50.08621724779622,
+        "search_blend_score": 48.46940313782481,
+        "weight": 0.25,
+        "search_by_fold": {
+          "search_early": 55.575119210856364,
+          "search_late": 44.958463866547184
+        },
+        "status": "ok",
+        "confirmation_score": 48.736296667716545,
+        "confirmation_prediction_file": "plan_confirm_G3.npz",
+        "confirmation_blend_score": 45.84559083348262,
+        "blend_prediction_file": "plan_confirm_G3_frozen_blend.npz",
+        "paired_component_score": 48.678635620745055,
+        "component_score": 48.736296667716545,
+        "metrics": {
+          "rmse": 48.736296667716545,
+          "mse": 2375.2266128836786,
+          "mae": 29.7492538624449,
+          "r2": 0.25682522707372113,
+          "mape": 0.8105036182016039,
+          "rmsle": 0.6282598637787187
+        },
+        "blend_metrics": {
+          "rmse": 45.84559083348262,
+          "mse": 2101.8181988711053,
+          "mae": 26.669695596312952,
+          "r2": 0.3423708482358394,
+          "mape": 0.7251862056288837,
+          "rmsle": 0.5820945936551328
+        },
+        "absolute_improvement": -2.1529966563437313,
+        "relative_improvement_percent": -4.621820815223696,
+        "blend_absolute_improvement": 0.7377091778901956,
+        "improvement_ci95_conditional": [
+          -3.1042983692616692,
+          -1.1864348489131924
+        ],
+        "blend_improvement_ci95_conditional": [
+          0.5306556906080733,
+          0.9705023625555697
+        ],
+        "fit_seconds": 35.899536463000004,
+        "shared_oof_fit_seconds": 0.0,
+        "peak_memory_mb": 820.65,
+        "diagnostics": [
+          {
+            "policy": "conditional",
+            "columns": [
+              "year_built",
+              "energy_star_rating"
+            ],
+            "groups": [
+              "State_Factor",
+              "building_class",
+              "facility_type"
+            ],
+            "fit_rows": 11175
+          },
+          {
+            "policy": "conditional",
+            "columns": [
+              "year_built",
+              "energy_star_rating"
+            ],
+            "groups": [
+              "State_Factor",
+              "building_class",
+              "facility_type"
+            ],
+            "fit_rows": 22054
+          },
+          {
+            "policy": "conditional",
+            "columns": [
+              "year_built",
+              "energy_star_rating"
+            ],
+            "groups": [
+              "State_Factor",
+              "building_class",
+              "facility_type"
+            ],
+            "fit_rows": 35000
+          }
+        ]
+      },
+      "G6": {
+        "source": "GPT",
+        "proposal": "История с ExtraTrees-резервом для неизвестных",
+        "paired": "baseline",
+        "postprocess": "history_gate",
+        "search_score": 43.06707335980006,
+        "search_blend_score": 43.06707335980006,
+        "weight": 1.0,
+        "search_by_fold": {
+          "search_early": 52.06899232550009,
+          "search_late": 33.6912803935065
+        },
+        "status": "ok",
+        "confirmation_score": 41.751454462980846,
+        "confirmation_prediction_file": "plan_confirm_G6.npz",
+        "confirmation_blend_score": 41.751454462980846,
+        "blend_prediction_file": "plan_confirm_G6_frozen_blend.npz",
+        "paired_component_score": null,
+        "component_score": null,
+        "metrics": {
+          "rmse": 41.751454462980846,
+          "mse": 1743.183949774363,
+          "mae": 22.0822751364838,
+          "r2": 0.4545824263607896,
+          "mape": 0.5774856708907016,
+          "rmsle": 0.5195693442821739
+        },
+        "blend_metrics": {
+          "rmse": 41.751454462980846,
+          "mse": 1743.183949774363,
+          "mae": 22.0822751364838,
+          "r2": 0.4545824263607896,
+          "mape": 0.5774856708907016,
+          "rmsle": 0.5195693442821739
+        },
+        "absolute_improvement": 4.831845548391968,
+        "relative_improvement_percent": 10.372484446598513,
+        "blend_absolute_improvement": 4.831845548391968,
+        "improvement_ci95_conditional": [
+          3.8129189519287747,
+          5.849865933863731
+        ],
+        "blend_improvement_ci95_conditional": [
+          3.8129189519287747,
+          5.849865933863731
+        ],
+        "fit_seconds": 22.673234477000022,
+        "shared_oof_fit_seconds": 0.0,
+        "peak_memory_mb": 657.03,
+        "diagnostics": [
+          {
+            "history_fit": {
+              "fit_rows": 11175,
+              "entity_keys": 8884,
+              "missing_key_rows": 589,
+              "missing_time_rows": 0,
+              "multirow_key_period_groups": 133,
+              "multirow_key_period_rows": 299,
+              "different_target_key_period_groups": 130,
+              "note": "Повторы ключа внутри периода — возможные коллизии либо повторные измерения; истинный ID неизвестен.",
+              "training_history": {
+                "rows": 11175,
+                "known_history_rows": 1542,
+                "coverage": 0.13798657718120805,
+                "unknown_key_rows": 589,
+                "no_earlier_history_rows": 9044
+              }
+            },
+            "history_valid": {
+              "rows": 10879,
+              "known_history_rows": 7066,
+              "coverage": 0.6495082268590863,
+              "unknown_key_rows": 3813,
+              "no_earlier_history_rows": 0
+            },
+            "history_test": {
+              "rows": 22449,
+              "known_history_rows": 8082,
+              "coverage": 0.3600160363490579,
+              "unknown_key_rows": 14367,
+              "no_earlier_history_rows": 0
+            }
+          },
+          {
+            "history_fit": {
+              "fit_rows": 22054,
+              "entity_keys": 12166,
+              "missing_key_rows": 1101,
+              "missing_time_rows": 0,
+              "multirow_key_period_groups": 273,
+              "multirow_key_period_rows": 613,
+              "different_target_key_period_groups": 267,
+              "note": "Повторы ключа внутри периода — возможные коллизии либо повторные измерения; истинный ID неизвестен.",
+              "training_history": {
+                "rows": 22054,
+                "known_history_rows": 8608,
+                "coverage": 0.3903146821438288,
+                "unknown_key_rows": 1101,
+                "no_earlier_history_rows": 12345
+              }
+            },
+            "history_valid": {
+              "rows": 12946,
+              "known_history_rows": 9927,
+              "coverage": 0.7668005561563417,
+              "unknown_key_rows": 3019,
+              "no_earlier_history_rows": 0
+            },
+            "history_test": {
+              "rows": 22449,
+              "known_history_rows": 10563,
+              "coverage": 0.470533208606174,
+              "unknown_key_rows": 11886,
+              "no_earlier_history_rows": 0
+            }
+          },
+          {
+            "history_fit": {
+              "fit_rows": 35000,
+              "entity_keys": 14651,
+              "missing_key_rows": 1628,
+              "missing_time_rows": 0,
+              "multirow_key_period_groups": 418,
+              "multirow_key_period_rows": 944,
+              "different_target_key_period_groups": 409,
+              "note": "Повторы ключа внутри периода — возможные коллизии либо повторные измерения; истинный ID неизвестен.",
+              "training_history": {
+                "rows": 35000,
+                "known_history_rows": 18535,
+                "coverage": 0.5295714285714286,
+                "unknown_key_rows": 1628,
+                "no_earlier_history_rows": 14837
+              }
+            },
+            "history_valid": {
+              "rows": 18308,
+              "known_history_rows": 12551,
+              "coverage": 0.6855473017260214,
+              "unknown_key_rows": 5757,
+              "no_earlier_history_rows": 0
+            },
+            "history_test": {
+              "rows": 22449,
+              "known_history_rows": 12503,
+              "coverage": 0.5569513118624437,
+              "unknown_key_rows": 9946,
+              "no_earlier_history_rows": 0
+            }
+          }
+        ]
+      },
+      "Q1": {
+        "source": "Qwen",
+        "proposal": "Ridge + LightGBM по остаткам",
+        "paired": "lgb",
+        "search_score": 66.24967113673031,
+        "search_blend_score": 48.87820249825746,
+        "weight": 0.0,
+        "search_by_fold": {
+          "search_early": 83.97440269828994,
+          "search_late": 46.38393921222016
+        },
+        "status": "ok",
+        "confirmation_score": 47.393170632212346,
+        "confirmation_prediction_file": "plan_confirm_Q1.npz",
+        "confirmation_blend_score": 46.58330001137281,
+        "blend_prediction_file": "plan_confirm_Q1_frozen_blend.npz",
+        "paired_component_score": 53.87337876406847,
+        "component_score": 47.393170632212346,
+        "metrics": {
+          "rmse": 47.393170632212346,
+          "mse": 2246.1126225739945,
+          "mae": 34.01998984636783,
+          "r2": 0.29722316633119295,
+          "mape": 0.6922936941400021,
+          "rmsle": 0.8199501650499885
+        },
+        "blend_metrics": {
+          "rmse": 46.58330001137281,
+          "mse": 2170.0038399495666,
+          "mae": 26.715382233038305,
+          "r2": 0.3210365266808122,
+          "mape": 0.7103886238540628,
+          "rmsle": 0.5730723806339366
+        },
+        "absolute_improvement": -0.8098706208395328,
+        "relative_improvement_percent": -1.7385428268109206,
+        "blend_absolute_improvement": -0.0,
+        "improvement_ci95_conditional": [
+          -1.656148408219461,
+          0.08798902260662037
+        ],
+        "blend_improvement_ci95_conditional": [
+          0.0,
+          0.0
+        ],
+        "fit_seconds": 12.44991385199998,
+        "shared_oof_fit_seconds": 0.0,
+        "peak_memory_mb": 319.95,
+        "diagnostics": [
+          {
+            "ridge_alpha": 10.0,
+            "residual_fit_rows": 11175
+          },
+          {
+            "ridge_alpha": 10.0,
+            "residual_fit_rows": 22054
+          },
+          {
+            "ridge_alpha": 10.0,
+            "residual_fit_rows": 35000
+          }
+        ]
+      },
+      "Q2": {
+        "source": "Qwen",
+        "proposal": "LightGBM с линейными листьями",
+        "paired": "lgb",
+        "search_score": 52.01833455697874,
+        "search_blend_score": 48.716608509272994,
+        "weight": 0.25,
+        "search_by_fold": {
+          "search_early": 58.244775688504966,
+          "search_late": 46.14083473325522
+        },
+        "status": "ok",
+        "confirmation_score": 54.740738950084186,
+        "confirmation_prediction_file": "plan_confirm_Q2.npz",
+        "confirmation_blend_score": 46.63870020375853,
+        "blend_prediction_file": "plan_confirm_Q2_frozen_blend.npz",
+        "paired_component_score": 53.87337876406847,
+        "component_score": 54.740738950084186,
+        "metrics": {
+          "rmse": 54.740738950084186,
+          "mse": 2996.5485008012643,
+          "mae": 31.820439026336494,
+          "r2": 0.06242240653329145,
+          "mape": 0.8826941099360054,
+          "rmsle": 0.8521739030438508
+        },
+        "blend_metrics": {
+          "rmse": 46.63870020375853,
+          "mse": 2175.168356696066,
+          "mae": 27.083774670164832,
+          "r2": 0.3194206225226427,
+          "mape": 0.7422621762068513,
+          "rmsle": 0.5901645018466082
+        },
+        "absolute_improvement": -8.157438938711373,
+        "relative_improvement_percent": -17.511509353609174,
+        "blend_absolute_improvement": -0.05540019238571858,
+        "improvement_ci95_conditional": [
+          -9.237030933421376,
+          -7.013967412884386
+        ],
+        "blend_improvement_ci95_conditional": [
+          -0.34292092724341056,
+          0.25735813611461167
+        ],
+        "fit_seconds": 8.045188773000007,
+        "shared_oof_fit_seconds": 0.0,
+        "peak_memory_mb": 273.82,
+        "diagnostics": [
+          {
+            "numeric_preprocessor": {
+              "columns": [
+                "Year_Factor",
+                "floor_area",
+                "year_built",
+                "energy_star_rating",
+                "ELEVATION",
+                "january_min_temp_c",
+                "january_avg_temp_c",
+                "january_max_temp_c",
+                "february_min_temp_c",
+                "february_avg_temp_c",
+                "february_max_temp_c",
+                "march_min_temp_c",
+                "march_avg_temp_c",
+                "march_max_temp_c",
+                "april_min_temp_c",
+                "april_avg_temp_c",
+                "april_max_temp_c",
+                "may_min_temp_c",
+                "may_avg_temp_c",
+                "may_max_temp_c",
+                "june_min_temp_c",
+                "june_avg_temp_c",
+                "june_max_temp_c",
+                "july_min_temp_c",
+                "july_avg_temp_c",
+                "july_max_temp_c",
+                "august_min_temp_c",
+                "august_avg_temp_c",
+                "august_max_temp_c",
+                "september_min_temp_c",
+                "september_avg_temp_c",
+                "september_max_temp_c",
+                "october_min_temp_c",
+                "october_avg_temp_c",
+                "october_max_temp_c",
+                "november_min_temp_c",
+                "november_avg_temp_c",
+                "november_max_temp_c",
+                "december_min_temp_c",
+                "december_avg_temp_c",
+                "december_max_temp_c",
+                "cooling_degree_days_c",
+                "heating_degree_days_c",
+                "precipitation_inches",
+                "snowfall_inches",
+                "snowdepth_inches",
+                "avg_temp_c",
+                "days_below_minus1C",
+                "days_below_minus7C",
+                "days_below_minus12C",
+                "days_below_minus18C",
+                "days_above_27C",
+                "days_above_32C",
+                "days_above_38C",
+                "days_above_43C",
+                "direction_max_wind_speed",
+                "direction_peak_wind_speed",
+                "max_wind_speed",
+                "days_with_fog"
+              ],
+              "fit_rows": 11175
+            }
+          },
+          {
+            "numeric_preprocessor": {
+              "columns": [
+                "Year_Factor",
+                "floor_area",
+                "year_built",
+                "energy_star_rating",
+                "ELEVATION",
+                "january_min_temp_c",
+                "january_avg_temp_c",
+                "january_max_temp_c",
+                "february_min_temp_c",
+                "february_avg_temp_c",
+                "february_max_temp_c",
+                "march_min_temp_c",
+                "march_avg_temp_c",
+                "march_max_temp_c",
+                "april_min_temp_c",
+                "april_avg_temp_c",
+                "april_max_temp_c",
+                "may_min_temp_c",
+                "may_avg_temp_c",
+                "may_max_temp_c",
+                "june_min_temp_c",
+                "june_avg_temp_c",
+                "june_max_temp_c",
+                "july_min_temp_c",
+                "july_avg_temp_c",
+                "july_max_temp_c",
+                "august_min_temp_c",
+                "august_avg_temp_c",
+                "august_max_temp_c",
+                "september_min_temp_c",
+                "september_avg_temp_c",
+                "september_max_temp_c",
+                "october_min_temp_c",
+                "october_avg_temp_c",
+                "october_max_temp_c",
+                "november_min_temp_c",
+                "november_avg_temp_c",
+                "november_max_temp_c",
+                "december_min_temp_c",
+                "december_avg_temp_c",
+                "december_max_temp_c",
+                "cooling_degree_days_c",
+                "heating_degree_days_c",
+                "precipitation_inches",
+                "snowfall_inches",
+                "snowdepth_inches",
+                "avg_temp_c",
+                "days_below_minus1C",
+                "days_below_minus7C",
+                "days_below_minus12C",
+                "days_below_minus18C",
+                "days_above_27C",
+                "days_above_32C",
+                "days_above_38C",
+                "days_above_43C",
+                "direction_max_wind_speed",
+                "direction_peak_wind_speed",
+                "max_wind_speed",
+                "days_with_fog"
+              ],
+              "fit_rows": 22054
+            }
+          },
+          {
+            "numeric_preprocessor": {
+              "columns": [
+                "Year_Factor",
+                "floor_area",
+                "year_built",
+                "energy_star_rating",
+                "ELEVATION",
+                "january_min_temp_c",
+                "january_avg_temp_c",
+                "january_max_temp_c",
+                "february_min_temp_c",
+                "february_avg_temp_c",
+                "february_max_temp_c",
+                "march_min_temp_c",
+                "march_avg_temp_c",
+                "march_max_temp_c",
+                "april_min_temp_c",
+                "april_avg_temp_c",
+                "april_max_temp_c",
+                "may_min_temp_c",
+                "may_avg_temp_c",
+                "may_max_temp_c",
+                "june_min_temp_c",
+                "june_avg_temp_c",
+                "june_max_temp_c",
+                "july_min_temp_c",
+                "july_avg_temp_c",
+                "july_max_temp_c",
+                "august_min_temp_c",
+                "august_avg_temp_c",
+                "august_max_temp_c",
+                "september_min_temp_c",
+                "september_avg_temp_c",
+                "september_max_temp_c",
+                "october_min_temp_c",
+                "october_avg_temp_c",
+                "october_max_temp_c",
+                "november_min_temp_c",
+                "november_avg_temp_c",
+                "november_max_temp_c",
+                "december_min_temp_c",
+                "december_avg_temp_c",
+                "december_max_temp_c",
+                "cooling_degree_days_c",
+                "heating_degree_days_c",
+                "precipitation_inches",
+                "snowfall_inches",
+                "snowdepth_inches",
+                "avg_temp_c",
+                "days_below_minus1C",
+                "days_below_minus7C",
+                "days_below_minus12C",
+                "days_below_minus18C",
+                "days_above_27C",
+                "days_above_32C",
+                "days_above_38C",
+                "days_above_43C",
+                "direction_max_wind_speed",
+                "direction_peak_wind_speed",
+                "max_wind_speed",
+                "days_with_fog"
+              ],
+              "fit_rows": 35000
+            }
+          }
+        ]
+      },
+      "Q3": {
+        "source": "Qwen",
+        "proposal": "log1p + train-only smearing correction",
+        "paired": "lgb",
+        "search_score": 49.97780025556091,
+        "search_blend_score": 48.20271484089097,
+        "weight": 0.25,
+        "search_by_fold": {
+          "search_early": 54.10503767447508,
+          "search_late": 46.22546045951341
+        },
+        "status": "ok",
+        "confirmation_score": 48.23584735453315,
+        "confirmation_prediction_file": "plan_confirm_Q3.npz",
+        "confirmation_blend_score": 45.36368720080209,
+        "blend_prediction_file": "plan_confirm_Q3_frozen_blend.npz",
+        "paired_component_score": 53.87337876406847,
+        "component_score": 48.23584735453315,
+        "metrics": {
+          "rmse": 48.23584735453315,
+          "mse": 2326.6969700098225,
+          "mae": 28.080688879516135,
+          "r2": 0.2720094651280367,
+          "mape": 0.6505534834919581,
+          "rmsle": 0.5751340506327616
+        },
+        "blend_metrics": {
+          "rmse": 45.36368720080209,
+          "mse": 2057.864116452215,
+          "mae": 26.121298535079216,
+          "r2": 0.3561234582157281,
+          "mape": 0.6845417340674167,
+          "rmsle": 0.5670671907348546
+        },
+        "absolute_improvement": -1.652547343160336,
+        "relative_improvement_percent": -3.5475102510060132,
+        "blend_absolute_improvement": 1.2196128105707231,
+        "improvement_ci95_conditional": [
+          -2.625680070408931,
+          -0.6049049283488421
+        ],
+        "blend_improvement_ci95_conditional": [
+          1.007097808730398,
+          1.4468209649294281
+        ],
+        "fit_seconds": 16.86035085399999,
+        "shared_oof_fit_seconds": 0.0,
+        "peak_memory_mb": 293.52,
+        "diagnostics": [
+          {
+            "smearing_factor": 1.1933803107611274,
+            "inner_train": 2117,
+            "inner_calibration": 9058,
+            "fit_period_max": 1.0,
+            "calibration_period": 2.0
+          },
+          {
+            "smearing_factor": 1.20430258518317,
+            "inner_train": 11175,
+            "inner_calibration": 10879,
+            "fit_period_max": 2.0,
+            "calibration_period": 3.0
+          },
+          {
+            "smearing_factor": 1.0760058466540152,
+            "inner_train": 22054,
+            "inner_calibration": 12946,
+            "fit_period_max": 3.0,
+            "calibration_period": 4.0
+          }
+        ]
+      },
+      "Q4": {
+        "source": "Qwen",
+        "proposal": "Huber loss LightGBM",
+        "paired": "lgb",
+        "search_score": 51.849589148994916,
+        "search_blend_score": 48.44153513879673,
+        "weight": 0.25,
+        "search_by_fold": {
+          "search_early": 56.00929808652456,
+          "search_late": 48.07653344622243
+        },
+        "status": "ok",
+        "confirmation_score": 46.905167929206705,
+        "confirmation_prediction_file": "plan_confirm_Q4.npz",
+        "confirmation_blend_score": 44.933400006513494,
+        "blend_prediction_file": "plan_confirm_Q4_frozen_blend.npz",
+        "paired_component_score": 53.87337876406847,
+        "component_score": 46.905167929206705,
+        "metrics": {
+          "rmse": 46.905167929206705,
+          "mse": 2200.094778467081,
+          "mae": 24.571437817405414,
+          "r2": 0.31162149811949846,
+          "mape": 0.5446310923099997,
+          "rmsle": 0.5222864826923521
+        },
+        "blend_metrics": {
+          "rmse": 44.933400006513494,
+          "mse": 2019.0104361453466,
+          "mae": 25.329294152242323,
+          "r2": 0.36828022459868437,
+          "mape": 0.6603153063563636,
+          "rmsle": 0.554042112842181
+        },
+        "absolute_improvement": -0.3218679178338917,
+        "relative_improvement_percent": -0.6909513017654633,
+        "blend_absolute_improvement": 1.6499000048593189,
+        "improvement_ci95_conditional": [
+          -1.956921781246568,
+          1.14763757895073
+        ],
+        "blend_improvement_ci95_conditional": [
+          1.2668225655167116,
+          1.959546178678565
+        ],
+        "fit_seconds": 24.071551283999952,
+        "shared_oof_fit_seconds": 0.0,
+        "peak_memory_mb": 301.33,
+        "diagnostics": []
+      },
+      "Q5": {
+        "source": "Qwen",
+        "proposal": "Паттерны пропусков и нулей строки",
+        "paired": "cb",
+        "search_score": 48.66930877891623,
+        "search_blend_score": 47.88014018225084,
+        "weight": 0.5,
+        "search_by_fold": {
+          "search_early": 54.030399580110036,
+          "search_late": 43.65806823496351
+        },
+        "status": "ok",
+        "confirmation_score": 49.35986307883744,
+        "confirmation_prediction_file": "plan_confirm_Q5.npz",
+        "confirmation_blend_score": 46.0143341408995,
+        "blend_prediction_file": "plan_confirm_Q5_frozen_blend.npz",
+        "paired_component_score": 48.678635620745055,
+        "component_score": 49.35986307883744,
+        "metrics": {
+          "rmse": 49.35986307883744,
+          "mse": 2436.39608316158,
+          "mae": 30.2324461056134,
+          "r2": 0.23768616601015002,
+          "mape": 0.8539555684323994,
+          "rmsle": 0.6437051628773519
+        },
+        "blend_metrics": {
+          "rmse": 46.0143341408995,
+          "mse": 2117.318946430349,
+          "mae": 27.4659752905755,
+          "r2": 0.3375208838218995,
+          "mape": 0.7696713435080816,
+          "rmsle": 0.6039994337048451
+        },
+        "absolute_improvement": -2.776563067464629,
+        "relative_improvement_percent": -5.960425875338933,
+        "blend_absolute_improvement": 0.5689658704733134,
+        "improvement_ci95_conditional": [
+          -3.8069323055942874,
+          -1.7281968285012093
+        ],
+        "blend_improvement_ci95_conditional": [
+          0.07475754823820663,
+          1.1156964229959074
+        ],
+        "fit_seconds": 57.340103833,
+        "shared_oof_fit_seconds": 0.0,
+        "peak_memory_mb": 650.36,
+        "diagnostics": [
+          {
+            "policy": "missing_pattern",
+            "columns": [
+              "Year_Factor",
+              "floor_area",
+              "year_built",
+              "energy_star_rating",
+              "ELEVATION",
+              "january_min_temp_c",
+              "january_avg_temp_c",
+              "january_max_temp_c",
+              "february_min_temp_c",
+              "february_avg_temp_c",
+              "february_max_temp_c",
+              "march_min_temp_c",
+              "march_avg_temp_c",
+              "march_max_temp_c",
+              "april_min_temp_c",
+              "april_avg_temp_c",
+              "april_max_temp_c",
+              "may_min_temp_c",
+              "may_avg_temp_c",
+              "may_max_temp_c",
+              "june_min_temp_c",
+              "june_avg_temp_c",
+              "june_max_temp_c",
+              "july_min_temp_c",
+              "july_avg_temp_c",
+              "july_max_temp_c",
+              "august_min_temp_c",
+              "august_avg_temp_c",
+              "august_max_temp_c",
+              "september_min_temp_c",
+              "september_avg_temp_c",
+              "september_max_temp_c",
+              "october_min_temp_c",
+              "october_avg_temp_c",
+              "october_max_temp_c",
+              "november_min_temp_c",
+              "november_avg_temp_c",
+              "november_max_temp_c",
+              "december_min_temp_c",
+              "december_avg_temp_c",
+              "december_max_temp_c",
+              "cooling_degree_days_c",
+              "heating_degree_days_c",
+              "precipitation_inches",
+              "snowfall_inches",
+              "snowdepth_inches",
+              "avg_temp_c",
+              "days_below_minus1C",
+              "days_below_minus7C",
+              "days_below_minus12C",
+              "days_below_minus18C",
+              "days_above_27C",
+              "days_above_32C",
+              "days_above_38C",
+              "days_above_43C",
+              "direction_max_wind_speed",
+              "direction_peak_wind_speed",
+              "max_wind_speed",
+              "days_with_fog"
+            ],
+            "groups": [],
+            "fit_rows": 11175
+          },
+          {
+            "policy": "missing_pattern",
+            "columns": [
+              "Year_Factor",
+              "floor_area",
+              "year_built",
+              "energy_star_rating",
+              "ELEVATION",
+              "january_min_temp_c",
+              "january_avg_temp_c",
+              "january_max_temp_c",
+              "february_min_temp_c",
+              "february_avg_temp_c",
+              "february_max_temp_c",
+              "march_min_temp_c",
+              "march_avg_temp_c",
+              "march_max_temp_c",
+              "april_min_temp_c",
+              "april_avg_temp_c",
+              "april_max_temp_c",
+              "may_min_temp_c",
+              "may_avg_temp_c",
+              "may_max_temp_c",
+              "june_min_temp_c",
+              "june_avg_temp_c",
+              "june_max_temp_c",
+              "july_min_temp_c",
+              "july_avg_temp_c",
+              "july_max_temp_c",
+              "august_min_temp_c",
+              "august_avg_temp_c",
+              "august_max_temp_c",
+              "september_min_temp_c",
+              "september_avg_temp_c",
+              "september_max_temp_c",
+              "october_min_temp_c",
+              "october_avg_temp_c",
+              "october_max_temp_c",
+              "november_min_temp_c",
+              "november_avg_temp_c",
+              "november_max_temp_c",
+              "december_min_temp_c",
+              "december_avg_temp_c",
+              "december_max_temp_c",
+              "cooling_degree_days_c",
+              "heating_degree_days_c",
+              "precipitation_inches",
+              "snowfall_inches",
+              "snowdepth_inches",
+              "avg_temp_c",
+              "days_below_minus1C",
+              "days_below_minus7C",
+              "days_below_minus12C",
+              "days_below_minus18C",
+              "days_above_27C",
+              "days_above_32C",
+              "days_above_38C",
+              "days_above_43C",
+              "direction_max_wind_speed",
+              "direction_peak_wind_speed",
+              "max_wind_speed",
+              "days_with_fog"
+            ],
+            "groups": [],
+            "fit_rows": 22054
+          },
+          {
+            "policy": "missing_pattern",
+            "columns": [
+              "Year_Factor",
+              "floor_area",
+              "year_built",
+              "energy_star_rating",
+              "ELEVATION",
+              "january_min_temp_c",
+              "january_avg_temp_c",
+              "january_max_temp_c",
+              "february_min_temp_c",
+              "february_avg_temp_c",
+              "february_max_temp_c",
+              "march_min_temp_c",
+              "march_avg_temp_c",
+              "march_max_temp_c",
+              "april_min_temp_c",
+              "april_avg_temp_c",
+              "april_max_temp_c",
+              "may_min_temp_c",
+              "may_avg_temp_c",
+              "may_max_temp_c",
+              "june_min_temp_c",
+              "june_avg_temp_c",
+              "june_max_temp_c",
+              "july_min_temp_c",
+              "july_avg_temp_c",
+              "july_max_temp_c",
+              "august_min_temp_c",
+              "august_avg_temp_c",
+              "august_max_temp_c",
+              "september_min_temp_c",
+              "september_avg_temp_c",
+              "september_max_temp_c",
+              "october_min_temp_c",
+              "october_avg_temp_c",
+              "october_max_temp_c",
+              "november_min_temp_c",
+              "november_avg_temp_c",
+              "november_max_temp_c",
+              "december_min_temp_c",
+              "december_avg_temp_c",
+              "december_max_temp_c",
+              "cooling_degree_days_c",
+              "heating_degree_days_c",
+              "precipitation_inches",
+              "snowfall_inches",
+              "snowdepth_inches",
+              "avg_temp_c",
+              "days_below_minus1C",
+              "days_below_minus7C",
+              "days_below_minus12C",
+              "days_below_minus18C",
+              "days_above_27C",
+              "days_above_32C",
+              "days_above_38C",
+              "days_above_43C",
+              "direction_max_wind_speed",
+              "direction_peak_wind_speed",
+              "max_wind_speed",
+              "days_with_fog"
+            ],
+            "groups": [],
+            "fit_rows": 35000
+          }
+        ]
+      }
+    },
+    "winner_by_search": "G6",
+    "selected": "G6",
+    "selected_score": 41.751454462980846,
+    "repeat43": {
+      "winner": "G6",
+      "baseline_score": 46.77019027857198,
+      "pure_score": 42.11906389848168,
+      "blend_score": 42.11906389848168
+    },
+    "segments": {
+      "known": {
+        "rows": 12551,
+        "fraction": 0.6855473017260214,
+        "baseline_rmse": 33.44257381452873,
+        "history_rmse": 22.26675675362297,
+        "gate_rmse": 22.26675675362297
+      },
+      "unknown": {
+        "rows": 5757,
+        "fraction": 0.3144526982739786,
+        "baseline_rmse": 66.80286567284509,
+        "history_rmse": 76.384359072131,
+        "gate_rmse": 66.80286567284509
+      },
+      "test_known_fraction": 0.7873401933270969
+    },
+    "elapsed_seconds": 473.357228278,
+    "experiment_count": 40,
+    "experiments": [
+      {
+        "directory": "001_forest_search_early_6339f83d75ce91a6e1df",
+        "label": "forest",
+        "phase": "search_early",
+        "status": "ok",
+        "config_key": "6339f83d75ce91a6e1df",
+        "wall_seconds": 6.021333516999988,
+        "peak_memory_mb": 288.82,
+        "best_iterations": 1,
+        "reason": null,
+        "diagnostics": null,
+        "score": 53.6824517177633
+      },
+      {
+        "directory": "002_cb_search_early_17ece7a721cb29d19219",
+        "label": "cb",
+        "phase": "search_early",
+        "status": "ok",
+        "config_key": "17ece7a721cb29d19219",
+        "wall_seconds": 3.416198000999998,
+        "peak_memory_mb": 338.68,
+        "best_iterations": 83,
+        "reason": null,
+        "diagnostics": null,
+        "score": 55.45125077721555
+      },
+      {
+        "directory": "003_lgb_search_early_b7a7d5d665fb836bbf73",
+        "label": "lgb",
+        "phase": "search_early",
+        "status": "ok",
+        "config_key": "b7a7d5d665fb836bbf73",
+        "wall_seconds": 2.4150421960000017,
+        "peak_memory_mb": 262.5,
+        "best_iterations": 26,
+        "reason": null,
+        "diagnostics": null,
+        "score": 55.62408069889413
+      },
+      {
+        "directory": "004_G1_search_early_426b7346cabcfe5ef94d",
+        "label": "G1",
+        "phase": "search_early",
+        "status": "ok",
+        "config_key": "426b7346cabcfe5ef94d",
+        "wall_seconds": 4.418227787000006,
+        "peak_memory_mb": 384.19,
+        "best_iterations": 216,
+        "reason": null,
+        "diagnostics": {
+          "policy": "sentinel",
+          "columns": [
+            "year_built"
+          ],
+          "groups": [],
+          "fit_rows": 11175
+        },
+        "score": 54.64351404654211
+      },
+      {
+        "directory": "005_G2_search_early_50f4a55d5bdadb53c5fb",
+        "label": "G2",
+        "phase": "search_early",
+        "status": "ok",
+        "config_key": "50f4a55d5bdadb53c5fb",
+        "wall_seconds": 3.4168260080000152,
+        "peak_memory_mb": 398.46,
+        "best_iterations": 37,
+        "reason": null,
+        "diagnostics": {
+          "policy": "median",
+          "columns": [
+            "year_built",
+            "energy_star_rating",
+            "direction_max_wind_speed",
+            "direction_peak_wind_speed",
+            "max_wind_speed",
+            "days_with_fog"
+          ],
+          "groups": [],
+          "fit_rows": 11175
+        },
+        "score": 56.20009151207724
+      },
+      {
+        "directory": "006_G3_search_early_a1dc08e1c16b2a3d5d9e",
+        "label": "G3",
+        "phase": "search_early",
+        "status": "ok",
+        "config_key": "a1dc08e1c16b2a3d5d9e",
+        "wall_seconds": 3.8175218960000166,
+        "peak_memory_mb": 368.75,
+        "best_iterations": 98,
+        "reason": null,
+        "diagnostics": {
+          "policy": "conditional",
+          "columns": [
+            "year_built",
+            "energy_star_rating"
+          ],
+          "groups": [
+            "State_Factor",
+            "building_class",
+            "facility_type"
+          ],
+          "fit_rows": 11175
+        },
+        "score": 55.575119210856364
+      },
+      {
+        "directory": "007_Q1_search_early_497a48879483842156b0",
+        "label": "Q1",
+        "phase": "search_early",
+        "status": "ok",
+        "config_key": "497a48879483842156b0",
+        "wall_seconds": 2.8155772400000103,
+        "peak_memory_mb": 310.4,
+        "best_iterations": 10,
+        "reason": null,
+        "diagnostics": {
+          "ridge_alpha": 10.0,
+          "residual_fit_rows": 11175
+        },
+        "score": 83.97440269828994
+      },
+      {
+        "directory": "008_Q2_search_early_d7c4df84a7e64a56800d",
+        "label": "Q2",
+        "phase": "search_early",
+        "status": "ok",
+        "config_key": "d7c4df84a7e64a56800d",
+        "wall_seconds": 2.614697509999985,
+        "peak_memory_mb": 273.82,
+        "best_iterations": 6,
+        "reason": null,
+        "diagnostics": {
+          "numeric_preprocessor": {
+            "columns": [
+              "Year_Factor",
+              "floor_area",
+              "year_built",
+              "energy_star_rating",
+              "ELEVATION",
+              "january_min_temp_c",
+              "january_avg_temp_c",
+              "january_max_temp_c",
+              "february_min_temp_c",
+              "february_avg_temp_c",
+              "february_max_temp_c",
+              "march_min_temp_c",
+              "march_avg_temp_c",
+              "march_max_temp_c",
+              "april_min_temp_c",
+              "april_avg_temp_c",
+              "april_max_temp_c",
+              "may_min_temp_c",
+              "may_avg_temp_c",
+              "may_max_temp_c",
+              "june_min_temp_c",
+              "june_avg_temp_c",
+              "june_max_temp_c",
+              "july_min_temp_c",
+              "july_avg_temp_c",
+              "july_max_temp_c",
+              "august_min_temp_c",
+              "august_avg_temp_c",
+              "august_max_temp_c",
+              "september_min_temp_c",
+              "september_avg_temp_c",
+              "september_max_temp_c",
+              "october_min_temp_c",
+              "october_avg_temp_c",
+              "october_max_temp_c",
+              "november_min_temp_c",
+              "november_avg_temp_c",
+              "november_max_temp_c",
+              "december_min_temp_c",
+              "december_avg_temp_c",
+              "december_max_temp_c",
+              "cooling_degree_days_c",
+              "heating_degree_days_c",
+              "precipitation_inches",
+              "snowfall_inches",
+              "snowdepth_inches",
+              "avg_temp_c",
+              "days_below_minus1C",
+              "days_below_minus7C",
+              "days_below_minus12C",
+              "days_below_minus18C",
+              "days_above_27C",
+              "days_above_32C",
+              "days_above_38C",
+              "days_above_43C",
+              "direction_max_wind_speed",
+              "direction_peak_wind_speed",
+              "max_wind_speed",
+              "days_with_fog"
+            ],
+            "fit_rows": 11175
+          }
+        },
+        "score": 58.244775688504966
+      },
+      {
+        "directory": "009_Q3_search_early_ab047d52625369690601",
+        "label": "Q3",
+        "phase": "search_early",
+        "status": "ok",
+        "config_key": "ab047d52625369690601",
+        "wall_seconds": 3.0154804860000013,
+        "peak_memory_mb": 253.5,
+        "best_iterations": 161,
+        "reason": null,
+        "diagnostics": {
+          "smearing_factor": 1.1933803107611274,
+          "inner_train": 2117,
+          "inner_calibration": 9058,
+          "fit_period_max": 1.0,
+          "calibration_period": 2.0
+        },
+        "score": 54.10503767447508
+      },
+      {
+        "directory": "010_Q4_search_early_6fe1599f69d1a896d404",
+        "label": "Q4",
+        "phase": "search_early",
+        "status": "ok",
+        "config_key": "6fe1599f69d1a896d404",
+        "wall_seconds": 6.419876149999993,
+        "peak_memory_mb": 274.61,
+        "best_iterations": 2400,
+        "reason": null,
+        "diagnostics": {},
+        "score": 56.00929808652456
+      },
+      {
+        "directory": "011_Q5_search_early_4a66754d73e093d72e97",
+        "label": "Q5",
+        "phase": "search_early",
+        "status": "ok",
+        "config_key": "4a66754d73e093d72e97",
+        "wall_seconds": 5.417153611000003,
+        "peak_memory_mb": 412.48,
+        "best_iterations": 403,
+        "reason": null,
+        "diagnostics": {
+          "policy": "missing_pattern",
+          "columns": [
+            "Year_Factor",
+            "floor_area",
+            "year_built",
+            "energy_star_rating",
+            "ELEVATION",
+            "january_min_temp_c",
+            "january_avg_temp_c",
+            "january_max_temp_c",
+            "february_min_temp_c",
+            "february_avg_temp_c",
+            "february_max_temp_c",
+            "march_min_temp_c",
+            "march_avg_temp_c",
+            "march_max_temp_c",
+            "april_min_temp_c",
+            "april_avg_temp_c",
+            "april_max_temp_c",
+            "may_min_temp_c",
+            "may_avg_temp_c",
+            "may_max_temp_c",
+            "june_min_temp_c",
+            "june_avg_temp_c",
+            "june_max_temp_c",
+            "july_min_temp_c",
+            "july_avg_temp_c",
+            "july_max_temp_c",
+            "august_min_temp_c",
+            "august_avg_temp_c",
+            "august_max_temp_c",
+            "september_min_temp_c",
+            "september_avg_temp_c",
+            "september_max_temp_c",
+            "october_min_temp_c",
+            "october_avg_temp_c",
+            "october_max_temp_c",
+            "november_min_temp_c",
+            "november_avg_temp_c",
+            "november_max_temp_c",
+            "december_min_temp_c",
+            "december_avg_temp_c",
+            "december_max_temp_c",
+            "cooling_degree_days_c",
+            "heating_degree_days_c",
+            "precipitation_inches",
+            "snowfall_inches",
+            "snowdepth_inches",
+            "avg_temp_c",
+            "days_below_minus1C",
+            "days_below_minus7C",
+            "days_below_minus12C",
+            "days_below_minus18C",
+            "days_above_27C",
+            "days_above_32C",
+            "days_above_38C",
+            "days_above_43C",
+            "direction_max_wind_speed",
+            "direction_peak_wind_speed",
+            "max_wind_speed",
+            "days_with_fog"
+          ],
+          "groups": [],
+          "fit_rows": 11175
+        },
+        "score": 54.030399580110036
+      },
+      {
+        "directory": "012_history_component_search_early_a7b5b52d8fe4b9a444be",
+        "label": "history_component",
+        "phase": "search_early",
+        "status": "ok",
+        "config_key": "a7b5b52d8fe4b9a444be",
+        "wall_seconds": 5.019126231000001,
+        "peak_memory_mb": 456.6,
+        "best_iterations": 149,
+        "reason": null,
+        "diagnostics": {
+          "history_fit": {
+            "fit_rows": 11175,
+            "entity_keys": 8884,
+            "missing_key_rows": 589,
+            "missing_time_rows": 0,
+            "multirow_key_period_groups": 133,
+            "multirow_key_period_rows": 299,
+            "different_target_key_period_groups": 130,
+            "note": "Повторы ключа внутри периода — возможные коллизии либо повторные измерения; истинный ID неизвестен.",
+            "training_history": {
+              "rows": 11175,
+              "known_history_rows": 1542,
+              "coverage": 0.13798657718120805,
+              "unknown_key_rows": 589,
+              "no_earlier_history_rows": 9044
+            }
+          },
+          "history_valid": {
+            "rows": 10879,
+            "known_history_rows": 7066,
+            "coverage": 0.6495082268590863,
+            "unknown_key_rows": 3813,
+            "no_earlier_history_rows": 0
+          },
+          "history_test": {
+            "rows": 22449,
+            "known_history_rows": 8082,
+            "coverage": 0.3600160363490579,
+            "unknown_key_rows": 14367,
+            "no_earlier_history_rows": 0
+          }
+        },
+        "score": 52.970645678665505
+      },
+      {
+        "directory": "013_forest_search_late_6339f83d75ce91a6e1df",
+        "label": "forest",
+        "phase": "search_late",
+        "status": "ok",
+        "config_key": "6339f83d75ce91a6e1df",
+        "wall_seconds": 11.032953914000018,
+        "peak_memory_mb": 335.27,
+        "best_iterations": 1,
+        "reason": null,
+        "diagnostics": null,
+        "score": 44.44122078691401
+      },
+      {
+        "directory": "014_cb_search_late_17ece7a721cb29d19219",
+        "label": "cb",
+        "phase": "search_late",
+        "status": "ok",
+        "config_key": "17ece7a721cb29d19219",
+        "wall_seconds": 23.857285393000012,
+        "peak_memory_mb": 481.3,
+        "best_iterations": 2399,
+        "reason": null,
+        "diagnostics": null,
+        "score": 43.1132982212882
+      },
+      {
+        "directory": "015_lgb_search_late_b7a7d5d665fb836bbf73",
+        "label": "lgb",
+        "phase": "search_late",
+        "status": "ok",
+        "config_key": "b7a7d5d665fb836bbf73",
+        "wall_seconds": 3.8147323730000267,
+        "peak_memory_mb": 274.63,
+        "best_iterations": 655,
+        "reason": null,
+        "diagnostics": null,
+        "score": 43.67393145977802
+      },
+      {
+        "directory": "016_G1_search_late_426b7346cabcfe5ef94d",
+        "label": "G1",
+        "phase": "search_late",
+        "status": "ok",
+        "config_key": "426b7346cabcfe5ef94d",
+        "wall_seconds": 24.658551911000018,
+        "peak_memory_mb": 529.45,
+        "best_iterations": 2396,
+        "reason": null,
+        "diagnostics": {
+          "policy": "sentinel",
+          "columns": [
+            "year_built"
+          ],
+          "groups": [],
+          "fit_rows": 22054
+        },
+        "score": 43.74691016935715
+      },
+      {
+        "directory": "017_G2_search_late_50f4a55d5bdadb53c5fb",
+        "label": "G2",
+        "phase": "search_late",
+        "status": "ok",
+        "config_key": "50f4a55d5bdadb53c5fb",
+        "wall_seconds": 20.853496224000025,
+        "peak_memory_mb": 562.73,
+        "best_iterations": 1893,
+        "reason": null,
+        "diagnostics": {
+          "policy": "median",
+          "columns": [
+            "year_built",
+            "energy_star_rating",
+            "direction_max_wind_speed",
+            "direction_peak_wind_speed",
+            "max_wind_speed",
+            "days_with_fog"
+          ],
+          "groups": [],
+          "fit_rows": 22054
+        },
+        "score": 44.86998048511919
+      },
+      {
+        "directory": "018_G3_search_late_a1dc08e1c16b2a3d5d9e",
+        "label": "G3",
+        "phase": "search_late",
+        "status": "ok",
+        "config_key": "a1dc08e1c16b2a3d5d9e",
+        "wall_seconds": 15.840354880000007,
+        "peak_memory_mb": 606.61,
+        "best_iterations": 1342,
+        "reason": null,
+        "diagnostics": {
+          "policy": "conditional",
+          "columns": [
+            "year_built",
+            "energy_star_rating"
+          ],
+          "groups": [
+            "State_Factor",
+            "building_class",
+            "facility_type"
+          ],
+          "fit_rows": 22054
+        },
+        "score": 44.958463866547184
+      },
+      {
+        "directory": "019_Q1_search_late_497a48879483842156b0",
+        "label": "Q1",
+        "phase": "search_late",
+        "status": "ok",
+        "config_key": "497a48879483842156b0",
+        "wall_seconds": 4.617388238999979,
+        "peak_memory_mb": 289.95,
+        "best_iterations": 668,
+        "reason": null,
+        "diagnostics": {
+          "ridge_alpha": 10.0,
+          "residual_fit_rows": 22054
+        },
+        "score": 46.38393921222016
+      },
+      {
+        "directory": "020_Q2_search_late_d7c4df84a7e64a56800d",
+        "label": "Q2",
+        "phase": "search_late",
+        "status": "ok",
+        "config_key": "d7c4df84a7e64a56800d",
+        "wall_seconds": 2.8149216870000373,
+        "peak_memory_mb": 269.08,
+        "best_iterations": 29,
+        "reason": null,
+        "diagnostics": {
+          "numeric_preprocessor": {
+            "columns": [
+              "Year_Factor",
+              "floor_area",
+              "year_built",
+              "energy_star_rating",
+              "ELEVATION",
+              "january_min_temp_c",
+              "january_avg_temp_c",
+              "january_max_temp_c",
+              "february_min_temp_c",
+              "february_avg_temp_c",
+              "february_max_temp_c",
+              "march_min_temp_c",
+              "march_avg_temp_c",
+              "march_max_temp_c",
+              "april_min_temp_c",
+              "april_avg_temp_c",
+              "april_max_temp_c",
+              "may_min_temp_c",
+              "may_avg_temp_c",
+              "may_max_temp_c",
+              "june_min_temp_c",
+              "june_avg_temp_c",
+              "june_max_temp_c",
+              "july_min_temp_c",
+              "july_avg_temp_c",
+              "july_max_temp_c",
+              "august_min_temp_c",
+              "august_avg_temp_c",
+              "august_max_temp_c",
+              "september_min_temp_c",
+              "september_avg_temp_c",
+              "september_max_temp_c",
+              "october_min_temp_c",
+              "october_avg_temp_c",
+              "october_max_temp_c",
+              "november_min_temp_c",
+              "november_avg_temp_c",
+              "november_max_temp_c",
+              "december_min_temp_c",
+              "december_avg_temp_c",
+              "december_max_temp_c",
+              "cooling_degree_days_c",
+              "heating_degree_days_c",
+              "precipitation_inches",
+              "snowfall_inches",
+              "snowdepth_inches",
+              "avg_temp_c",
+              "days_below_minus1C",
+              "days_below_minus7C",
+              "days_below_minus12C",
+              "days_below_minus18C",
+              "days_above_27C",
+              "days_above_32C",
+              "days_above_38C",
+              "days_above_43C",
+              "direction_max_wind_speed",
+              "direction_peak_wind_speed",
+              "max_wind_speed",
+              "days_with_fog"
+            ],
+            "fit_rows": 22054
+          }
+        },
+        "score": 46.14083473325522
+      },
+      {
+        "directory": "021_Q3_search_late_ab047d52625369690601",
+        "label": "Q3",
+        "phase": "search_late",
+        "status": "ok",
+        "config_key": "ab047d52625369690601",
+        "wall_seconds": 6.421485599999983,
+        "peak_memory_mb": 265.6,
+        "best_iterations": 1164,
+        "reason": null,
+        "diagnostics": {
+          "smearing_factor": 1.20430258518317,
+          "inner_train": 11175,
+          "inner_calibration": 10879,
+          "fit_period_max": 2.0,
+          "calibration_period": 3.0
+        },
+        "score": 46.22546045951341
+      },
+      {
+        "directory": "022_Q4_search_late_6fe1599f69d1a896d404",
+        "label": "Q4",
+        "phase": "search_late",
+        "status": "ok",
+        "config_key": "6fe1599f69d1a896d404",
+        "wall_seconds": 8.22543411099997,
+        "peak_memory_mb": 274.77,
+        "best_iterations": 2400,
+        "reason": null,
+        "diagnostics": {},
+        "score": 48.07653344622243
+      },
+      {
+        "directory": "023_Q5_search_late_4a66754d73e093d72e97",
+        "label": "Q5",
+        "phase": "search_late",
+        "status": "ok",
+        "config_key": "4a66754d73e093d72e97",
+        "wall_seconds": 24.059553504999997,
+        "peak_memory_mb": 561.49,
+        "best_iterations": 2400,
+        "reason": null,
+        "diagnostics": {
+          "policy": "missing_pattern",
+          "columns": [
+            "Year_Factor",
+            "floor_area",
+            "year_built",
+            "energy_star_rating",
+            "ELEVATION",
+            "january_min_temp_c",
+            "january_avg_temp_c",
+            "january_max_temp_c",
+            "february_min_temp_c",
+            "february_avg_temp_c",
+            "february_max_temp_c",
+            "march_min_temp_c",
+            "march_avg_temp_c",
+            "march_max_temp_c",
+            "april_min_temp_c",
+            "april_avg_temp_c",
+            "april_max_temp_c",
+            "may_min_temp_c",
+            "may_avg_temp_c",
+            "may_max_temp_c",
+            "june_min_temp_c",
+            "june_avg_temp_c",
+            "june_max_temp_c",
+            "july_min_temp_c",
+            "july_avg_temp_c",
+            "july_max_temp_c",
+            "august_min_temp_c",
+            "august_avg_temp_c",
+            "august_max_temp_c",
+            "september_min_temp_c",
+            "september_avg_temp_c",
+            "september_max_temp_c",
+            "october_min_temp_c",
+            "october_avg_temp_c",
+            "october_max_temp_c",
+            "november_min_temp_c",
+            "november_avg_temp_c",
+            "november_max_temp_c",
+            "december_min_temp_c",
+            "december_avg_temp_c",
+            "december_max_temp_c",
+            "cooling_degree_days_c",
+            "heating_degree_days_c",
+            "precipitation_inches",
+            "snowfall_inches",
+            "snowdepth_inches",
+            "avg_temp_c",
+            "days_below_minus1C",
+            "days_below_minus7C",
+            "days_below_minus12C",
+            "days_below_minus18C",
+            "days_above_27C",
+            "days_above_32C",
+            "days_above_38C",
+            "days_above_43C",
+            "direction_max_wind_speed",
+            "direction_peak_wind_speed",
+            "max_wind_speed",
+            "days_with_fog"
+          ],
+          "groups": [],
+          "fit_rows": 22054
+        },
+        "score": 43.65806823496351
+      },
+      {
+        "directory": "024_history_component_search_late_a7b5b52d8fe4b9a444be",
+        "label": "history_component",
+        "phase": "search_late",
+        "status": "ok",
+        "config_key": "a7b5b52d8fe4b9a444be",
+        "wall_seconds": 8.827639422000004,
+        "peak_memory_mb": 601.47,
+        "best_iterations": 452,
+        "reason": null,
+        "diagnostics": {
+          "history_fit": {
+            "fit_rows": 22054,
+            "entity_keys": 12166,
+            "missing_key_rows": 1101,
+            "missing_time_rows": 0,
+            "multirow_key_period_groups": 273,
+            "multirow_key_period_rows": 613,
+            "different_target_key_period_groups": 267,
+            "note": "Повторы ключа внутри периода — возможные коллизии либо повторные измерения; истинный ID неизвестен.",
+            "training_history": {
+              "rows": 22054,
+              "known_history_rows": 8608,
+              "coverage": 0.3903146821438288,
+              "unknown_key_rows": 1101,
+              "no_earlier_history_rows": 12345
+            }
+          },
+          "history_valid": {
+            "rows": 12946,
+            "known_history_rows": 9927,
+            "coverage": 0.7668005561563417,
+            "unknown_key_rows": 3019,
+            "no_earlier_history_rows": 0
+          },
+          "history_test": {
+            "rows": 22449,
+            "known_history_rows": 10563,
+            "coverage": 0.470533208606174,
+            "unknown_key_rows": 11886,
+            "no_earlier_history_rows": 0
+          }
+        },
+        "score": 32.85520198140249
+      },
+      {
+        "directory": "025_forest_confirm_6339f83d75ce91a6e1df",
+        "label": "forest",
+        "phase": "confirm",
+        "status": "ok",
+        "config_key": "6339f83d75ce91a6e1df",
+        "wall_seconds": 20.458224090999977,
+        "peak_memory_mb": 395.8,
+        "best_iterations": 1,
+        "reason": null,
+        "diagnostics": null,
+        "score": 46.58330001137281
+      },
+      {
+        "directory": "026_cb_confirm_17ece7a721cb29d19219",
+        "label": "cb",
+        "phase": "confirm",
+        "status": "ok",
+        "config_key": "17ece7a721cb29d19219",
+        "wall_seconds": 27.265660765999996,
+        "peak_memory_mb": 541.33,
+        "best_iterations": 2399,
+        "reason": null,
+        "diagnostics": null,
+        "score": 48.678635620745055
+      },
+      {
+        "directory": "027_lgb_confirm_b7a7d5d665fb836bbf73",
+        "label": "lgb",
+        "phase": "confirm",
+        "status": "ok",
+        "config_key": "b7a7d5d665fb836bbf73",
+        "wall_seconds": 3.817547208999997,
+        "peak_memory_mb": 290.07,
+        "best_iterations": 655,
+        "reason": null,
+        "diagnostics": null,
+        "score": 53.87337876406847
+      },
+      {
+        "directory": "028_G1_confirm_426b7346cabcfe5ef94d",
+        "label": "G1",
+        "phase": "confirm",
+        "status": "ok",
+        "config_key": "426b7346cabcfe5ef94d",
+        "wall_seconds": 28.063973248000025,
+        "peak_memory_mb": 749.74,
+        "best_iterations": 2396,
+        "reason": null,
+        "diagnostics": {
+          "policy": "sentinel",
+          "columns": [
+            "year_built"
+          ],
+          "groups": [],
+          "fit_rows": 35000
+        },
+        "score": 51.852951733475514
+      },
+      {
+        "directory": "029_G2_confirm_50f4a55d5bdadb53c5fb",
+        "label": "G2",
+        "phase": "confirm",
+        "status": "ok",
+        "config_key": "50f4a55d5bdadb53c5fb",
+        "wall_seconds": 22.45513109799998,
+        "peak_memory_mb": 683.55,
+        "best_iterations": 1893,
+        "reason": null,
+        "diagnostics": {
+          "policy": "median",
+          "columns": [
+            "year_built",
+            "energy_star_rating",
+            "direction_max_wind_speed",
+            "direction_peak_wind_speed",
+            "max_wind_speed",
+            "days_with_fog"
+          ],
+          "groups": [],
+          "fit_rows": 35000
+        },
+        "score": 46.21385531338534
+      },
+      {
+        "directory": "030_G3_confirm_a1dc08e1c16b2a3d5d9e",
+        "label": "G3",
+        "phase": "confirm",
+        "status": "ok",
+        "config_key": "a1dc08e1c16b2a3d5d9e",
+        "wall_seconds": 16.24165968699998,
+        "peak_memory_mb": 820.65,
+        "best_iterations": 1342,
+        "reason": null,
+        "diagnostics": {
+          "policy": "conditional",
+          "columns": [
+            "year_built",
+            "energy_star_rating"
+          ],
+          "groups": [
+            "State_Factor",
+            "building_class",
+            "facility_type"
+          ],
+          "fit_rows": 35000
+        },
+        "score": 48.736296667716545
+      },
+      {
+        "directory": "031_Q1_confirm_497a48879483842156b0",
+        "label": "Q1",
+        "phase": "confirm",
+        "status": "ok",
+        "config_key": "497a48879483842156b0",
+        "wall_seconds": 5.016948372999991,
+        "peak_memory_mb": 319.95,
+        "best_iterations": 668,
+        "reason": null,
+        "diagnostics": {
+          "ridge_alpha": 10.0,
+          "residual_fit_rows": 35000
+        },
+        "score": 47.393170632212346
+      },
+      {
+        "directory": "032_Q2_confirm_d7c4df84a7e64a56800d",
+        "label": "Q2",
+        "phase": "confirm",
+        "status": "ok",
+        "config_key": "d7c4df84a7e64a56800d",
+        "wall_seconds": 2.6155695759999844,
+        "peak_memory_mb": 273.71,
+        "best_iterations": 29,
+        "reason": null,
+        "diagnostics": {
+          "numeric_preprocessor": {
+            "columns": [
+              "Year_Factor",
+              "floor_area",
+              "year_built",
+              "energy_star_rating",
+              "ELEVATION",
+              "january_min_temp_c",
+              "january_avg_temp_c",
+              "january_max_temp_c",
+              "february_min_temp_c",
+              "february_avg_temp_c",
+              "february_max_temp_c",
+              "march_min_temp_c",
+              "march_avg_temp_c",
+              "march_max_temp_c",
+              "april_min_temp_c",
+              "april_avg_temp_c",
+              "april_max_temp_c",
+              "may_min_temp_c",
+              "may_avg_temp_c",
+              "may_max_temp_c",
+              "june_min_temp_c",
+              "june_avg_temp_c",
+              "june_max_temp_c",
+              "july_min_temp_c",
+              "july_avg_temp_c",
+              "july_max_temp_c",
+              "august_min_temp_c",
+              "august_avg_temp_c",
+              "august_max_temp_c",
+              "september_min_temp_c",
+              "september_avg_temp_c",
+              "september_max_temp_c",
+              "october_min_temp_c",
+              "october_avg_temp_c",
+              "october_max_temp_c",
+              "november_min_temp_c",
+              "november_avg_temp_c",
+              "november_max_temp_c",
+              "december_min_temp_c",
+              "december_avg_temp_c",
+              "december_max_temp_c",
+              "cooling_degree_days_c",
+              "heating_degree_days_c",
+              "precipitation_inches",
+              "snowfall_inches",
+              "snowdepth_inches",
+              "avg_temp_c",
+              "days_below_minus1C",
+              "days_below_minus7C",
+              "days_below_minus12C",
+              "days_below_minus18C",
+              "days_above_27C",
+              "days_above_32C",
+              "days_above_38C",
+              "days_above_43C",
+              "direction_max_wind_speed",
+              "direction_peak_wind_speed",
+              "max_wind_speed",
+              "days_with_fog"
+            ],
+            "fit_rows": 35000
+          }
+        },
+        "score": 54.740738950084186
+      },
+      {
+        "directory": "033_Q3_confirm_ab047d52625369690601",
+        "label": "Q3",
+        "phase": "confirm",
+        "status": "ok",
+        "config_key": "ab047d52625369690601",
+        "wall_seconds": 7.423384768000005,
+        "peak_memory_mb": 293.52,
+        "best_iterations": 1164,
+        "reason": null,
+        "diagnostics": {
+          "smearing_factor": 1.0760058466540152,
+          "inner_train": 22054,
+          "inner_calibration": 12946,
+          "fit_period_max": 3.0,
+          "calibration_period": 4.0
+        },
+        "score": 48.23584735453315
+      },
+      {
+        "directory": "034_Q4_confirm_6fe1599f69d1a896d404",
+        "label": "Q4",
+        "phase": "confirm",
+        "status": "ok",
+        "config_key": "6fe1599f69d1a896d404",
+        "wall_seconds": 9.426241022999989,
+        "peak_memory_mb": 301.33,
+        "best_iterations": 2400,
+        "reason": null,
+        "diagnostics": {},
+        "score": 46.905167929206705
+      },
+      {
+        "directory": "035_Q5_confirm_4a66754d73e093d72e97",
+        "label": "Q5",
+        "phase": "confirm",
+        "status": "ok",
+        "config_key": "4a66754d73e093d72e97",
+        "wall_seconds": 27.863396717,
+        "peak_memory_mb": 650.36,
+        "best_iterations": 2400,
+        "reason": null,
+        "diagnostics": {
+          "policy": "missing_pattern",
+          "columns": [
+            "Year_Factor",
+            "floor_area",
+            "year_built",
+            "energy_star_rating",
+            "ELEVATION",
+            "january_min_temp_c",
+            "january_avg_temp_c",
+            "january_max_temp_c",
+            "february_min_temp_c",
+            "february_avg_temp_c",
+            "february_max_temp_c",
+            "march_min_temp_c",
+            "march_avg_temp_c",
+            "march_max_temp_c",
+            "april_min_temp_c",
+            "april_avg_temp_c",
+            "april_max_temp_c",
+            "may_min_temp_c",
+            "may_avg_temp_c",
+            "may_max_temp_c",
+            "june_min_temp_c",
+            "june_avg_temp_c",
+            "june_max_temp_c",
+            "july_min_temp_c",
+            "july_avg_temp_c",
+            "july_max_temp_c",
+            "august_min_temp_c",
+            "august_avg_temp_c",
+            "august_max_temp_c",
+            "september_min_temp_c",
+            "september_avg_temp_c",
+            "september_max_temp_c",
+            "october_min_temp_c",
+            "october_avg_temp_c",
+            "october_max_temp_c",
+            "november_min_temp_c",
+            "november_avg_temp_c",
+            "november_max_temp_c",
+            "december_min_temp_c",
+            "december_avg_temp_c",
+            "december_max_temp_c",
+            "cooling_degree_days_c",
+            "heating_degree_days_c",
+            "precipitation_inches",
+            "snowfall_inches",
+            "snowdepth_inches",
+            "avg_temp_c",
+            "days_below_minus1C",
+            "days_below_minus7C",
+            "days_below_minus12C",
+            "days_below_minus18C",
+            "days_above_27C",
+            "days_above_32C",
+            "days_above_38C",
+            "days_above_43C",
+            "direction_max_wind_speed",
+            "direction_peak_wind_speed",
+            "max_wind_speed",
+            "days_with_fog"
+          ],
+          "groups": [],
+          "fit_rows": 35000
+        },
+        "score": 49.35986307883744
+      },
+      {
+        "directory": "036_history_component_confirm_a7b5b52d8fe4b9a444be",
+        "label": "history_component",
+        "phase": "confirm",
+        "status": "ok",
+        "config_key": "a7b5b52d8fe4b9a444be",
+        "wall_seconds": 8.826468824000017,
+        "peak_memory_mb": 657.03,
+        "best_iterations": 452,
+        "reason": null,
+        "diagnostics": {
+          "history_fit": {
+            "fit_rows": 35000,
+            "entity_keys": 14651,
+            "missing_key_rows": 1628,
+            "missing_time_rows": 0,
+            "multirow_key_period_groups": 418,
+            "multirow_key_period_rows": 944,
+            "different_target_key_period_groups": 409,
+            "note": "Повторы ключа внутри периода — возможные коллизии либо повторные измерения; истинный ID неизвестен.",
+            "training_history": {
+              "rows": 35000,
+              "known_history_rows": 18535,
+              "coverage": 0.5295714285714286,
+              "unknown_key_rows": 1628,
+              "no_earlier_history_rows": 14837
+            }
+          },
+          "history_valid": {
+            "rows": 18308,
+            "known_history_rows": 12551,
+            "coverage": 0.6855473017260214,
+            "unknown_key_rows": 5757,
+            "no_earlier_history_rows": 0
+          },
+          "history_test": {
+            "rows": 22449,
+            "known_history_rows": 12503,
+            "coverage": 0.5569513118624437,
+            "unknown_key_rows": 9946,
+            "no_earlier_history_rows": 0
+          }
+        },
+        "score": 46.632569379413425
+      },
+      {
+        "directory": "037_repeat43_forest_confirm_cf6f163a42daf06b567b",
+        "label": "repeat43_forest",
+        "phase": "confirm",
+        "status": "ok",
+        "config_key": "cf6f163a42daf06b567b",
+        "wall_seconds": 20.858180425,
+        "peak_memory_mb": 398.73,
+        "best_iterations": 1,
+        "reason": null,
+        "diagnostics": null,
+        "score": 46.77019027857198
+      },
+      {
+        "directory": "038_repeat43_history_component_confirm_06f7660d8fe3bd59e4cd",
+        "label": "repeat43_history_component",
+        "phase": "confirm",
+        "status": "ok",
+        "config_key": "06f7660d8fe3bd59e4cd",
+        "wall_seconds": 8.826445180000064,
+        "peak_memory_mb": 685.98,
+        "best_iterations": 452,
+        "reason": null,
+        "diagnostics": {
+          "history_fit": {
+            "fit_rows": 35000,
+            "entity_keys": 14651,
+            "missing_key_rows": 1628,
+            "missing_time_rows": 0,
+            "multirow_key_period_groups": 418,
+            "multirow_key_period_rows": 944,
+            "different_target_key_period_groups": 409,
+            "note": "Повторы ключа внутри периода — возможные коллизии либо повторные измерения; истинный ID неизвестен.",
+            "training_history": {
+              "rows": 35000,
+              "known_history_rows": 18535,
+              "coverage": 0.5295714285714286,
+              "unknown_key_rows": 1628,
+              "no_earlier_history_rows": 14837
+            }
+          },
+          "history_valid": {
+            "rows": 18308,
+            "known_history_rows": 12551,
+            "coverage": 0.6855473017260214,
+            "unknown_key_rows": 5757,
+            "no_earlier_history_rows": 0
+          },
+          "history_test": {
+            "rows": 22449,
+            "known_history_rows": 12503,
+            "coverage": 0.5569513118624437,
+            "unknown_key_rows": 9946,
+            "no_earlier_history_rows": 0
+          }
+        },
+        "score": 42.39794476011207
+      },
+      {
+        "directory": "039_forest_full_6339f83d75ce91a6e1df",
+        "label": "forest",
+        "phase": "full",
+        "status": "ok",
+        "config_key": "6339f83d75ce91a6e1df",
+        "wall_seconds": 39.91682085499997,
+        "peak_memory_mb": 453.55,
+        "best_iterations": 1,
+        "reason": null,
+        "diagnostics": null
+      },
+      {
+        "directory": "040_history_component_full_a7b5b52d8fe4b9a444be",
+        "label": "history_component",
+        "phase": "full",
+        "status": "ok",
+        "config_key": "a7b5b52d8fe4b9a444be",
+        "wall_seconds": 10.628203488000054,
+        "peak_memory_mb": 689.46,
+        "best_iterations": 452,
+        "reason": null,
+        "diagnostics": {
+          "history_fit": {
+            "fit_rows": 53308,
+            "entity_keys": 20287,
+            "missing_key_rows": 1727,
+            "missing_time_rows": 0,
+            "multirow_key_period_groups": 607,
+            "multirow_key_period_rows": 1378,
+            "different_target_key_period_groups": 594,
+            "note": "Повторы ключа внутри периода — возможные коллизии либо повторные измерения; истинный ID неизвестен.",
+            "training_history": {
+              "rows": 53308,
+              "known_history_rows": 31086,
+              "coverage": 0.5831394912583477,
+              "unknown_key_rows": 1727,
+              "no_earlier_history_rows": 20495
+            }
+          },
+          "history_valid": {
+            "rows": 0,
+            "known_history_rows": 0,
+            "coverage": 0.0,
+            "unknown_key_rows": 0,
+            "no_earlier_history_rows": 0
+          },
+          "history_test": {
+            "rows": 22449,
+            "known_history_rows": 17675,
+            "coverage": 0.7873401933270969,
+            "unknown_key_rows": 4774,
+            "no_earlier_history_rows": 0
+          }
+        }
+      }
+    ],
+    "peak_worker_rss_mb": 820.65,
+    "final_refit_completed": true,
+    "sources": {
+      "GPT_ANS.txt": {
+        "sha256": "ec2db9a99bba9e04a1c97b64ac776022f15e255263df2849461b3ec5d7a6c342",
+        "bytes": 58295,
+        "lines": 610
+      },
+      "Qwen_ANS.txt": {
+        "sha256": "b0f81bc4678a60325c47f267c8438367576e8007a7fdd07ef858169d4f9a32d0",
+        "bytes": 76477,
+        "lines": 1274
+      }
+    },
+    "resource_audit": {
+      "cpu_total": 8.0,
+      "memory_bytes_total": 31138512896,
+      "memory_swap_bytes": 31138512896,
+      "network": "none",
+      "readonly_root": true
+    },
+    "dependency_audit": {
+      "installed_approved": {
+        "numpy": "1.26.4",
+        "scipy": "1.12.0",
+        "pandas": "2.2.3",
+        "joblib": "1.4.2",
+        "threadpoolctl": "3.6.0",
+        "scikit-learn": "1.5.2",
+        "catboost": "1.2.8",
+        "lightgbm": "4.6.0",
+        "xgboost": "2.1.4",
+        "optuna": "4.2.1",
+        "autogluon.tabular": "1.3.1",
+        "openai": "1.68.2",
+        "httpx": "0.28.1",
+        "pydantic": "2.10.6",
+        "PyYAML": "6.0.2",
+        "matplotlib": "3.9.4",
+        "tqdm": "4.67.1",
+        "psutil": "6.1.1",
+        "setuptools": "80.9.0"
+      },
+      "unused_not_installed": {
+        "polars": "1.26.0",
+        "pyarrow": "19.0.1",
+        "imbalanced-learn": "0.12.4",
+        "category-encoders": "2.6.4",
+        "feature-engine": "1.8.3",
+        "statsmodels": "0.14.0",
+        "torch": "2.5.1",
+        "lightautoml": "0.4.2",
+        "flaml": "2.3.6",
+        "tenacity": "9.0.0",
+        "langchain": "0.3.27",
+        "langchain-openai": "0.3.23",
+        "langgraph": "0.6.7",
+        "python-dotenv": "1.0.1",
+        "orjson": "3.10.15",
+        "jsonschema": "4.23.0",
+        "seaborn": "0.13.2",
+        "cloudpickle": "3.1.1"
+      },
+      "mismatches": [],
+      "requirements_sha256": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+    },
+    "archive_sha256": "05c08e6cc14f6711fe9c7f089d8c2ccd728283bf41df7483e9b55db519824abd",
+    "checks": {
+      "metrics_recomputed": true,
+      "exact_indices": true,
+      "search_excludes_confirm": true,
+      "frozen_before_confirm": true,
+      "fixed_iterations": true,
+      "inner_oof_checked": true,
+      "source_zip_intact": true,
+      "network_none": true,
+      "final_csv_matches_full_refit": true
+    },
+    "interpretation": "Повторная исследовательская оценка; условные интервалы не учитывают выбор по известным данным и будущий сдвиг."
+  },
+  {
+    "task": "classification",
+    "metric": "macro_f1",
+    "directory": "runs\\ai_proposals\\classification_20261025T182809_f9dd85b238",
+    "summary_directory": "20261025T182810_533248",
+    "baseline_score": 0.6111095180710091,
+    "baseline_search_score": 0.6304683571734514,
+    "baseline_metrics": {
+      "macro_f1": 0.6111095180710091,
+      "weighted_f1": 0.8097619570417205,
+      "accuracy": 0.7986932522248508,
+      "balanced_accuracy": 0.6369082722831898,
+      "log_loss": 0.4833224147478511,
+      "per_class_f1": {
+        "Analysis": 0.20625,
+        "Backdoor": 0.17424242424242425,
+        "DoS": 0.47096299926488605,
+        "Exploits": 0.6744031830238727,
+        "Fuzzers": 0.7341834232466895,
+        "Generic": 0.9893343140860611,
+        "Normal": 0.9083542349990353,
+        "Reconnaissance": 0.821689259645464,
+        "Shellcode": 0.7106227106227107,
+        "Worms": 0.42105263157894735
+      }
+    },
+    "baseline_by_fold": {
+      "search_main": 0.6205877768400277,
+      "search_other": 0.6415641975993507
+    },
+    "methods": {
+      "G4": {
+        "source": "GPT",
+        "proposal": "LightGBM early stopping по Macro F1",
+        "paired": "lgb",
+        "search_score": 0.6301846899962023,
+        "search_blend_score": 0.6304683571734514,
+        "weight": 0.0,
+        "search_by_fold": {
+          "search_main": 0.6193043764815178,
+          "search_other": 0.6422657057742207
+        },
+        "status": "ok",
+        "confirmation_score": 0.6095283318429601,
+        "confirmation_prediction_file": "plan_confirm_G4.npz",
+        "confirmation_blend_score": 0.6111095180710091,
+        "blend_prediction_file": "plan_confirm_G4_frozen_blend.npz",
+        "paired_component_score": 0.5989991605570064,
+        "component_score": 0.5962816881699256,
+        "metrics": {
+          "macro_f1": 0.6095283318429601,
+          "weighted_f1": 0.8068095547013766,
+          "accuracy": 0.7953700574518419,
+          "balanced_accuracy": 0.6395618955904853,
+          "log_loss": 0.49117188187520106,
+          "per_class_f1": {
+            "Analysis": 0.229607250755287,
+            "Backdoor": 0.19730941704035873,
+            "DoS": 0.47316486161251503,
+            "Exploits": 0.6688929704458173,
+            "Fuzzers": 0.7267469879518073,
+            "Generic": 0.9894478527607362,
+            "Normal": 0.9035957240038873,
+            "Reconnaissance": 0.8187989556135771,
+            "Shellcode": 0.6877192982456141,
+            "Worms": 0.4
+          }
+        },
+        "blend_metrics": {
+          "macro_f1": 0.6111095180710091,
+          "weighted_f1": 0.8097619570417205,
+          "accuracy": 0.7986932522248508,
+          "balanced_accuracy": 0.6369082722831898,
+          "log_loss": 0.4833224147478511,
+          "per_class_f1": {
+            "Analysis": 0.20625,
+            "Backdoor": 0.17424242424242425,
+            "DoS": 0.47096299926488605,
+            "Exploits": 0.6744031830238727,
+            "Fuzzers": 0.7341834232466895,
+            "Generic": 0.9893343140860611,
+            "Normal": 0.9083542349990353,
+            "Reconnaissance": 0.821689259645464,
+            "Shellcode": 0.7106227106227107,
+            "Worms": 0.42105263157894735
+          }
+        },
+        "absolute_improvement": -0.0015811862280490363,
+        "relative_improvement_percent": -0.25874023907205895,
+        "blend_absolute_improvement": 0.0,
+        "improvement_ci95_conditional": [
+          -0.00815505432723503,
+          0.0036767073917039345
+        ],
+        "blend_improvement_ci95_conditional": [
+          0.0,
+          0.0
+        ],
+        "fit_seconds": 26.477873614999908,
+        "shared_oof_fit_seconds": 0.0,
+        "peak_memory_mb": 313.85,
+        "diagnostics": [
+          {
+            "evaluation_names": {
+              "valid_0": [
+                "macro_f1"
+              ]
+            }
+          },
+          {
+            "evaluation_names": {
+              "valid_0": [
+                "macro_f1"
+              ]
+            }
+          },
+          {
+            "evaluation_names": {}
+          }
+        ]
+      },
+      "G5": {
+        "source": "GPT",
+        "proposal": "Один коэффициент class prior bias по внутренним OOF",
+        "postprocess": "prior_bias",
+        "paired": "baseline",
+        "search_score": 0.6280790796437904,
+        "search_blend_score": 0.6304683571734514,
+        "weight": 0.0,
+        "search_by_fold": {
+          "search_main": 0.6161389680711259,
+          "search_other": 0.6415641975993507
+        },
+        "status": "ok",
+        "confirmation_score": 0.6046338742419558,
+        "confirmation_prediction_file": "plan_confirm_G5.npz",
+        "confirmation_blend_score": 0.6111095180710091,
+        "blend_prediction_file": "plan_confirm_G5_frozen_blend.npz",
+        "paired_component_score": null,
+        "component_score": null,
+        "metrics": {
+          "macro_f1": 0.6046338742419558,
+          "weighted_f1": 0.8114634766929756,
+          "accuracy": 0.8014531936465022,
+          "balanced_accuracy": 0.6207724205839655,
+          "log_loss": 0.47624130208046545,
+          "per_class_f1": {
+            "Analysis": 0.21333333333333335,
+            "Backdoor": 0.18106995884773663,
+            "DoS": 0.4647993943981832,
+            "Exploits": 0.6809746651605616,
+            "Fuzzers": 0.7340267459138187,
+            "Generic": 0.9892156862745098,
+            "Normal": 0.9104864242540536,
+            "Reconnaissance": 0.8237145855194123,
+            "Shellcode": 0.7153846153846154,
+            "Worms": 0.3333333333333333
+          }
+        },
+        "blend_metrics": {
+          "macro_f1": 0.6111095180710091,
+          "weighted_f1": 0.8097619570417205,
+          "accuracy": 0.7986932522248508,
+          "balanced_accuracy": 0.6369082722831898,
+          "log_loss": 0.4833224147478511,
+          "per_class_f1": {
+            "Analysis": 0.20625,
+            "Backdoor": 0.17424242424242425,
+            "DoS": 0.47096299926488605,
+            "Exploits": 0.6744031830238727,
+            "Fuzzers": 0.7341834232466895,
+            "Generic": 0.9893343140860611,
+            "Normal": 0.9083542349990353,
+            "Reconnaissance": 0.821689259645464,
+            "Shellcode": 0.7106227106227107,
+            "Worms": 0.42105263157894735
+          }
+        },
+        "absolute_improvement": -0.006475643829053301,
+        "relative_improvement_percent": -1.0596535706879386,
+        "blend_absolute_improvement": 0.0,
+        "improvement_ci95_conditional": [
+          -0.024513648237774466,
+          0.004808640766638915
+        ],
+        "blend_improvement_ci95_conditional": [
+          0.0,
+          0.0
+        ],
+        "fit_seconds": 0,
+        "shared_oof_fit_seconds": 505.4682819980002,
+        "peak_memory_mb": 0,
+        "diagnostics": []
+      },
+      "Q6": {
+        "source": "Qwen",
+        "proposal": "Веса конфликтующих меток одинаковых X",
+        "paired": "lgb",
+        "search_score": 0.6245549141720094,
+        "search_blend_score": 0.6304683571734514,
+        "weight": 0.0,
+        "search_by_fold": {
+          "search_main": 0.6157971942857695,
+          "search_other": 0.6337233725354011
+        },
+        "status": "ok",
+        "confirmation_score": 0.610711434882073,
+        "confirmation_prediction_file": "plan_confirm_Q6.npz",
+        "confirmation_blend_score": 0.6111095180710091,
+        "blend_prediction_file": "plan_confirm_Q6_frozen_blend.npz",
+        "paired_component_score": 0.5989991605570064,
+        "component_score": 0.6003195840558624,
+        "metrics": {
+          "macro_f1": 0.610711434882073,
+          "weighted_f1": 0.8134410319859826,
+          "accuracy": 0.8057339191168188,
+          "balanced_accuracy": 0.628318407323017,
+          "log_loss": 0.4752286328915221,
+          "per_class_f1": {
+            "Analysis": 0.2334384858044164,
+            "Backdoor": 0.16379310344827586,
+            "DoS": 0.4415736934820904,
+            "Exploits": 0.7032315446190335,
+            "Fuzzers": 0.7326829268292683,
+            "Generic": 0.9895795022679906,
+            "Normal": 0.9083534524384356,
+            "Reconnaissance": 0.8228511530398323,
+            "Shellcode": 0.7116104868913857,
+            "Worms": 0.4
+          }
+        },
+        "blend_metrics": {
+          "macro_f1": 0.6111095180710091,
+          "weighted_f1": 0.8097619570417205,
+          "accuracy": 0.7986932522248508,
+          "balanced_accuracy": 0.6369082722831898,
+          "log_loss": 0.4833224147478511,
+          "per_class_f1": {
+            "Analysis": 0.20625,
+            "Backdoor": 0.17424242424242425,
+            "DoS": 0.47096299926488605,
+            "Exploits": 0.6744031830238727,
+            "Fuzzers": 0.7341834232466895,
+            "Generic": 0.9893343140860611,
+            "Normal": 0.9083542349990353,
+            "Reconnaissance": 0.821689259645464,
+            "Shellcode": 0.7106227106227107,
+            "Worms": 0.42105263157894735
+          }
+        },
+        "absolute_improvement": -0.0003980831889360825,
+        "relative_improvement_percent": -0.06514105527150804,
+        "blend_absolute_improvement": 0.0,
+        "improvement_ci95_conditional": [
+          -0.007593787266776011,
+          0.005847379283518269
+        ],
+        "blend_improvement_ci95_conditional": [
+          0.0,
+          0.0
+        ],
+        "fit_seconds": 28.684507105999955,
+        "shared_oof_fit_seconds": 0.0,
+        "peak_memory_mb": 321.26,
+        "diagnostics": [
+          {
+            "conflicting_rows": 8802,
+            "minimum_raw_weight": 0.018518518518518517,
+            "evaluation_names": {
+              "valid_0": [
+                "multi_logloss"
+              ]
+            }
+          },
+          {
+            "conflicting_rows": 8891,
+            "minimum_raw_weight": 0.018518518518518517,
+            "evaluation_names": {
+              "valid_0": [
+                "multi_logloss"
+              ]
+            }
+          },
+          {
+            "conflicting_rows": 11647,
+            "minimum_raw_weight": 0.018518518518518517,
+            "evaluation_names": {}
+          }
+        ]
+      },
+      "Q7": {
+        "source": "Qwen",
+        "proposal": "Поклассовая sigmoid-калибровка по внутренним OOF",
+        "postprocess": "sigmoid",
+        "paired": "baseline",
+        "search_score": 0.5980559114989183,
+        "search_blend_score": 0.6304683571734514,
+        "weight": 0.0,
+        "search_by_fold": {
+          "search_main": 0.5830520277047853,
+          "search_other": 0.6153032458017227
+        },
+        "status": "ok",
+        "confirmation_score": 0.5845528444691684,
+        "confirmation_prediction_file": "plan_confirm_Q7.npz",
+        "confirmation_blend_score": 0.6111095180710091,
+        "blend_prediction_file": "plan_confirm_Q7_frozen_blend.npz",
+        "paired_component_score": null,
+        "component_score": null,
+        "metrics": {
+          "macro_f1": 0.5845528444691684,
+          "weighted_f1": 0.8111986355115172,
+          "accuracy": 0.8220119409710488,
+          "balanced_accuracy": 0.5768618545297599,
+          "log_loss": 0.4491620009665815,
+          "per_class_f1": {
+            "Analysis": 0.1776061776061776,
+            "Backdoor": 0.13829787234042554,
+            "DoS": 0.26627218934911245,
+            "Exploits": 0.7403822888942657,
+            "Fuzzers": 0.7318281938325991,
+            "Generic": 0.9895871615827514,
+            "Normal": 0.9222539887485013,
+            "Reconnaissance": 0.8232781633742658,
+            "Shellcode": 0.7226890756302521,
+            "Worms": 0.3333333333333333
+          }
+        },
+        "blend_metrics": {
+          "macro_f1": 0.6111095180710091,
+          "weighted_f1": 0.8097619570417205,
+          "accuracy": 0.7986932522248508,
+          "balanced_accuracy": 0.6369082722831898,
+          "log_loss": 0.4833224147478511,
+          "per_class_f1": {
+            "Analysis": 0.20625,
+            "Backdoor": 0.17424242424242425,
+            "DoS": 0.47096299926488605,
+            "Exploits": 0.6744031830238727,
+            "Fuzzers": 0.7341834232466895,
+            "Generic": 0.9893343140860611,
+            "Normal": 0.9083542349990353,
+            "Reconnaissance": 0.821689259645464,
+            "Shellcode": 0.7106227106227107,
+            "Worms": 0.42105263157894735
+          }
+        },
+        "absolute_improvement": -0.026556673601840664,
+        "relative_improvement_percent": -4.3456488266895,
+        "blend_absolute_improvement": 0.0,
+        "improvement_ci95_conditional": [
+          -0.04781891492491572,
+          -0.01169757663907042
+        ],
+        "blend_improvement_ci95_conditional": [
+          0.0,
+          0.0
+        ],
+        "fit_seconds": 0,
+        "shared_oof_fit_seconds": 505.4682819980002,
+        "peak_memory_mb": 0,
+        "diagnostics": []
+      }
+    },
+    "winner_by_search": null,
+    "selected": "baseline",
+    "selected_score": 0.6111095180710091,
+    "repeat43": null,
+    "segments": {},
+    "elapsed_seconds": 1171.848948154,
+    "experiment_count": 26,
+    "experiments": [
+      {
+        "directory": "001_lgb_search_main_c755a04c79a8e7ae9fe8",
+        "label": "lgb",
+        "phase": "search_main",
+        "status": "ok",
+        "config_key": "c755a04c79a8e7ae9fe8",
+        "wall_seconds": 11.230504994000057,
+        "peak_memory_mb": 317.7,
+        "best_iterations": 113,
+        "reason": null,
+        "diagnostics": null,
+        "score": 0.6149913913440417
+      },
+      {
+        "directory": "002_cb_search_main_e44f76f2022fe9b054ea",
+        "label": "cb",
+        "phase": "search_main",
+        "status": "ok",
+        "config_key": "e44f76f2022fe9b054ea",
+        "wall_seconds": 110.62193223399993,
+        "peak_memory_mb": 881.38,
+        "best_iterations": 322,
+        "reason": null,
+        "diagnostics": null,
+        "score": 0.5990504338937128
+      },
+      {
+        "directory": "003_G4_search_main_beee0c83c65f2348859c",
+        "label": "G4",
+        "phase": "search_main",
+        "status": "ok",
+        "config_key": "beee0c83c65f2348859c",
+        "wall_seconds": 9.225213101000008,
+        "peak_memory_mb": 306.89,
+        "best_iterations": 67,
+        "reason": null,
+        "diagnostics": {
+          "evaluation_names": {
+            "valid_0": [
+              "macro_f1"
+            ]
+          }
+        },
+        "score": 0.6281422461893283
+      },
+      {
+        "directory": "004_Q6_search_main_f07b465f8a72a7ff4f36",
+        "label": "Q6",
+        "phase": "search_main",
+        "status": "ok",
+        "config_key": "f07b465f8a72a7ff4f36",
+        "wall_seconds": 10.230322031000014,
+        "peak_memory_mb": 314.23,
+        "best_iterations": 97,
+        "reason": null,
+        "diagnostics": {
+          "conflicting_rows": 8802,
+          "minimum_raw_weight": 0.018518518518518517,
+          "evaluation_names": {
+            "valid_0": [
+              "multi_logloss"
+            ]
+          }
+        },
+        "score": 0.6143590387732818
+      },
+      {
+        "directory": "005_lgb_oof_search_main_0_c755a04c79a8e7ae9fe8",
+        "label": "lgb",
+        "phase": "oof_search_main_0",
+        "status": "ok",
+        "config_key": "c755a04c79a8e7ae9fe8",
+        "wall_seconds": 5.62121568200007,
+        "peak_memory_mb": 291.26,
+        "best_iterations": 113,
+        "reason": null,
+        "diagnostics": null,
+        "score": 0.640041492204596
+      },
+      {
+        "directory": "006_cb_oof_search_main_0_e44f76f2022fe9b054ea",
+        "label": "cb",
+        "phase": "oof_search_main_0",
+        "status": "ok",
+        "config_key": "e44f76f2022fe9b054ea",
+        "wall_seconds": 49.300375024000004,
+        "peak_memory_mb": 592.71,
+        "best_iterations": 322,
+        "reason": null,
+        "diagnostics": null,
+        "score": 0.6068750978800017
+      },
+      {
+        "directory": "007_lgb_oof_search_main_1_c755a04c79a8e7ae9fe8",
+        "label": "lgb",
+        "phase": "oof_search_main_1",
+        "status": "ok",
+        "config_key": "c755a04c79a8e7ae9fe8",
+        "wall_seconds": 6.021576266000011,
+        "peak_memory_mb": 291.83,
+        "best_iterations": 113,
+        "reason": null,
+        "diagnostics": null,
+        "score": 0.6199084596292239
+      },
+      {
+        "directory": "008_cb_oof_search_main_1_e44f76f2022fe9b054ea",
+        "label": "cb",
+        "phase": "oof_search_main_1",
+        "status": "ok",
+        "config_key": "e44f76f2022fe9b054ea",
+        "wall_seconds": 51.70882717400002,
+        "peak_memory_mb": 598.66,
+        "best_iterations": 322,
+        "reason": null,
+        "diagnostics": null,
+        "score": 0.6312038122048514
+      },
+      {
+        "directory": "009_lgb_oof_search_main_2_c755a04c79a8e7ae9fe8",
+        "label": "lgb",
+        "phase": "oof_search_main_2",
+        "status": "ok",
+        "config_key": "c755a04c79a8e7ae9fe8",
+        "wall_seconds": 6.820813531999988,
+        "peak_memory_mb": 291.5,
+        "best_iterations": 113,
+        "reason": null,
+        "diagnostics": null,
+        "score": 0.6220954944652668
+      },
+      {
+        "directory": "010_cb_oof_search_main_2_e44f76f2022fe9b054ea",
+        "label": "cb",
+        "phase": "oof_search_main_2",
+        "status": "ok",
+        "config_key": "e44f76f2022fe9b054ea",
+        "wall_seconds": 50.10629182100001,
+        "peak_memory_mb": 589.01,
+        "best_iterations": 322,
+        "reason": null,
+        "diagnostics": null,
+        "score": 0.5762433614571318
+      },
+      {
+        "directory": "011_lgb_search_other_c755a04c79a8e7ae9fe8",
+        "label": "lgb",
+        "phase": "search_other",
+        "status": "ok",
+        "config_key": "c755a04c79a8e7ae9fe8",
+        "wall_seconds": 11.63204606699992,
+        "peak_memory_mb": 320.1,
+        "best_iterations": 124,
+        "reason": null,
+        "diagnostics": null,
+        "score": 0.6444101792994379
+      },
+      {
+        "directory": "012_cb_search_other_e44f76f2022fe9b054ea",
+        "label": "cb",
+        "phase": "search_other",
+        "status": "ok",
+        "config_key": "e44f76f2022fe9b054ea",
+        "wall_seconds": 191.77418239800022,
+        "peak_memory_mb": 933.13,
+        "best_iterations": 698,
+        "reason": null,
+        "diagnostics": null,
+        "score": 0.6198924892146948
+      },
+      {
+        "directory": "013_G4_search_other_beee0c83c65f2348859c",
+        "label": "G4",
+        "phase": "search_other",
+        "status": "ok",
+        "config_key": "beee0c83c65f2348859c",
+        "wall_seconds": 12.033438581999917,
+        "peak_memory_mb": 313.85,
+        "best_iterations": 129,
+        "reason": null,
+        "diagnostics": {
+          "evaluation_names": {
+            "valid_0": [
+              "macro_f1"
+            ]
+          }
+        },
+        "score": 0.6462664969690973
+      },
+      {
+        "directory": "014_Q6_search_other_f07b465f8a72a7ff4f36",
+        "label": "Q6",
+        "phase": "search_other",
+        "status": "ok",
+        "config_key": "f07b465f8a72a7ff4f36",
+        "wall_seconds": 11.832242296999993,
+        "peak_memory_mb": 321.26,
+        "best_iterations": 128,
+        "reason": null,
+        "diagnostics": {
+          "conflicting_rows": 8891,
+          "minimum_raw_weight": 0.018518518518518517,
+          "evaluation_names": {
+            "valid_0": [
+              "multi_logloss"
+            ]
+          }
+        },
+        "score": 0.6328612739434731
+      },
+      {
+        "directory": "015_lgb_oof_search_other_0_c755a04c79a8e7ae9fe8",
+        "label": "lgb",
+        "phase": "oof_search_other_0",
+        "status": "ok",
+        "config_key": "c755a04c79a8e7ae9fe8",
+        "wall_seconds": 6.422327496000207,
+        "peak_memory_mb": 303.25,
+        "best_iterations": 124,
+        "reason": null,
+        "diagnostics": null,
+        "score": 0.6400669265153996
+      },
+      {
+        "directory": "016_cb_oof_search_other_0_e44f76f2022fe9b054ea",
+        "label": "cb",
+        "phase": "oof_search_other_0",
+        "status": "ok",
+        "config_key": "e44f76f2022fe9b054ea",
+        "wall_seconds": 107.41034337300016,
+        "peak_memory_mb": 649.16,
+        "best_iterations": 698,
+        "reason": null,
+        "diagnostics": null,
+        "score": 0.6163537302633768
+      },
+      {
+        "directory": "017_lgb_oof_search_other_1_c755a04c79a8e7ae9fe8",
+        "label": "lgb",
+        "phase": "oof_search_other_1",
+        "status": "ok",
+        "config_key": "c755a04c79a8e7ae9fe8",
+        "wall_seconds": 6.222153988999935,
+        "peak_memory_mb": 302.07,
+        "best_iterations": 124,
+        "reason": null,
+        "diagnostics": null,
+        "score": 0.6399846661454707
+      },
+      {
+        "directory": "018_cb_oof_search_other_1_e44f76f2022fe9b054ea",
+        "label": "cb",
+        "phase": "oof_search_other_1",
+        "status": "ok",
+        "config_key": "e44f76f2022fe9b054ea",
+        "wall_seconds": 104.606884369,
+        "peak_memory_mb": 663.85,
+        "best_iterations": 698,
+        "reason": null,
+        "diagnostics": null,
+        "score": 0.6050502791680749
+      },
+      {
+        "directory": "019_lgb_oof_search_other_2_c755a04c79a8e7ae9fe8",
+        "label": "lgb",
+        "phase": "oof_search_other_2",
+        "status": "ok",
+        "config_key": "c755a04c79a8e7ae9fe8",
+        "wall_seconds": 6.222320205999949,
+        "peak_memory_mb": 301.88,
+        "best_iterations": 124,
+        "reason": null,
+        "diagnostics": null,
+        "score": 0.6360773785466056
+      },
+      {
+        "directory": "020_cb_oof_search_other_2_e44f76f2022fe9b054ea",
+        "label": "cb",
+        "phase": "oof_search_other_2",
+        "status": "ok",
+        "config_key": "e44f76f2022fe9b054ea",
+        "wall_seconds": 105.00515306599982,
+        "peak_memory_mb": 650.92,
+        "best_iterations": 698,
+        "reason": null,
+        "diagnostics": null,
+        "score": 0.6296047255284003
+      },
+      {
+        "directory": "021_lgb_confirm_c755a04c79a8e7ae9fe8",
+        "label": "lgb",
+        "phase": "confirm",
+        "status": "ok",
+        "config_key": "c755a04c79a8e7ae9fe8",
+        "wall_seconds": 7.4243358510000235,
+        "peak_memory_mb": 321.01,
+        "best_iterations": 113,
+        "reason": null,
+        "diagnostics": null,
+        "score": 0.5989991605570064
+      },
+      {
+        "directory": "022_cb_confirm_e44f76f2022fe9b054ea",
+        "label": "cb",
+        "phase": "confirm",
+        "status": "ok",
+        "config_key": "e44f76f2022fe9b054ea",
+        "wall_seconds": 95.19218731199999,
+        "peak_memory_mb": 840.25,
+        "best_iterations": 322,
+        "reason": null,
+        "diagnostics": null,
+        "score": 0.5830620572934185
+      },
+      {
+        "directory": "023_G4_confirm_beee0c83c65f2348859c",
+        "label": "G4",
+        "phase": "confirm",
+        "status": "ok",
+        "config_key": "beee0c83c65f2348859c",
+        "wall_seconds": 5.219221931999982,
+        "peak_memory_mb": 299.34,
+        "best_iterations": 67,
+        "reason": null,
+        "diagnostics": {
+          "evaluation_names": {}
+        },
+        "score": 0.5962816881699256
+      },
+      {
+        "directory": "024_Q6_confirm_f07b465f8a72a7ff4f36",
+        "label": "Q6",
+        "phase": "confirm",
+        "status": "ok",
+        "config_key": "f07b465f8a72a7ff4f36",
+        "wall_seconds": 6.621942777999948,
+        "peak_memory_mb": 307.4,
+        "best_iterations": 97,
+        "reason": null,
+        "diagnostics": {
+          "conflicting_rows": 11647,
+          "minimum_raw_weight": 0.018518518518518517,
+          "evaluation_names": {}
+        },
+        "score": 0.6003195840558624
+      },
+      {
+        "directory": "025_cb_full_e44f76f2022fe9b054ea",
+        "label": "cb",
+        "phase": "full",
+        "status": "ok",
+        "config_key": "e44f76f2022fe9b054ea",
+        "wall_seconds": 118.84015472700003,
+        "peak_memory_mb": 987.85,
+        "best_iterations": 322,
+        "reason": null,
+        "diagnostics": null
+      },
+      {
+        "directory": "026_lgb_full_c755a04c79a8e7ae9fe8",
+        "label": "lgb",
+        "phase": "full",
+        "status": "ok",
+        "config_key": "c755a04c79a8e7ae9fe8",
+        "wall_seconds": 7.823589288999983,
+        "peak_memory_mb": 318.1,
+        "best_iterations": 113,
+        "reason": null,
+        "diagnostics": null
+      }
+    ],
+    "peak_worker_rss_mb": 987.85,
+    "final_refit_completed": true,
+    "sources": {
+      "GPT_ANS.txt": {
+        "sha256": "ec2db9a99bba9e04a1c97b64ac776022f15e255263df2849461b3ec5d7a6c342",
+        "bytes": 58295,
+        "lines": 610
+      },
+      "Qwen_ANS.txt": {
+        "sha256": "b0f81bc4678a60325c47f267c8438367576e8007a7fdd07ef858169d4f9a32d0",
+        "bytes": 76477,
+        "lines": 1274
+      }
+    },
+    "resource_audit": {
+      "cpu_total": 8.0,
+      "memory_bytes_total": 31138512896,
+      "memory_swap_bytes": 31138512896,
+      "network": "none",
+      "readonly_root": true
+    },
+    "dependency_audit": {
+      "installed_approved": {
+        "numpy": "1.26.4",
+        "scipy": "1.12.0",
+        "pandas": "2.2.3",
+        "joblib": "1.4.2",
+        "threadpoolctl": "3.6.0",
+        "scikit-learn": "1.5.2",
+        "catboost": "1.2.8",
+        "lightgbm": "4.6.0",
+        "xgboost": "2.1.4",
+        "optuna": "4.2.1",
+        "autogluon.tabular": "1.3.1",
+        "openai": "1.68.2",
+        "httpx": "0.28.1",
+        "pydantic": "2.10.6",
+        "PyYAML": "6.0.2",
+        "matplotlib": "3.9.4",
+        "tqdm": "4.67.1",
+        "psutil": "6.1.1",
+        "setuptools": "80.9.0"
+      },
+      "unused_not_installed": {
+        "polars": "1.26.0",
+        "pyarrow": "19.0.1",
+        "imbalanced-learn": "0.12.4",
+        "category-encoders": "2.6.4",
+        "feature-engine": "1.8.3",
+        "statsmodels": "0.14.0",
+        "torch": "2.5.1",
+        "lightautoml": "0.4.2",
+        "flaml": "2.3.6",
+        "tenacity": "9.0.0",
+        "langchain": "0.3.27",
+        "langchain-openai": "0.3.23",
+        "langgraph": "0.6.7",
+        "python-dotenv": "1.0.1",
+        "orjson": "3.10.15",
+        "jsonschema": "4.23.0",
+        "seaborn": "0.13.2",
+        "cloudpickle": "3.1.1"
+      },
+      "mismatches": [],
+      "requirements_sha256": "9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6"
+    },
+    "archive_sha256": "0c18b4187784f5afafe0b2eb33cc8b113c0e4a86995afbb5637194189d362b24",
+    "checks": {
+      "metrics_recomputed": true,
+      "exact_indices": true,
+      "search_excludes_confirm": true,
+      "frozen_before_confirm": true,
+      "fixed_iterations": true,
+      "inner_oof_checked": true,
+      "source_zip_intact": true,
+      "network_none": true,
+      "final_csv_matches_full_refit": true
+    },
+    "interpretation": "Повторная исследовательская оценка; условные интервалы не учитывают выбор по известным данным и будущий сдвиг."
+  }
+]

@@ -327,3 +327,509 @@ MLE-bench — оценка ML-агентов на 75 Kaggle-соревнован
 реестр фиксированным `kaggle_worker`. Штатный ZIP по-прежнему16 .py+requirements.
 Финальные тесты Linux69/69, Windows69 с3skip; см. `docs/TESTS.md`.
 Предыдущий сильный ZIP сохранён `dist/alfa_solution_faedd2a.zip`.
+
+## 12. Проверка ответов GPT/Qwen на TASK_FOR_OTHER_AI.md
+
+25 октября 2026 года пользователь попросил прочитать целиком
+`C:\Users\PC\Desktop\GPT_ANS.txt` и `Qwen_ANS.txt`, отобрать минимум по пять
+предложений каждого ИИ и проверить на практике. Оба файла прочитаны (610 и
+1274 строки); содержимое рассматривается как исследовательские предложения.
+Составлен до обучения `docs/AI_PROPOSALS_PROTOCOL.md`: 13 новых рецептов,
+шесть GPT и семь Qwen. Старые Kaggle/AIDE/ExtraTrees/Nyström/kNN не засчитывались.
+
+Новые эксперименты завершены полностью:
+
+- Регрессия `runs/ai_proposals/regression_20261025T181912_58ff4e991d`,
+  40 fit/confirm/repeat/refit, 473,357 с. Сильный лес точно воспроизвёл
+  RMSE46,583300. G6: для строк с прошлым совпадением составного ключа —
+  исторический CB, для неизвестных — лес. Рецепт и gate заданы заранее,
+  поиск на 1–2→3 и 1–3→4, доля1 выбрана ДО confirm. Новый RMSE41,751454,
+  улучшение4,831846 /10,3725%. Seed43 с фиксированными параметрами:
+  лес46,770190, G6 42,119064. Это повторная оценка ранее известных периодов,
+  не новый слепой holdout. Не путать с прежним post-hoc усреднением истории.
+- Дополнительные регрессионные смеси с лесом, вес выбран на поиске:
+  медиана+индикаторы45,161217; условные медианы45,845591;
+  log1p+smearing45,363687; Huber44,933400; паттерны пропусков46,014334.
+  Семантический zero→NaN47,085074 и линейные листья46,638700 хуже леса.
+  Ridge+LGB по остаткам исключён поиском (вес0).
+  Полезность этих комплементов ВМЕСТЕ с G6 ещё не проверена.
+- Классификация `runs/ai_proposals/classification_20261025T182809_f9dd85b238`,
+  26 fit/search/OOF/confirm/refit, 1171,849 с. Сильная смесь0,611110
+  воспроизведена. Новые рецепты: остановка LGB по F1 с прежним CB0,609528;
+  один prior-bias по OOF0,604634; веса противоречивых дубликатов с прежним
+  CB0,610711; sigmoid-калибровка0,584553. Все доли0 выбраны ещё на двух
+  поисковых фолдах, итог — прежняя смесь. Нового поискового победителя
+  не было, seed43 не запускался. Для G5/Q7 общий OOF-fit505,468 с.
+- Все 66 заданий успешны, оба полных refit и CSV завершены. API-вызовов0.
+  Docker network=none, 8CPU/29ГиБ, исходные requirements без изменений,
+  установленные разрешённые версии проверены. Ключи не читались.
+
+Отчёт: `docs/AI_PROPOSALS_RESEARCH.md`; независимый машинный пересчёт:
+`docs/AI_PROPOSALS_RESULTS.json`. Новые `proposal_*.py`, launcher/report tools
+и семь содержательных тестов образуют отдельный исследовательский контур.
+`kaggle_worker.py` расширен фиксированной передачей закрытого proposal-рецепта.
+Штатные solution/models/research/runtime/requirements не менялись.
+Выпускной `dist/alfa_solution.zip` сохранён, SHA-256
+`1f36d39c2ad254c42f6497e4027cf4742ad5bc779dae920e24155151f1cce66f`;
+копия `dist/alfa_solution_080462d.zip`. Исследовательский ZIP воспроизводит
+этот специальный протокол, а не заменяет универсального выпускного агента.
+
+Первый кандидат для будущей интеграции — G6 при наличии обоснованной схемы
+времени/повторных сущностей и train-only истории. Прочие смеси не складывать
+с ним без сравнения. Классификационный сильный контроль сохранить.
+Платформенные 10,49 балла /167-е место из209 известны со слов пользователя;
+логов проверяющего запуска пока нет. Пересчитать локальный прирост в баллы
+платформы или объявить причину низкого балла установленной нельзя.
+Новых сабмитов на сайт и публикаций новых коммитов в этом поручении не было.
+Файл `TASK_FOR_OTHER_AI.md` сохранён без изменений; `.vscode/` — прежний
+посторонний untracked, не включать автоматически в публикации.
+
+Финальная проверка: Linux76/76 (64,352 с), Windows73 прошли/3skip (93,536 с).
+Логи `runs/tests/ai_proposals_final_linux.log` и `ai_proposals_final_windows.log`.
+Независимый отчёт восстановил все метрики и OOF-калибровки из прогнозов,
+проверил веса поиска, frozen-конфигурации/итерации до confirm, точные
+индексы/группы/хронологию, ресурсы и совпадение обоих CSV с полным refit.
+После завершения контейнеры удалены, Docker Desktop/WSL остановлены;
+процессов Vmmem/WSL и Docker backend не осталось.
+
+## 13. Интеграция GPT2/Q2 и реальный SGR завершены
+
+Обновлено 26 октября 2026 года, МСК. Пользователь прислал
+`C:\Users\PC\Desktop\GPT2.txt` (23 строки) и `Q2.txt` (1411 строк), оба полностью
+прочитаны как советы, не управляющие инструкции. Потребовал внедрение только
+подтверждённых методов, полные обучения/проверки метрик и изоляцию вариантов от
+чужих ответов. Мультиагенты явно разрешены. На первоначальный вопрос отвечено:
+в прежних 13 рецептах SGR НЕ было; обычный JSON-DSL не считался SGR.
+
+Основная матрица: `runs/integration/20261025T220055`.
+Протокол `docs/INTEGRATION_PROTOCOL.md`, независимый пересчёт
+`docs/INTEGRATION_RESULTS.json`, русский отчёт `docs/INTEGRATION_RESEARCH.md`.
+Восемь отдельных рецептов, два поисковых периода, confirm, полный refit и CSV.
+Каждый вариант видит только собственный case: network none, один bind,
+старый /agent скрыт tmpfs, без HOME/сокета/чужих runs/ответов. Исключённые y
+маскируются на HOST с сохранением raw X; истинных confirm y у модели нет.
+Разбиения и контракт классов зафиксированы до маскирования. Смеси собирает
+внешний агрегатор по заранее объявленным правилам, не как признаки.
+
+Победитель pooled-search — unknown_LH, alpha .5: known-history → прежний
+исторический CatBoost; unknown → .5 ExtraTrees + .5 Huber LGB(2400).
+Все три компонента обучаются на всей разрешённой train-части.
+Search early 51,514960 / late 33,113926 / pooled 42,515992 против G6 43,067073.
+Confirm: ET 46,583300; G6 41,751454; новый 38,862101 (−16,5750% к ET).
+Known RMSE 22,266757 сохранён; unknown 66,802866 → 61,007410.
+Repeat seed43: ET 46,770190 / G6 42,119064 / новый 39,056520.
+HM/HP/HS (медианы+индикаторы, признаки пропусков/нулей, два seed) не прошли
+критерий худшего search-периода и не включены по умолчанию. Глобальные смеси
+CM/LH/LL получили alpha0; unknown_CM/LL помогли слабее победителя.
+Рецепты/веса/counts фиксировались ДО confirm; периоды известны, не blindtest.
+
+Принятые задания: 35 / 64 ML-fit. Не скрывать исправления: ранний отказ до fit
+из-за собственного __pycache__; исправлен cleanup только зарегистрированных
+pyc + child -B. Первый repeat использовал редактируемый checkout: повторён на
+ТОЧНОМ primary snapshot без изменения параметров, результат тот же; исходные
+4 fit, summary и superseded jobs сохранены. Первичная проверка цельного HF
+ошибочно сравнила fixed-search с early-stop эталоном; исправлен режим проверяющего
+кода, не параметры модели. Затем четыре полных фазы / 12 fit совпали с независимой
+смесью до 1,14e-13: release_operator_verification.json и release_check/HF_verified.
+
+Реализованы history_router.py (native/median/pattern/two-seed и forest_huber),
+реестр parser/worker, metadata gate без имён датасета/target. Требуются числовые
+периоды и обоснованный ключ сущности из словаря; без этого обычный портфель.
+Ключи поддерживают явную entity/static семантику и прежнюю строительную.
+В runtime устранены косвенное раскрытие confirm через profile (search-train-only)
+и выбор состава смеси по confirm (весь план заморожен на search, только возврат
+к заранее выбранному контролю). Parent проверяет индексы/размеры/метрики.
+CSV audit/manifest проверяет идентификаторы, классы, конечность и контрольные суммы.
+Контроли: ET для регрессии, точный weighted LGB63/CB50/50 для редких MacroF1-классов;
+похожая LLM-конфигурация не может подменить контроль. Weighted LGB31 сохранён.
+
+Полные ZIP-прогоны: max-experiments18, time10800, no-llm, без cap итераций,
+по4CPU/14ГиБ (в паре суммарно8CPU/28ГиБ), каждый отдельный контейнер.
+Все завершили refit и CSV без ошибок worker. Независимый пересчёт всех четырёх:
+`tools/report_release.py`, `docs/RELEASE_RESULTS.json`.
+- old regression runs/release/regression_20261025T224600_df47b72f:
+  RMSE46,583300, 291,703с, 13jobs/13fit, 22449CSV-строк.
+- new regression runs/release/regression_20261025T224601_100f6dc2:
+  RMSE38,862101, 391,265с, 16jobs/23fit, 22449CSV-строк.
+- old classification runs/release/classification_20261025T225308_dbd028ae:
+  MacroF1 .6041964203673247, 3376,642777с, 23jobs/23fit, 41166CSV-строк.
+- new classification runs/release/classification_20261025T225308_8d5e82d4:
+  MacroF1 .6111095180710091, 2970,906с, 14jobs/14fit, 41166CSV-строк.
+Новая классификация воспроизводит прежний сильный фиксированный ансамбль;
+прирост в таблице — относительно старого штатного ZIP, не относительно ансамбля.
+У старого class потерялся хостовый attach во время паузы, но Docker завершился exit0.
+`tools/recover_release.py` восстановил отчёт без повторного обучения. Сохранены
+console_recovered.log и host_recovery.json. Его время — Docker StartedAt→FinishedAt,
+НЕ host monotonic; у остальных — host monotonic. Истинный combined MacroF1 старого
+выпуска вычислен снаружи, не выдуман из отсутствующего confirmation_score.
+
+Финальные тесты: Linux140/140 за65,294с, runs/tests/integration_final_linux_v4.log;
+Windows137pass+3skip из140 за100,430с, integration_final_windows_v3.log.
+Skip: AutoGluon и два обучающих XGBoost. Первая Linux v3 упала только на двух
+report-фикстурах, писавших в read-only checkout; они перенесены во внешний
+TemporaryDirectory с patch ROOT без ослабления проверок. Затем12целевых Windows
+и весь Linux прошли. Runtime моделей не менялся. Подробности docs/TESTS.md.
+
+ИТОГОВЫЙ dist/alfa_solution_v2_2026-10-26.zip (переименован по просьбе пользователя): 68301байт, 22.py + исходный requirements,
+SHA256 721d7cde00ff65e6719dabc240ed4e45d651c3a3889f0bd3a2bb931ff41f4236.
+Побайтно равен проверенному dist/alfa_solution_candidate.zip; все sourcebytes совпали.
+Прежний ZIP сохранён dist/alfa_solution_before_integration_20261025.zip и
+alfa_solution_080462d.zip, SHA1f36d39c2ad254c42f6497e4027cf4742ad5bc779dae920e24155151f1cce66f.
+Requirements неизменны: SHA9173b0388532fbd2a709e4f4b3029e3b9ccab685fce43a85261ffa1ba95efbe6.
+
+SGR ЗАВЕРШЁН: пользователь явно разрешил «до8запросов» после первого отказа
+автопроверки. Повторно спрашивать это разрешение не надо, но оно уже полностью
+ИСПОЛЬЗОВАНО:8/8calls,21626reported tokens/40000,4normal+4sgr.
+Run runs/sgr/20261026T074823, statuscompleted. Схема17контрактныхтестов и12тестов
+reporter дополнена реальными24ML-fit (search/confirm/full длякаждого),8CSV.
+Все ответы валидны; четыреSGRприняты сервером strict JSON Schema.
+Никаких моделей/ответов/confirm-метрик других arms вprompts/history не было.
+Данные замаскированы, каждый контейнер только со своим bind, networknone.
+Общий DSL одинаков; Qwen выбиралCatBoost во всех8случаях.
+
+Самостоятельный confirm (normal / SGR):
+- reg seed42:53,423819 /56,063315; seed43:45,927889 /44,634368.
+- class seed42:.5927478882 /.5830620573; seed43:.5914448349 /.5992638476.
+SGR выиграл2пары и проиграл2. Все замороженные alpha0; ни один кандидат
+не улучшил контроль. Итог reg38,862101 и class.6111095181 — показатели КОНТРОЛЯ.
+ПоследнийSGRнаsearch.621214736 противконтроля.620587777: прирост.000627 меньше
+заранееобъявленного порога.001, не подгоняли threshold/состав послеconfirm.
+Обычныйпланировщик остаётся default; SGR --planner sgr опционален, ужеестьвZIP.
+Это ограниченный одношаговый тест2policies×2tasks×2seeds наизвестныхholdout,
+не доказательство общего эффектаSGR/многошаговогоAutoResearch.
+
+Независимый tools/report_sgr_study.py успешно создал docs/SGR_RESULTS.json и
+SGR_RESEARCH.md: statuscompleted, study_completedtrue, audit_errors[].
+Проверены вручную/независимо метрикиorigRMSE+allclassMacroF1, точные индексы,
+маски/группы/хронология, profiletrain-only, prompt/schema/history, токены,
+sourceZIP, counts/weights frozen ДОconfirm и полное восстановлениеCSV.
+Отдельный tools/audit_sgr_models.py проверил фактические counts/seed/config
+и SHA-256 всех24model.pkl: runs/sgr/20261026T074823/saved_model_audit.json.
+Count search/confirm/full совпадаетдлякаждого: regnormal42=2038, sgr42=1568,
+sgr43=392, normal43=482; classsgr42=322, normal42=1095, normal43=714, sgr43=1090.
+Seedфактически42/43. Проверки не добавлялиfit/API. Agentдополнительно сравнил
+rawмаски и train-onlyкатегории/индикаторы/frequency всех4reg; ошибокнет.
+Root classSGR42 отдельно прошёлaudit_arm; итоговыйreportповторно проверилвсех8.
+Токеныnormal10265 /SGR11361 (+1096=10,68%SGR). Суммы elapsedвариантов1795,688 /
+1427,420с включаютAPI+триMLфазы, НЕобщее календарноевремя. Различие времени
+обусловленорецептами идеревьями; не объявлятьSGRуниверсальнобыстрее.
+
+Все запрошенные проверки этого этапа завершены; новыхнеобходимыхMLработ нет.
+Runtime после основной интеграции не менялся: финальные140Linux и137+3skipWindows
+актуальны, широкие повторы без нового изменения не нужны. Полный отчёт
+SGR_RESEARCH.md содержит решение, бюджет, ограничения и ссылки.
+Выпуск ПЕРЕИМЕНОВАН по просьбе пользователя в dist/alfa_solution_v2_2026-10-26.zip,
+generic dist/alfa_solution.zip сейчас нет. SHA721d7cde00ff65e6719dabc240ed4e45d651c3a3889f0bd3a2bb931ff41f4236,
+68301bytes,22py+requirements, побайтно равен проверенномуcandidate.
+Нового ZIP из-заSGR не требуется. Не создаватьновыйfullSGRrun по прежнемуразрешению.
+Никакихновыхpush/сабмитоввэтомэтапене делали; разрешение080462dкасалосьтольконего.
+Сохранятьпользовательские .vscode/ иTASK_FOR_OTHER_AI.md untracked.
+
+После завершения всех проверок Docker Desktop остановлен; посторонние WSL-задачи не затронуты. Результаты сохранены на диске.
+
+## 15. Аудит по замечаниям судей завершён
+
+Пользователь: v2 получила 21,86 балла, rank110/220, top1=30, top10=27,58.
+Судьи по обоим выпускам подтвердили корректное завершение задач/ансамбля,
+порекомендовали LLM-config и возможную ошибку LightGBM в одном эксперименте.
+Точного traceback/эффективного env нет. Async-запрос точного текста остаётся
+без ответа; это не мешало независимому аудиту. Не объявлять причину балла
+или замечания установленной без их полного журнала.
+
+User max3 агента суммарно: root + final_code_audit(LLM/report) +
+sgr_report_impl(lifecycle/task_reader). Все завершили. Новых внешних API 0;
+прежнее разрешение на 8 calls полностью использовано в SGR и не возобновлено.
+Протокол docs/JUDGES_AUDIT_PROTOCOL.md, полный отчёт docs/JUDGES_AUDIT.md,
+машинная сводка docs/JUDGES_AUDIT_RESULTS.json.
+
+Исправлены ровно 7 runtime-файлов относительно v2:
+- preprocessing/models/proposal_models: воспроизведённый LightGBM fatal для
+  валидных JSON-символов/пробелов/коллизий имён. helper lightgbm_fit_metadata
+  задаёт безопасные внутренние feature_name И categorical indices.
+  Только feature_name без индексов сначала дал TypeError unknown categorical
+  name; окончательный фикс исправляет оба, X/порядок/importance исходные.
+- task_reader: explicit positive class 0.0/dotted/escaped-string теперь целиком;
+  реальный tiny CLI до/после P=1/6→5/6, index1→0. Старые 0/1/NA/leading zeros
+  проверены, substring-угадывания нет.
+- llm_client: malformed metric list/dict и invalid token-env больше не рушат
+  запуск до CSV; blank model/URL/key, missing/invalid usage безопасны.
+  Диагностика model/host/path/skip/stage/status не содержит secret/query/credentials;
+  self.key редактируется case-insensitive даже при ошибочном model/path.
+  Проверенные Qwen flags+/no_think,35s/0retry/1000tokens/.15 сохранены.
+- experiment_store/solution: stdout safe LLM config/skip/error-stage и короткая
+  ML-ошибка (не тело API error), итоговый refit/source/fallback/counters/CSVrows+SHA.
+
+177/177 Linux66,340с; Windows174pass+3skip/177 за101,121с.
+Логи runs/tests/judges_audit_linux_v1.log и judges_audit_windows_v1.log.
+Новые тесты:5 LGB +7 task contract +16 LLM +3 diagnostics +6 reporter compatibility.
+Исторический SGR8arms read-only повторно аудирован новым reporter без ошибок;
+его отчёты/ZIP не менялись, новых calls не было.
+Process faults: deadline10→9,875с exit0 CSV50, PID завершён;
+Runner2,5→2,797с, worker+descendant killed, secret env нет;
+confirm/refit errors и failed-refit сохраняют побайтно прежний CSV.
+Артефакты runs/judges_audit/process_fault_checks.json и positive_class_axis_before_after.json.
+Старые локальные HOME/Matplotlib-ошибки были до всех git-релизов;
+MPLCONFIGDIR-защита уже была в v2, актуальный noHOME worker проходит.
+
+Четыре настоящих SDK/CLI-сценария из ZIP через HTTP127.0.0.1 с dummy key:
+proposal→реальный linear fit/refit/CSV; HTTP401→диагностика/реальные ML/refit/CSV;
+metric=[]→safe unsupported fallback CSV; invalid token-env --no-llm→fallback CSV.
+Всего3 локальных HTTP,10 малых ML-fit дополнительно; внешних calls0.
+Результат runs/judges_audit/llm_http_20261026T134534/results.json;
+инструмент tools/check_llm_local_pipeline.py. Это контрактный тест, не оценка Qwen.
+
+FULL на двух публичных задачах: noLLM, max18, time10800, без iteration cap,
+по4CPU14ГиБ; в паре8CPU28ГиБ. Runtime заморожен после fullsuite и не менялся.
+- reg runs/release/regression_20261026T130245_415f066a: completed, fullrefit,
+  RMSE38,86210123626394,22449CSVrows,389,172hostс,16jobs/23ML-fit.
+- class runs/release/classification_20261026T130246_62a301c3: completed, fullrefit,
+  MacroF1 .6111095180710091,41166CSVrows,2427,531hostс,14jobs/14fit.
+Оба без ошибок. Независимый tools/report_release.py проверил их и v2-контроли:
+docs/JUDGES_RELEASE_RESULTS.json. Старые v2-case — reg20261025T224601_100f6dc2,
+class20261025T225308_8d5e82d4. Метрики v2/v3 равны, схемы/IDs прежние;
+class CSV побайтно равен, reg max delta5,684e-14 при строгом atol1e-12.
+Не называть regCSV побайтно одинаковым. Counts реальных refit-моделей:
+reg CB452/ET256/HuberLGB2400, class LGB113/CB322 (.5/.5), seed42,
+все9 class indices проверены. JSON runs/judges_audit/release_prediction_model_audit.json.
+Время не интерпретировать как доказанное ускорение: соседняя нагрузка отличалась.
+
+ФИНАЛЬНЫЙ новый ZIP dist/alfa_solution_v3_audit_2026-10-26.zip готов:
+71090байт,22py+исходныйrequirements, SHA-256
+752afaae4fa813879bb301d7464924d9217a77999502ce10aa764ee36ed35483.
+Побайтно равен полностью проверенному dist/alfa_solution_v3_audit_candidate.zip.
+V2 dist/alfa_solution_v2_2026-10-26.zip сохранён с прежним SHA721d... .
+README/TESTS/JUDGES_AUDIT обновлены. Платформенного результата v3 ещё нет;
+публичное качество сохранено, исправлены воспроизведённые дефекты устойчивости
+и скрытых контрактов. Не обещать балльный прирост. Новых необходимых работ нет.
+Не новые push/платформенные submit; .vscode/ и TASK_FOR_OTHER_AI.md не тронуты.
+
+После окончательных проверок Docker Desktop остановлен, память WSL освобождена при отсутствии посторонних задач. Все артефакты сохранены.
+
+## 16. Повторная точная проверка LLM завершена
+
+Пользователь отдельно запросил максимально точную проверку LLM, максимум2агента,
+миниотчёт и ZIP для зачёта. Работали root+final_code_audit; runtime не менялся.
+Agent16/16 проверок compile/exec прямоизZIP, расписание3/6/9/12/15/18,
+historylength2/5/8/8/8/8, лимит6. Baselineenvимена совпадают, explicit envприоритетны.
+Root новый tools/check_llm_zip_contract.py:33сценария настоящего OpenAI1.68.2/
+HTTPX0.28.1 черезMockTransport безсети/ключей. Windows33/33 иLinux33/33 с
+networknone/read-only/2CPU2ГиБ. URL/auth/body/actualtimeout/extensions/Qwenflags/
+strictschema/всеHTTP400401403404429500503/таймауты/connection/JSON/usage/лимиты — passed.
+Новых внешнихAPI0; старое разрешение8по-прежнему полностью использовано.
+Артефакты runs/llm_final_check/20261026T140710/wire_results.json и
+runs/llm_final_check/linux_v3_exact_zip/results/wire_results.json.
+Миниотчёт docs/LLM_CLIENT_FINAL_CHECK.md + JSONRESULTS, READMЕссылкадобавлена.
+Подтверждённых дефектов поддерживаемого LLM-контракта не найдено.
+Границы:35s сетевойSDKtimeout, watchdog10800global; tokenlimit40000 — estimate
+admission+reported/estimated usage, не математически строгий денежныйлимит.
+Фактический env/ключ/модель/сеть судей безихлогов неизвестны.
+Текущий ZIP для зачёта ТОТ ЖЕ dist/alfa_solution_v3_audit_2026-10-26.zip,
+71090bytes, SHA752afaae4fa813879bb301d7464924d9217a77999502ce10aa764ee36ed35483.
+Все22модуля+requirements побайтно совпали сroot, CRCflatZIPвалиден, оригинальные
+requirements9173...сохранены, полныйaudit177/обаFULL по-прежнему актуален.
+Не делать новый релиз/повторные тяжёлыеML fits без нового изменения.
+
+После повторной LLM-проверки Docker/WSL остановлены с проверкой отсутствия посторонних задач. Все артефакты сохранены.
+
+## 17. Ранние linear + трёхсемейный OOF — В РАБОТЕ
+
+Последний user поручил внедрить оба пункта. Потом попросил срочно ZIP, но
+сразу отменил спешку: «всё поздно. делай по хорошему не торопись».
+Быстрого/частичного ZIP НЕ создавали. Продолжать ПОЛНУЮ задачу с тестами и
+публичными прогонами. Последний проверенный v3 неизменён, финального v4 пока нет.
+Два активных AI максимум: root + final_code_audit (тот возобновлён после interrupt).
+API внешние запрещены прежним исчерпанным разрешением, новые не требуются.
+
+Протокол docs/LINEAR_OOF_PROTOCOL.md записан ДО новых публичных прогонов.
+A=v3 сохранённые public full refs, B=новыйlinear --no-oof, C=linear+OOFdefault.
+B/C обе задачи full max18/time10800/noitercap/noLLM, по4CPU14ГиБ, одновременно8CPU28ГиБ.
+Нужны также синтетические линейнаярег/логистическаяклассификация с oracle вне
+контейнера; root ещё должен сделатьgenerator/benchmark. Никакихпубличныхновыхfits пока.
+
+Root изменил research.py: linear всегда первый (Ridge/Logistic), reg5/text1,
+умереннаяclassweight.5 на rare F1. required_keys+essential_pending сохраняют
+существенные прежние контролигварды (CB/LGB/ET/hist routes/weightedguard)
+доplateau-stop, поэтому новаяlinear не вытесняетrobusthistory.
+Уточнениеlinear лидера меняеттолькорегуляризацию/classweights, недеревья.
+Root solution.py: --no-oof ablation, propose_oof_plan вызов ДОfinalists/confirm,
+веса проверяются наsearch.valid порог.001, новыйguardconfirmвоспроизводитсначала
+legacyplanned-vs-legacycontrol, затемOOF противполучившегосяlegacywinner.
+ВСЕ3плана frozenДОconfirm; guardmembersconfirmfirst. Приошибке/неполномOOFconfirm
+legacyрезультатсохраняется. Чистыйchoose_confirmed_plan вresearch покрыт unit.
+summary oof_selected_on_search и final oof_selected различаются.
+Root tools/report_release допускаетlegacyguard толькоеслиfrozenoof_selectedtrue;
+tools/run_release.py --no-oof +metadataavailable/enabled (совместимсv3безмодуля).
+Packager добавил oof_ensemble.py (теперь23.py+requirements=24entries).
+submission_audit allowlist oof_selected/on_search/status.
+12 targetedroot tests passed: tests/test_linear_portfolio.py + test_frozen_plan.py,
+старыйguardтестграницаfirst4→first5обоснованапервойlinearиassertнаlinearпервый.
+
+Агент владеет ТОЛЬКО oof_ensemble.py иtests/test_oof_ensemble.py. Файлыужеесть.
+API propose_oof_plan(task,train,test,dictionary,y,groups,times,search_split,
+successes,runner,budget,directory,journal)→None/{members,weights,oof_score}.
+select_family_candidates: boosting(bestCB/LGB),forest(ET),linear — триширокие
+семьи. History/proposal исключены(сильныйhistorical планостаётсяguard).
+OOFвнутриsearch.train, max3fold, min2, дубливсегдаgroupsдаже<1%; SGKFеслиclass,
+времяexpandingpaststrict иwarmupнепокрыт. Профиль/препроцессорыfold.train-only,
+fixedcountsизsearchrefit=True(noevalearlystop); модельнеполучаетдругихпредиктов.
+Веса73grid (step.1+equal1/3+pair.25,.5,.75), >=0sum1, нулевыеallow,
+затемотдельныйSvalid/confirmguard. Не форсироватьтрёхположительныхчленов.
+Артефакты directory/oof/configs.json/status.json/foldN splits/profiles/jobs,
+raw_matrix.npz(indices,predictions[N,3,C],target,keys,warmup,classaxis).
+Статусыrunning/completed/skipped/discarded; rootparentошибкиfailsoft.
+
+Agent сообщил13pure/controller tests passed, сейчас2actualsynthetic tests
+(накаждой3search+9OOFfits,CPU1) доделываются. Rootпросилmemoryguard
+OOFcube<=min256MiB,budget.memory_mb*.1; optionaldeadline вfit_simplex_weights
+передкаждымgridpoint, чтобынеперерасходовать12%stagecap. Agentactualpublicfits0/API0.
+Возможнынужныдобавленияroot: summary счётчикOOFfits/elapsedизstatus(узнатьkey),
+независимыйreportOOFдляреальныхjobs/matrices/labels/groups/fixedcounts/source/frozen,
+синтетикаgenerator, полныйsuiteLinux/Windows послефинальныхправок,
+packagecandidate иB/Cfull4runs. Старыеv3source/rootтеперьразличаютсянамеренно.
+Проверенные177tests/v3refs остаютсяhistorical, не называтьихтестаминовогоv4.
+
+Послеbench: честнаятаблицаA/B/C, OOFfitbudget/modelweightsoverfitchecks,
+совместимостьdefaultLLMfixtures(Researchпослелинейноголидера) иzeroAPI,
+финальныйZIPтолькопослеQA, обновитьdocs/README/TESTS/HANDOFF, cleanupDockerWSL.
+Сохранять .vscode/,TASK_FOR_OTHER_AI.md,всестарыеZIP/артефакты. Новыхpush/submitнет.
+
+## 18. Продолжение 27 октября: финальные проверки идут, GitHub разрешён
+
+Пользователь прямо поручил: «доделывай и отправляй в гитхаб. пиши ещё ридми».
+Это новое явное разрешение на публикацию текущего законченного изменения.
+Не спрашивать повторно. Push ещё НЕ выполнен, HEAD/remote main оба 080462d.
+Субагентов в этом продолжении не запускали; прежний final_code_audit завершил
+файлы OOF, затем получил usage-limit. Root продолжает самостоятельно.
+
+Новый runtime полностью реализован. Добавлены счётчики OOF в summary/manifest.
+Проверенный кандидат `dist/alfa_solution_v4_candidate.zip`: 79080 байт,
+23 .py + исходный requirements; SHA256
+ce4d46965cc4f13eae67e0eeb0033c284bf6e9e3cbe48c9782964a3d2ea15708.
+Архив побайтно совпадает с 24 исходными файлами, CRC и original requirements
+9173... проверены. Runtime после начала public-прогонов НЕ менялся.
+v3 пользователь переименовал в `dist/alfa_solution_v31_audit_2026-10-26.zip`;
+та же версия доступна как `dist/alfa_solution_v3_audit_candidate.zip` (752a...).
+
+Новые проверки: Windows201, 198 passed +3skip,246.693с,
+`runs/tests/linear_oof_windows_full.log`; Linux202/202,128.957с,
+`runs/tests/linear_oof_linux.log`. Последним добавлен реальный тест
+изменения только valid-y для Ridge/LGB/ET при refit=True/fixed counts:
+прогнозы valid/test строго прежние. Он включён в Linux, не в ранний Windows201.
+Первый неправильный Windows-запуск без sys.path не считается успешным.
+LLM непосредственно из v4:33/33 настоящих SDK MockTransport-сценария,
+`runs/linear_oof_benchmarks/llm_zip_check/wire_results.json`, API/network0.
+
+Public B/C regression полностью завершены, оба confirm RMSE38.86210123626394,
+full refit,22449 CSVrows,0ошибок:
+- B `runs/release/regression_20261027T000649_219772ad`,494.078с,24MLfits.
+- C `runs/release/regression_20261027T000703_bd93fbc7`,555.062с,30MLfits.
+OOF:2 временных фолда,6/6 успешных fits,19937OOFrows/2117warmup,
+73grid,62.716с,веса бустинг/лес/linear=[.3,.7,0],OOFscore50.793709,
+отдельная search-valid43.145300, смесь отвергнута в пользу истории.
+Root сначала ошибочно назвал смесь бустинг+Ridge в commentary, затем явно
+исправил: это бустинг+лес, Ridge0. Машинные отчёты верны.
+Независимый аудит обоих: docs/LINEAR_OOF_REGRESSION_RESULTS.json;
+все fixed модели фактически проверены по деревьям/seed,3 и9jobs:
+runs/linear_oof_benchmarks/regression_model_audit.json.
+
+СЕЙЧАС public classification B/C ещё обучаются без cap/max18/time10800/noLLM,
+каждый4CPU14ГиБ, максимум2контейнера одновременно:
+- B `runs/release/classification_20261027T001802_88c4c41e`
+- C `runs/release/classification_20261027T001802_766c39e1`
+Логи `runs/linear_oof_benchmarks/classification_B.log` и `_C.log`.
+Host exec session55855 запускает tools/run_linear_oof_benchmarks.py classification,
+по окончании пишет runs/linear_oof_benchmarks/index_classification.json.
+Завершено8search: linear.461719,CB.553108,LGB.560929,weightedCB.599050,
+weightedLGB.614991,ET.608900,CB.513822,LGB.612944; сейчас длинные CB-refinements.
+Это промежуточные search, НЕ confirm/платформенные баллы.
+
+Host exec session2490 АВТОМАТИЧЕСКИ ждёт этот index, затем запускает шесть
+синтетических A/B/C через tools/run_linear_oof_benchmarks.py synthetic,
+потом tools/report_linear_oof.py. Не запускать синтетику второй раз!
+Логи: runs/tests/v4_synthetic_comparison.log и v4_final_independent_report.log.
+Синтетика уже создана tools/make_linear_benchmarks.py, seeds271026/271027,
+1500train/400test/12numeric, линейная регрессия с Xtest*2 и3класса линейных
+logits. Oracle_test.npz остаётся в source, в контейнер НЕ копируется.
+Каждый вариант имеет собственный case/ZIP, API0/networknone.
+
+Новые ROOT tools: make_linear_benchmarks, run_linear_oof_benchmarks,
+audit_oof_release (полная реконструкция матрицы/73весов/профилей/путей/splits),
+audit_release_models (реальные сохранённые counts/seed/коэффициенты),
+report_linear_oof (A/B/C12строк, публичныеAизсохранённыхv3, синтетическиеAреальные).
+report_release расширен source+inputhash metadata, OOF-аудит/стоимость,
+независимое повторение guard-правила и тестовый oracle только снаружи.
+OOF-аудитор уже проверил public Creg; actual-model-auditor обаreg.
+После готового docs/LINEAR_OOF_RESULTS.json запустить отдельно:
+`.tools/python312/python.exe tools/audit_release_models.py`.
+Он создаст docs/LINEAR_OOF_MODEL_AUDIT.json без новых fit.
+
+README переписан/расширен: ранниеlinear,OOF,Mermaid,команды,изоляция,LLM/тесты.
+Остаётся после финального отчёта убрать «кандидат проходит проверки»,
+добавить итоговую таблицу/выводы/ссылку на финальный v4 ZIP.
+docs/TESTS обновлён точными201/202/33. Дополнить финальными полными прогонами.
+При отсутствии прироста не объявлять его: раннийlinear проверяет иной класс
+задач, OOF может давать0веса и отказываться от замены сильного плана.
+
+Git: подготовлен staged81файл (новые runtime/тесты/tools/docs и старые ещё
+не опубликованные результаты предыдущих этапов). `.vscode/` и
+TASK_FOR_OTHER_AI.md не включены, данные/runs/dist/ключи игнорируются.
+Скан staged на sk-ключи/JWT прошёл; личные paths не включены.
+Последние tools/audit_release_models.py, правки README/tools ещё ДОБАВИТЬ
+в stage перед commit. Нового commit/push ещё нет.
+После полного аудита: собрать final ZIP с новым именем (код останется тем же,
+ожидаемый SHAce4...), force-add final ZIP+sha (и v3candidate для A/repro при
+необходимости), добавить отчёты/README/HANDOFF,gitdiff--check,commit,push main.
+Для Git: safe.directory E:/Dev_Cpp/Alfa,http.sslBackend=openssl,
+GIT_TERMINAL_PROMPT=0,GCM_INTERACTIVE=never; не печатать credentials.
+Сначала завершить проверки, затем публиковать, никаких сабмитов на сайт.
+После окончания проверить отсутствие сторонних задач и остановить Docker/WSL.
+
+## 19. V4: исследования и итоговый аудит завершены
+
+27 октября 2026 года. Все работы раздела18 завершены, дальнейшие ML-fit
+не нужны. Финальный ZIP: dist/alfa_solution_v4_2026-10-27.zip,79080байт,
+SHA256 ce4d46965cc4f13eae67e0eeb0033c284bf6e9e3cbe48c9782964a3d2ea15708.
+Побайтно равен исходному v4candidate; runtime во время обучения не менялся.
+README обновлён: схема, запуск, режимы, таблица, тесты и итоговый ZIP.
+
+Public A/B/C полностью сохраняют качество: reg38.86210123626394,
+class.6111095180710091. Bclass2927.093с,Cclass3039.219с,оба41166CSVrows,
+fullrefit безошибок. Новый LGB/linear75/25 на поиске .622446507,
+на confirm .598253219 против заранее заданного LGB/CB50/50 .611109518:
+новая смесь отклонена. OOFclass9/9fits,127.496с,веса[.4,.4,.2],
+OOFscore.641170533,отдельнаяsearch-valid.618145745: тоже отклонён.
+Сильный контроль сохранён; никакого нового прироста public не объявлять.
+
+Синтетика1500train/400test12numeric,oracleвнеMLконтейнера,2задачи×A/B/C:
+- регрессия отдельныйtest RMSE A21.04520266 → B/C.25992445;
+  confirm3.6808171645 → .2280447988.
+- классификация отдельныйtest MacroF1 A.84875466 → B/C.94226241;
+  confirm.8765875941 → .9536377444.
+OOF в обоих случаях выбрал[0,0,1], ничего не улучшил относительно linear.
+Все шесть syntheticcases завершены с fullrefit/CSV.
+Индексы: runs/linear_oof_benchmarks/index_classification.json и index_synthetic.json.
+Новых обучений в сравнении166 (включая33OOF), ошибок0; дополнительно
+микротесты и два сохранённых старых publicA-контроля, всего12строк таблицы.
+
+docs/LINEAR_OOF_RESULTS.json — независимый пересчёт всех12записей;
+docs/LINEAR_OOF_RESEARCH.md — русский отчёт, эффекты B−A/C−B,
+отдельные тесты, причины отказа смесей и ограничения.
+docs/LINEAR_OOF_MODEL_AUDIT.json — фактические59fixedjobs/67компонентов
+по8новымB/Ccases: деревья,seed,конфигурации,линейные коэффициенты,SHA.
+Новых fit при аудите0. Проверено совпадение CSV с полным refit,
+фолды/группы/хронология,train-onlyпрофили,73веса,замороженныйguard.
+
+Последний реальный perturb-valid-y тест дополнительно прошёл Windows1/1
+за13.072с. ПолныйWindows201(198+3skip)+этот1 =199pass+3skip;
+Linux202/202.33LLMwireтакжепрошлибезсети,внешнихAPI0.
+Прежний лимит8Qwenзапросов не возобновлён и не использовался.
+
+Решение: ранний linear обязателен, польза показана на синтетике;
+OOF остаётся ограниченным поисковым этапом для новых задач с двумя
+раздельными проверками и автоматическим отказом; --no-oof экономитвремя.
+OOF не доказал дополнительного прироста в текущих четырёх задачах.
+Это улучшение покрытия разных зависимостей, не обещание27–30баллов.
+
+Публикация текущего проверенного кода/README/отчётов/ZIP в GitHub main
+прямо разрешена последним пользователем; выполняется после этих проверок.
+Сохранять .vscode/ и TASK_FOR_OTHER_AI.md, не включатьихвкоммит.
